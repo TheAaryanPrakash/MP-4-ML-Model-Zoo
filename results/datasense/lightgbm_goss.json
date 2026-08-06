@@ -1,0 +1,198 @@
+{
+  "status": "ok",
+  "name": "LightGBM (GOSS)",
+  "key": "lightgbm_goss",
+  "category": "ml",
+  "family": "boosting",
+  "description": "LightGBM with Gradient-based One-Side Sampling -- keeps high-gradient samples, subsamples the rest for speed.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "boosting_type": "goss",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0,
+    "verbose": -1
+  },
+  "subsample_cap": null,
+  "train_time_sec": 7.80623984336853,
+  "inference_time_sec": 0.1754896640777588,
+  "inference_time_per_sample_ms": 0.012982885557280372,
+  "accuracy": 0.9709255012206851,
+  "precision_macro": 0.9764039975884589,
+  "recall_macro": 0.9433413173400197,
+  "f1_macro": 0.9591796647284088,
+  "precision_weighted": 0.970948686075766,
+  "recall_weighted": 0.9709255012206851,
+  "f1_weighted": 0.970604887069766,
+  "confusion_matrix": [
+    [
+      8165,
+      0,
+      1,
+      0,
+      1,
+      0,
+      40,
+      1
+    ],
+    [
+      8,
+      98,
+      1,
+      0,
+      3,
+      0,
+      2,
+      0
+    ],
+    [
+      35,
+      1,
+      984,
+      19,
+      2,
+      8,
+      10,
+      0
+    ],
+    [
+      6,
+      0,
+      19,
+      1052,
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      7,
+      0,
+      1,
+      0,
+      432,
+      3,
+      4,
+      0
+    ],
+    [
+      10,
+      0,
+      0,
+      1,
+      1,
+      456,
+      5,
+      0
+    ],
+    [
+      181,
+      1,
+      3,
+      0,
+      2,
+      4,
+      1780,
+      0
+    ],
+    [
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      157
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9694846829731655,
+      "recall": 0.994761208576998,
+      "f1": 0.9819603126879134,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.98,
+      "recall": 0.875,
+      "f1": 0.9245283018867925,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9752229930624381,
+      "recall": 0.9291784702549575,
+      "f1": 0.9516441005802708,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9813432835820896,
+      "recall": 0.9740740740740741,
+      "f1": 0.9776951672862454,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.9795918367346939,
+      "recall": 0.9664429530201343,
+      "f1": 0.972972972972973,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.9661016949152542,
+      "recall": 0.9640591966173362,
+      "f1": 0.9650793650793651,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9658166033640803,
+      "recall": 0.9030948756976154,
+      "f1": 0.9334032511798637,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9936708860759493,
+      "recall": 0.9401197604790419,
+      "f1": 0.9661538461538461,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.97      0.99      0.98      8208\n  bruteforce       0.98      0.88      0.92       112\n        ddos       0.98      0.93      0.95      1059\n         dos       0.98      0.97      0.98      1080\n     malware       0.98      0.97      0.97       447\n        mitm       0.97      0.96      0.97       473\n       recon       0.97      0.90      0.93      1971\n         web       0.99      0.94      0.97       167\n\n    accuracy                           0.97     13517\n   macro avg       0.98      0.94      0.96     13517\nweighted avg       0.97      0.97      0.97     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

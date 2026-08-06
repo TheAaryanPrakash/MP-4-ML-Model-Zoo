@@ -1,0 +1,134 @@
+{
+  "status": "ok",
+  "name": "CatBoost",
+  "key": "catboost",
+  "category": "ml",
+  "family": "boosting",
+  "description": "Yandex's ordered-boosting gradient boosting library, designed to reduce prediction shift/target leakage.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "iterations": 200,
+    "verbose": 0,
+    "allow_writing_files": false,
+    "random_state": 42
+  },
+  "subsample_cap": null,
+  "train_time_sec": 4.909843921661377,
+  "inference_time_sec": 0.022457122802734375,
+  "inference_time_per_sample_ms": 0.00022617708533320953,
+  "accuracy": 0.9350488468123678,
+  "precision_macro": 0.9139074825870966,
+  "recall_macro": 0.7942632783996183,
+  "f1_macro": 0.833922082813903,
+  "precision_weighted": 0.9356205949890738,
+  "recall_weighted": 0.9350488468123678,
+  "f1_weighted": 0.9336855803985481,
+  "confusion_matrix": [
+    [
+      3506,
+      507,
+      0,
+      39,
+      299,
+      0
+    ],
+    [
+      215,
+      35557,
+      0,
+      3268,
+      37,
+      0
+    ],
+    [
+      1,
+      21,
+      87,
+      74,
+      1,
+      0
+    ],
+    [
+      0,
+      642,
+      0,
+      48996,
+      1,
+      0
+    ],
+    [
+      1039,
+      281,
+      0,
+      24,
+      1934,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.736399915984037,
+      "recall": 0.8057917720064353,
+      "f1": 0.7695346795434592,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9607922611327281,
+      "recall": 0.9099214371625253,
+      "f1": 0.9346651771045541,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 1.0,
+      "recall": 0.47282608695652173,
+      "f1": 0.6420664206642066,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9350203240396175,
+      "recall": 0.9870464755534962,
+      "f1": 0.9603292826342611,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.8512323943661971,
+      "recall": 0.589993898718731,
+      "f1": 0.6969369369369369,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.74      0.81      0.77      4351\n         dos       0.96      0.91      0.93     39077\n       flood       1.00      0.47      0.64       184\n  legitimate       0.94      0.99      0.96     49639\n   malformed       0.85      0.59      0.70      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.94     99290\n   macro avg       0.91      0.79      0.83     99290\nweighted avg       0.94      0.94      0.93     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

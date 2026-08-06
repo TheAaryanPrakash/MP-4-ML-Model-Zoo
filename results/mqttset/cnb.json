@@ -1,0 +1,140 @@
+{
+  "status": "ok",
+  "name": "Complement Naive Bayes",
+  "key": "cnb",
+  "category": "ml",
+  "family": "naive_bayes",
+  "description": "Naive Bayes variant designed for imbalanced classes; complements weights to correct majority-class skew.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "memory": null,
+    "transform_input": null,
+    "verbose": false,
+    "minmaxscaler__clip": false,
+    "minmaxscaler__copy": true,
+    "complementnb__alpha": 1.0,
+    "complementnb__class_prior": null,
+    "complementnb__fit_prior": true,
+    "complementnb__force_alpha": true,
+    "complementnb__norm": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.04764866828918457,
+  "inference_time_sec": 0.011911153793334961,
+  "inference_time_per_sample_ms": 0.00011996327720148013,
+  "accuracy": 0.7933427334071911,
+  "precision_macro": 0.7410869137488257,
+  "recall_macro": 0.3431833716636552,
+  "f1_macro": 0.37348688534530816,
+  "precision_weighted": 0.8405404084284348,
+  "recall_weighted": 0.7933427334071911,
+  "f1_weighted": 0.7637018792426105,
+  "confusion_matrix": [
+    [
+      836,
+      0,
+      0,
+      3514,
+      1,
+      0
+    ],
+    [
+      0,
+      27866,
+      0,
+      11211,
+      0,
+      0
+    ],
+    [
+      0,
+      67,
+      0,
+      117,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      49639,
+      0,
+      0
+    ],
+    [
+      249,
+      0,
+      0,
+      2996,
+      33,
+      0
+    ],
+    [
+      0,
+      115,
+      0,
+      2249,
+      0,
+      397
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7705069124423963,
+      "recall": 0.19213973799126638,
+      "f1": 0.30757910228108903,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9935111237877924,
+      "recall": 0.7131048954628042,
+      "f1": 0.8302718808193669,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.7119152109686487,
+      "recall": 1.0,
+      "f1": 0.8317178402379257,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.9705882352941176,
+      "recall": 0.010067114093959731,
+      "f1": 0.019927536231884056,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 0.14378848243390077,
+      "f1": 0.25142495250158325,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.77      0.19      0.31      4351\n         dos       0.99      0.71      0.83     39077\n       flood       0.00      0.00      0.00       184\n  legitimate       0.71      1.00      0.83     49639\n   malformed       0.97      0.01      0.02      3278\n     slowite       1.00      0.14      0.25      2761\n\n    accuracy                           0.79     99290\n   macro avg       0.74      0.34      0.37     99290\nweighted avg       0.84      0.79      0.76     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

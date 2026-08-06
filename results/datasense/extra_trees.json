@@ -1,0 +1,197 @@
+{
+  "status": "ok",
+  "name": "Extra Trees",
+  "key": "extra_trees",
+  "category": "ml",
+  "family": "ensemble_bagging",
+  "description": "200 extremely-randomized trees bagged together -- usually faster to train than Random Forest, similar accuracy.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "bootstrap": false,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.5135102272033691,
+  "inference_time_sec": 0.03727316856384277,
+  "inference_time_per_sample_ms": 0.0027575030379405766,
+  "accuracy": 0.9458459717392913,
+  "precision_macro": 0.8635709422315656,
+  "recall_macro": 0.9366627683626569,
+  "f1_macro": 0.8889730384744563,
+  "precision_weighted": 0.9511314972886357,
+  "recall_weighted": 0.9458459717392913,
+  "f1_weighted": 0.9472918305768538,
+  "confusion_matrix": [
+    [
+      7907,
+      60,
+      3,
+      1,
+      4,
+      0,
+      106,
+      127
+    ],
+    [
+      5,
+      100,
+      0,
+      0,
+      1,
+      2,
+      0,
+      4
+    ],
+    [
+      44,
+      0,
+      981,
+      16,
+      5,
+      10,
+      2,
+      1
+    ],
+    [
+      7,
+      0,
+      22,
+      1036,
+      2,
+      11,
+      0,
+      2
+    ],
+    [
+      11,
+      0,
+      1,
+      0,
+      431,
+      4,
+      0,
+      0
+    ],
+    [
+      20,
+      0,
+      1,
+      5,
+      0,
+      443,
+      3,
+      1
+    ],
+    [
+      232,
+      2,
+      2,
+      0,
+      3,
+      5,
+      1724,
+      3
+    ],
+    [
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      163
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9607533414337789,
+      "recall": 0.9633284600389863,
+      "f1": 0.9620391775155128,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.6172839506172839,
+      "recall": 0.8928571428571429,
+      "f1": 0.7299270072992701,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9712871287128713,
+      "recall": 0.9263456090651558,
+      "f1": 0.9482841952634122,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9792060491493384,
+      "recall": 0.9592592592592593,
+      "f1": 0.9691300280636108,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.9663677130044843,
+      "recall": 0.9642058165548099,
+      "f1": 0.9652855543113102,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.9326315789473684,
+      "recall": 0.9365750528541226,
+      "f1": 0.9345991561181435,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9395095367847411,
+      "recall": 0.8746829020801623,
+      "f1": 0.905937992643195,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.5415282392026578,
+      "recall": 0.9760479041916168,
+      "f1": 0.6965811965811965,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.96      0.96      0.96      8208\n  bruteforce       0.62      0.89      0.73       112\n        ddos       0.97      0.93      0.95      1059\n         dos       0.98      0.96      0.97      1080\n     malware       0.97      0.96      0.97       447\n        mitm       0.93      0.94      0.93       473\n       recon       0.94      0.87      0.91      1971\n         web       0.54      0.98      0.70       167\n\n    accuracy                           0.95     13517\n   macro avg       0.86      0.94      0.89     13517\nweighted avg       0.95      0.95      0.95     13517\n",
+  "model_size": "200 base estimators",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

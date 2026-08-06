@@ -1,0 +1,150 @@
+{
+  "status": "ok",
+  "name": "LightGBM (GOSS)",
+  "key": "lightgbm_goss",
+  "category": "ml",
+  "family": "boosting",
+  "description": "LightGBM with Gradient-based One-Side Sampling -- keeps high-gradient samples, subsamples the rest for speed.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "boosting_type": "goss",
+    "class_weight": null,
+    "colsample_bytree": 1.0,
+    "importance_type": "split",
+    "learning_rate": 0.1,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "min_child_weight": 0.001,
+    "min_split_gain": 0.0,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "num_leaves": 31,
+    "objective": null,
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "subsample": 1.0,
+    "subsample_for_bin": 200000,
+    "subsample_freq": 0,
+    "verbose": -1
+  },
+  "subsample_cap": null,
+  "train_time_sec": 5.223880052566528,
+  "inference_time_sec": 0.3106980323791504,
+  "inference_time_per_sample_ms": 0.003129197626942798,
+  "accuracy": 0.6957095377177963,
+  "precision_macro": 0.5322911193463713,
+  "recall_macro": 0.348170594874284,
+  "f1_macro": 0.3488854367179645,
+  "precision_weighted": 0.7489357558676931,
+  "recall_weighted": 0.6957095377177963,
+  "f1_weighted": 0.678039996371096,
+  "confusion_matrix": [
+    [
+      525,
+      1091,
+      0,
+      968,
+      1767,
+      0
+    ],
+    [
+      49,
+      19585,
+      0,
+      17567,
+      1876,
+      0
+    ],
+    [
+      23,
+      63,
+      0,
+      65,
+      33,
+      0
+    ],
+    [
+      205,
+      142,
+      0,
+      47354,
+      1938,
+      0
+    ],
+    [
+      54,
+      828,
+      5,
+      1128,
+      1243,
+      20
+    ],
+    [
+      154,
+      834,
+      0,
+      6,
+      1397,
+      370
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.5198019801980198,
+      "recall": 0.12066191680073546,
+      "f1": 0.19585898153329603,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.8687841014949208,
+      "recall": 0.5011899582874837,
+      "f1": 0.6356702369360597,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.7058490341044598,
+      "recall": 0.953967646407059,
+      "f1": 0.8113632664250773,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.1505936515628786,
+      "recall": 0.37919463087248323,
+      "f1": 0.21557405480402358,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 0.9487179487179487,
+      "recall": 0.13400941687794277,
+      "f1": 0.23484608060933038,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.52      0.12      0.20      4351\n         dos       0.87      0.50      0.64     39077\n       flood       0.00      0.00      0.00       184\n  legitimate       0.71      0.95      0.81     49639\n   malformed       0.15      0.38      0.22      3278\n     slowite       0.95      0.13      0.23      2761\n\n    accuracy                           0.70     99290\n   macro avg       0.53      0.35      0.35     99290\nweighted avg       0.75      0.70      0.68     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

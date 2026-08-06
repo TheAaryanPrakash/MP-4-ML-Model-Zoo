@@ -1,0 +1,181 @@
+{
+  "status": "ok",
+  "name": "Nearest Centroid",
+  "key": "nearest_centroid",
+  "category": "ml",
+  "family": "instance",
+  "description": "Assigns each point to the class whose training-set centroid (mean) is closest -- essentially 1-NN against class means.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "metric": "euclidean",
+    "priors": "uniform",
+    "shrink_threshold": null
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.015877962112426758,
+  "inference_time_sec": 0.019299983978271484,
+  "inference_time_per_sample_ms": 0.0014278304341400817,
+  "accuracy": 0.7776873566619812,
+  "precision_macro": 0.5915128572021268,
+  "recall_macro": 0.6641839409834336,
+  "f1_macro": 0.5947522268146754,
+  "precision_weighted": 0.8134353942832169,
+  "recall_weighted": 0.7776873566619812,
+  "f1_weighted": 0.7863496339471964,
+  "confusion_matrix": [
+    [
+      7273,
+      40,
+      0,
+      55,
+      104,
+      638,
+      29,
+      69
+    ],
+    [
+      11,
+      65,
+      0,
+      2,
+      6,
+      26,
+      0,
+      2
+    ],
+    [
+      118,
+      29,
+      441,
+      283,
+      9,
+      35,
+      128,
+      16
+    ],
+    [
+      106,
+      25,
+      128,
+      699,
+      19,
+      52,
+      17,
+      34
+    ],
+    [
+      24,
+      43,
+      0,
+      2,
+      273,
+      31,
+      58,
+      16
+    ],
+    [
+      164,
+      6,
+      0,
+      8,
+      21,
+      264,
+      3,
+      7
+    ],
+    [
+      475,
+      62,
+      0,
+      3,
+      41,
+      31,
+      1341,
+      18
+    ],
+    [
+      10,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      156
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.8890111233345557,
+      "recall": 0.8860867446393762,
+      "f1": 0.8875465251083043,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.23985239852398524,
+      "recall": 0.5803571428571429,
+      "f1": 0.3394255874673629,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.7750439367311072,
+      "recall": 0.4164305949008499,
+      "f1": 0.5417690417690417,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.6644486692015209,
+      "recall": 0.6472222222222223,
+      "f1": 0.6557223264540337,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.5771670190274841,
+      "recall": 0.610738255033557,
+      "f1": 0.5934782608695652,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.24512534818941503,
+      "recall": 0.5581395348837209,
+      "f1": 0.3406451612903226,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.8508883248730964,
+      "recall": 0.680365296803653,
+      "f1": 0.7561319424866084,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.49056603773584906,
+      "recall": 0.9341317365269461,
+      "f1": 0.643298969072165,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.89      0.89      0.89      8208\n  bruteforce       0.24      0.58      0.34       112\n        ddos       0.78      0.42      0.54      1059\n         dos       0.66      0.65      0.66      1080\n     malware       0.58      0.61      0.59       447\n        mitm       0.25      0.56      0.34       473\n       recon       0.85      0.68      0.76      1971\n         web       0.49      0.93      0.64       167\n\n    accuracy                           0.78     13517\n   macro avg       0.59      0.66      0.59     13517\nweighted avg       0.81      0.78      0.79     13517\n",
+  "model_size": "872 centroid values",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

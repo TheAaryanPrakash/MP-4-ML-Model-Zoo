@@ -1,0 +1,153 @@
+{
+  "status": "ok",
+  "name": "Bagging (Decision Trees)",
+  "key": "bagging_dt",
+  "category": "ml",
+  "family": "ensemble_bagging",
+  "description": "Classic bootstrap-aggregated decision trees (the general recipe Random Forest specializes).",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "bootstrap": true,
+    "bootstrap_features": false,
+    "estimator__ccp_alpha": 0.0,
+    "estimator__class_weight": "balanced",
+    "estimator__criterion": "gini",
+    "estimator__max_depth": null,
+    "estimator__max_features": null,
+    "estimator__max_leaf_nodes": null,
+    "estimator__min_impurity_decrease": 0.0,
+    "estimator__min_samples_leaf": 1,
+    "estimator__min_samples_split": 2,
+    "estimator__min_weight_fraction_leaf": 0.0,
+    "estimator__monotonic_cst": null,
+    "estimator__random_state": null,
+    "estimator__splitter": "best",
+    "max_features": 1.0,
+    "max_samples": null,
+    "n_estimators": 50,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 2.889631986618042,
+  "inference_time_sec": 0.35889697074890137,
+  "inference_time_per_sample_ms": 0.0036146336060922687,
+  "accuracy": 0.8902507805418471,
+  "precision_macro": 0.7245941877270802,
+  "recall_macro": 0.837783097577726,
+  "f1_macro": 0.7185289157090459,
+  "precision_weighted": 0.9388468455085289,
+  "recall_weighted": 0.8902507805418471,
+  "f1_weighted": 0.9128994855427864,
+  "confusion_matrix": [
+    [
+      3282,
+      311,
+      5,
+      10,
+      743,
+      0
+    ],
+    [
+      417,
+      34801,
+      1257,
+      2411,
+      191,
+      0
+    ],
+    [
+      1,
+      1,
+      152,
+      29,
+      1,
+      0
+    ],
+    [
+      3,
+      447,
+      3893,
+      45288,
+      8,
+      0
+    ],
+    [
+      944,
+      198,
+      18,
+      9,
+      2109,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7062621045836023,
+      "recall": 0.7543093541714548,
+      "f1": 0.7294954434318738,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9732367582079534,
+      "recall": 0.890575018553113,
+      "f1": 0.9300728268858155,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.028544600938967137,
+      "recall": 0.8260869565217391,
+      "f1": 0.05518242875294972,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9484993821601357,
+      "recall": 0.9123471463969862,
+      "f1": 0.9300720842831619,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6910222804718218,
+      "recall": 0.6433801098230628,
+      "f1": 0.6663507109004739,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.71      0.75      0.73      4351\n         dos       0.97      0.89      0.93     39077\n       flood       0.03      0.83      0.06       184\n  legitimate       0.95      0.91      0.93     49639\n   malformed       0.69      0.64      0.67      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.89     99290\n   macro avg       0.72      0.84      0.72     99290\nweighted avg       0.94      0.89      0.91     99290\n",
+  "model_size": "50 base estimators",
+  "n_train_samples": 40000,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

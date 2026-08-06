@@ -1,0 +1,182 @@
+{
+  "status": "ok",
+  "name": "CatBoost",
+  "key": "catboost",
+  "category": "ml",
+  "family": "boosting",
+  "description": "Yandex's ordered-boosting gradient boosting library, designed to reduce prediction shift/target leakage.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "iterations": 200,
+    "verbose": 0,
+    "allow_writing_files": false,
+    "random_state": 42
+  },
+  "subsample_cap": null,
+  "train_time_sec": 2.946368932723999,
+  "inference_time_sec": 0.004924774169921875,
+  "inference_time_per_sample_ms": 0.00036433928903764704,
+  "accuracy": 0.9675223792261597,
+  "precision_macro": 0.9708844047320985,
+  "recall_macro": 0.9353130347565657,
+  "f1_macro": 0.9522810296788089,
+  "precision_weighted": 0.9676392985324852,
+  "recall_weighted": 0.9675223792261597,
+  "f1_weighted": 0.9671056846129851,
+  "confusion_matrix": [
+    [
+      8178,
+      0,
+      0,
+      1,
+      0,
+      0,
+      28,
+      1
+    ],
+    [
+      8,
+      98,
+      0,
+      0,
+      4,
+      0,
+      2,
+      0
+    ],
+    [
+      37,
+      0,
+      975,
+      21,
+      2,
+      13,
+      11,
+      0
+    ],
+    [
+      8,
+      0,
+      18,
+      1043,
+      1,
+      7,
+      3,
+      0
+    ],
+    [
+      9,
+      1,
+      3,
+      0,
+      425,
+      3,
+      6,
+      0
+    ],
+    [
+      12,
+      0,
+      0,
+      3,
+      2,
+      446,
+      10,
+      0
+    ],
+    [
+      201,
+      1,
+      1,
+      0,
+      3,
+      9,
+      1756,
+      0
+    ],
+    [
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      157
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9663239985820631,
+      "recall": 0.9963450292397661,
+      "f1": 0.9811049127226921,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.98,
+      "recall": 0.875,
+      "f1": 0.9245283018867925,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9779338014042126,
+      "recall": 0.9206798866855525,
+      "f1": 0.9484435797665369,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9765917602996255,
+      "recall": 0.9657407407407408,
+      "f1": 0.9711359404096834,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.9725400457665904,
+      "recall": 0.9507829977628636,
+      "f1": 0.9615384615384616,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.9330543933054394,
+      "recall": 0.9429175475687104,
+      "f1": 0.9379600420609885,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9669603524229075,
+      "recall": 0.8909183155758498,
+      "f1": 0.9273831528914708,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9936708860759493,
+      "recall": 0.9401197604790419,
+      "f1": 0.9661538461538461,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.97      1.00      0.98      8208\n  bruteforce       0.98      0.88      0.92       112\n        ddos       0.98      0.92      0.95      1059\n         dos       0.98      0.97      0.97      1080\n     malware       0.97      0.95      0.96       447\n        mitm       0.93      0.94      0.94       473\n       recon       0.97      0.89      0.93      1971\n         web       0.99      0.94      0.97       167\n\n    accuracy                           0.97     13517\n   macro avg       0.97      0.94      0.95     13517\nweighted avg       0.97      0.97      0.97     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

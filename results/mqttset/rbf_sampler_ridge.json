@@ -1,0 +1,145 @@
+{
+  "status": "ok",
+  "name": "RBF Sampler + Ridge",
+  "key": "rbf_sampler_ridge",
+  "category": "ml",
+  "family": "kernel",
+  "description": "Random Fourier Features approximation of an RBF kernel feeding a closed-form ridge classifier.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "memory": null,
+    "transform_input": null,
+    "verbose": false,
+    "rbfsampler__gamma": 1.0,
+    "rbfsampler__n_components": 200,
+    "rbfsampler__random_state": 42,
+    "ridgeclassifier__alpha": 1.0,
+    "ridgeclassifier__class_weight": "balanced",
+    "ridgeclassifier__copy_X": true,
+    "ridgeclassifier__fit_intercept": true,
+    "ridgeclassifier__max_iter": null,
+    "ridgeclassifier__positive": false,
+    "ridgeclassifier__random_state": 42,
+    "ridgeclassifier__solver": "auto",
+    "ridgeclassifier__tol": 0.0001
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.3378317356109619,
+  "inference_time_sec": 0.09570622444152832,
+  "inference_time_per_sample_ms": 0.0009639059768509247,
+  "accuracy": 0.6655957296807332,
+  "precision_macro": 0.7803759503070716,
+  "recall_macro": 0.7319020761675001,
+  "f1_macro": 0.6508793820278541,
+  "precision_weighted": 0.9846563423049358,
+  "recall_weighted": 0.6655957296807332,
+  "f1_weighted": 0.7904903259888921,
+  "confusion_matrix": [
+    [
+      2628,
+      0,
+      1661,
+      0,
+      59,
+      3
+    ],
+    [
+      30,
+      27803,
+      11169,
+      0,
+      2,
+      73
+    ],
+    [
+      1,
+      0,
+      179,
+      1,
+      2,
+      1
+    ],
+    [
+      0,
+      0,
+      18471,
+      31156,
+      10,
+      2
+    ],
+    [
+      824,
+      12,
+      864,
+      10,
+      1568,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      8,
+      2753
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7545219638242894,
+      "recall": 0.6039990806711101,
+      "f1": 0.6709216236916007,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9995685781053388,
+      "recall": 0.7114926939120199,
+      "f1": 0.8312802726783471,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.005534256740044522,
+      "recall": 0.9728260869565217,
+      "f1": 0.011005902606984752,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.999647062598261,
+      "recall": 0.6276516448760048,
+      "f1": 0.7711308566195579,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.9508793208004851,
+      "recall": 0.4783404514948139,
+      "f1": 0.6364927948041404,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 0.9721045197740112,
+      "recall": 0.997102499094531,
+      "f1": 0.9844448417664938,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.75      0.60      0.67      4351\n         dos       1.00      0.71      0.83     39077\n       flood       0.01      0.97      0.01       184\n  legitimate       1.00      0.63      0.77     49639\n   malformed       0.95      0.48      0.64      3278\n     slowite       0.97      1.00      0.98      2761\n\n    accuracy                           0.67     99290\n   macro avg       0.78      0.73      0.65     99290\nweighted avg       0.98      0.67      0.79     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

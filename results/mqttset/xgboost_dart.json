@@ -1,0 +1,171 @@
+{
+  "status": "ok",
+  "name": "XGBoost (DART)",
+  "key": "xgboost_dart",
+  "category": "ml",
+  "family": "boosting",
+  "description": "XGBoost with DART dropout regularization -- randomly drops trees during boosting to reduce overfitting.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "objective": "multi:softprob",
+    "base_score": null,
+    "booster": "dart",
+    "callbacks": null,
+    "colsample_bylevel": null,
+    "colsample_bynode": null,
+    "colsample_bytree": null,
+    "device": null,
+    "early_stopping_rounds": null,
+    "enable_categorical": true,
+    "eval_metric": "mlogloss",
+    "feature_types": null,
+    "feature_weights": null,
+    "gamma": null,
+    "grow_policy": null,
+    "importance_type": null,
+    "interaction_constraints": null,
+    "learning_rate": 0.1,
+    "max_bin": null,
+    "max_cat_threshold": null,
+    "max_cat_to_onehot": null,
+    "max_delta_step": null,
+    "max_depth": 6,
+    "max_leaves": null,
+    "min_child_weight": null,
+    "missing": null,
+    "monotone_constraints": null,
+    "multi_strategy": null,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "num_parallel_tree": null,
+    "random_state": 42,
+    "reg_alpha": null,
+    "reg_lambda": null,
+    "sampling_method": null,
+    "scale_pos_weight": null,
+    "subsample": null,
+    "tree_method": "hist",
+    "validate_parameters": null,
+    "verbosity": null,
+    "num_class": 6
+  },
+  "subsample_cap": null,
+  "train_time_sec": 3.669919013977051,
+  "inference_time_sec": 0.11852312088012695,
+  "inference_time_per_sample_ms": 0.0011937065251296903,
+  "accuracy": 0.9354416356128512,
+  "precision_macro": 0.9155401974597867,
+  "recall_macro": 0.7977348853355197,
+  "f1_macro": 0.8371205420250712,
+  "precision_weighted": 0.936156711374458,
+  "recall_weighted": 0.9354416356128512,
+  "f1_weighted": 0.9341250097466756,
+  "confusion_matrix": [
+    [
+      3531,
+      471,
+      0,
+      51,
+      298,
+      0
+    ],
+    [
+      231,
+      35554,
+      0,
+      3271,
+      21,
+      0
+    ],
+    [
+      1,
+      21,
+      89,
+      72,
+      1,
+      0
+    ],
+    [
+      0,
+      642,
+      0,
+      48997,
+      0,
+      0
+    ],
+    [
+      1022,
+      288,
+      0,
+      20,
+      1948,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7379310344827587,
+      "recall": 0.8115375775683751,
+      "f1": 0.772985989492119,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9615426222414539,
+      "recall": 0.909844665660107,
+      "f1": 0.9349795537322657,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 1.0,
+      "recall": 0.483695652173913,
+      "f1": 0.652014652014652,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9348610024613154,
+      "recall": 0.9870666210036463,
+      "f1": 0.9602547770700637,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.8589065255731922,
+      "recall": 0.5942647956070775,
+      "f1": 0.7024882798413271,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.74      0.81      0.77      4351\n         dos       0.96      0.91      0.93     39077\n       flood       1.00      0.48      0.65       184\n  legitimate       0.93      0.99      0.96     49639\n   malformed       0.86      0.59      0.70      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.94     99290\n   macro avg       0.92      0.80      0.84     99290\nweighted avg       0.94      0.94      0.93     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

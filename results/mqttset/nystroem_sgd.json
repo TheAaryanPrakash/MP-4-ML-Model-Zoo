@@ -1,0 +1,162 @@
+{
+  "status": "ok",
+  "name": "Nystroem + SGD",
+  "key": "nystroem_sgd",
+  "category": "ml",
+  "family": "kernel",
+  "description": "Approximates an RBF kernel with a low-rank Nystroem feature map, then a fast linear SGD classifier on top.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "memory": null,
+    "transform_input": null,
+    "verbose": false,
+    "nystroem__coef0": null,
+    "nystroem__degree": null,
+    "nystroem__gamma": null,
+    "nystroem__kernel": "rbf",
+    "nystroem__kernel_params": null,
+    "nystroem__n_components": 200,
+    "nystroem__n_jobs": null,
+    "nystroem__random_state": 42,
+    "sgdclassifier__alpha": 0.0001,
+    "sgdclassifier__average": false,
+    "sgdclassifier__class_weight": "balanced",
+    "sgdclassifier__early_stopping": false,
+    "sgdclassifier__epsilon": 0.1,
+    "sgdclassifier__eta0": 0.01,
+    "sgdclassifier__fit_intercept": true,
+    "sgdclassifier__l1_ratio": 0.15,
+    "sgdclassifier__learning_rate": "optimal",
+    "sgdclassifier__loss": "log_loss",
+    "sgdclassifier__max_iter": 1000,
+    "sgdclassifier__n_iter_no_change": 5,
+    "sgdclassifier__n_jobs": null,
+    "sgdclassifier__penalty": "l2",
+    "sgdclassifier__power_t": 0.5,
+    "sgdclassifier__random_state": 42,
+    "sgdclassifier__shuffle": true,
+    "sgdclassifier__tol": 0.001,
+    "sgdclassifier__validation_fraction": 0.1,
+    "sgdclassifier__verbose": 0,
+    "sgdclassifier__warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 4.4181718826293945,
+  "inference_time_sec": 0.112518310546875,
+  "inference_time_per_sample_ms": 0.0011332290315930608,
+  "accuracy": 0.6434887702689093,
+  "precision_macro": 0.5412578495942975,
+  "recall_macro": 0.5154434812597691,
+  "f1_macro": 0.43778057779842977,
+  "precision_weighted": 0.9113987789894388,
+  "recall_weighted": 0.6434887702689093,
+  "f1_weighted": 0.7346673664781442,
+  "confusion_matrix": [
+    [
+      3450,
+      4,
+      1,
+      58,
+      419,
+      419
+    ],
+    [
+      11198,
+      27866,
+      0,
+      13,
+      0,
+      0
+    ],
+    [
+      93,
+      0,
+      86,
+      5,
+      0,
+      0
+    ],
+    [
+      18471,
+      0,
+      203,
+      30963,
+      0,
+      2
+    ],
+    [
+      1137,
+      44,
+      45,
+      757,
+      1008,
+      287
+    ],
+    [
+      1324,
+      0,
+      397,
+      398,
+      123,
+      519
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.09671179883945841,
+      "recall": 0.7929211675476902,
+      "f1": 0.17239656206276235,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.998280432757756,
+      "recall": 0.7131048954628042,
+      "f1": 0.8319326476690899,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.11748633879781421,
+      "recall": 0.4673913043478261,
+      "f1": 0.18777292576419213,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9617630614400199,
+      "recall": 0.6237635729970387,
+      "f1": 0.7567362799848472,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6503225806451612,
+      "recall": 0.3075045759609518,
+      "f1": 0.4175642087821044,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 0.4229828850855746,
+      "recall": 0.1879753712423035,
+      "f1": 0.26028084252758277,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.10      0.79      0.17      4351\n         dos       1.00      0.71      0.83     39077\n       flood       0.12      0.47      0.19       184\n  legitimate       0.96      0.62      0.76     49639\n   malformed       0.65      0.31      0.42      3278\n     slowite       0.42      0.19      0.26      2761\n\n    accuracy                           0.64     99290\n   macro avg       0.54      0.52      0.44     99290\nweighted avg       0.91      0.64      0.73     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

@@ -1,0 +1,200 @@
+{
+  "status": "ok",
+  "name": "NGBoost",
+  "key": "ngboost",
+  "category": "ml",
+  "family": "boosting",
+  "description": "Natural Gradient Boosting: boosts full predictive probability distributions, not just point predictions.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "natural_gradient": true,
+    "n_estimators": 150,
+    "learning_rate": 0.01,
+    "minibatch_frac": 1.0,
+    "col_sample": 1.0,
+    "verbose": false,
+    "verbose_eval": 100,
+    "tol": 0.0001,
+    "validation_fraction": 0.1,
+    "early_stopping_rounds": null,
+    "Base__ccp_alpha": 0.0,
+    "Base__criterion": "squared_error",
+    "Base__max_depth": 3,
+    "Base__max_features": null,
+    "Base__max_leaf_nodes": null,
+    "Base__min_impurity_decrease": 0.0,
+    "Base__min_samples_leaf": 1,
+    "Base__min_samples_split": 2,
+    "Base__min_weight_fraction_leaf": 0.0,
+    "Base__monotonic_cst": null,
+    "Base__random_state": null,
+    "Base__splitter": "best"
+  },
+  "subsample_cap": null,
+  "train_time_sec": 102.12896084785461,
+  "inference_time_sec": 1.4345779418945312,
+  "inference_time_per_sample_ms": 0.10613138580265823,
+  "accuracy": 0.9289783235925131,
+  "precision_macro": 0.9274710578615207,
+  "recall_macro": 0.8068641475117144,
+  "f1_macro": 0.8522719928070772,
+  "precision_weighted": 0.9292190782219395,
+  "recall_weighted": 0.9289783235925131,
+  "f1_weighted": 0.9260711197253324,
+  "confusion_matrix": [
+    [
+      8207,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      21,
+      46,
+      0,
+      0,
+      29,
+      11,
+      5,
+      0
+    ],
+    [
+      71,
+      0,
+      916,
+      36,
+      7,
+      11,
+      18,
+      0
+    ],
+    [
+      42,
+      0,
+      60,
+      950,
+      9,
+      19,
+      0,
+      0
+    ],
+    [
+      26,
+      3,
+      9,
+      0,
+      364,
+      11,
+      33,
+      1
+    ],
+    [
+      78,
+      0,
+      2,
+      7,
+      0,
+      353,
+      33,
+      0
+    ],
+    [
+      392,
+      0,
+      1,
+      0,
+      2,
+      13,
+      1563,
+      0
+    ],
+    [
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      158
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9277639611123671,
+      "recall": 0.9998781676413255,
+      "f1": 0.9624721472968218,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.9387755102040817,
+      "recall": 0.4107142857142857,
+      "f1": 0.5714285714285714,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9271255060728745,
+      "recall": 0.8649669499527857,
+      "f1": 0.8949682462139716,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9566968781470292,
+      "recall": 0.8796296296296297,
+      "f1": 0.9165460684997588,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.8856447688564477,
+      "recall": 0.814317673378076,
+      "f1": 0.8484848484848485,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.8444976076555024,
+      "recall": 0.7463002114164905,
+      "f1": 0.792368125701459,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9455535390199638,
+      "recall": 0.7929984779299848,
+      "f1": 0.8625827814569537,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9937106918238994,
+      "recall": 0.9461077844311377,
+      "f1": 0.9693251533742331,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.93      1.00      0.96      8208\n  bruteforce       0.94      0.41      0.57       112\n        ddos       0.93      0.86      0.89      1059\n         dos       0.96      0.88      0.92      1080\n     malware       0.89      0.81      0.85       447\n        mitm       0.84      0.75      0.79       473\n       recon       0.95      0.79      0.86      1971\n         web       0.99      0.95      0.97       167\n\n    accuracy                           0.93     13517\n   macro avg       0.93      0.81      0.85     13517\nweighted avg       0.93      0.93      0.93     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

@@ -1,0 +1,152 @@
+{
+  "status": "ok",
+  "name": "NGBoost",
+  "key": "ngboost",
+  "category": "ml",
+  "family": "boosting",
+  "description": "Natural Gradient Boosting: boosts full predictive probability distributions, not just point predictions.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "natural_gradient": true,
+    "n_estimators": 150,
+    "learning_rate": 0.01,
+    "minibatch_frac": 1.0,
+    "col_sample": 1.0,
+    "verbose": false,
+    "verbose_eval": 100,
+    "tol": 0.0001,
+    "validation_fraction": 0.1,
+    "early_stopping_rounds": null,
+    "Base__ccp_alpha": 0.0,
+    "Base__criterion": "squared_error",
+    "Base__max_depth": 3,
+    "Base__max_features": null,
+    "Base__max_leaf_nodes": null,
+    "Base__min_impurity_decrease": 0.0,
+    "Base__min_samples_leaf": 1,
+    "Base__min_samples_split": 2,
+    "Base__min_weight_fraction_leaf": 0.0,
+    "Base__monotonic_cst": null,
+    "Base__random_state": null,
+    "Base__splitter": "best"
+  },
+  "subsample_cap": null,
+  "train_time_sec": 85.85880613327026,
+  "inference_time_sec": 1.6689951419830322,
+  "inference_time_per_sample_ms": 0.016809297431594643,
+  "accuracy": 0.9147547587873904,
+  "precision_macro": 0.9124888548172745,
+  "recall_macro": 0.7242886547023096,
+  "f1_macro": 0.7709043835295543,
+  "precision_weighted": 0.9172464825583487,
+  "recall_weighted": 0.9147547587873904,
+  "f1_weighted": 0.9082700859527809,
+  "confusion_matrix": [
+    [
+      3184,
+      823,
+      0,
+      283,
+      61,
+      0
+    ],
+    [
+      359,
+      34609,
+      0,
+      4107,
+      2,
+      0
+    ],
+    [
+      2,
+      0,
+      86,
+      96,
+      0,
+      0
+    ],
+    [
+      49,
+      281,
+      0,
+      49309,
+      0,
+      0
+    ],
+    [
+      1045,
+      745,
+      0,
+      611,
+      877,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.6863548178486742,
+      "recall": 0.7317857963686509,
+      "f1": 0.7083426028921024,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9492841077404136,
+      "recall": 0.8856616423983418,
+      "f1": 0.9163698947507778,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 1.0,
+      "recall": 0.4673913043478261,
+      "f1": 0.6370370370370371,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.906315479910304,
+      "recall": 0.9933520014504724,
+      "f1": 0.9478398769763083,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.9329787234042554,
+      "recall": 0.2675411836485662,
+      "f1": 0.41583688952110004,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.69      0.73      0.71      4351\n         dos       0.95      0.89      0.92     39077\n       flood       1.00      0.47      0.64       184\n  legitimate       0.91      0.99      0.95     49639\n   malformed       0.93      0.27      0.42      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.91     99290\n   macro avg       0.91      0.72      0.77     99290\nweighted avg       0.92      0.91      0.91     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

@@ -1,0 +1,139 @@
+{
+  "status": "ok",
+  "name": "Gaussian Process Classifier",
+  "key": "gaussian_process",
+  "category": "ml",
+  "family": "probabilistic",
+  "description": "Bayesian non-parametric classifier over an RBF-kernel Gaussian Process posterior (O(n^3) -- heavily subsampled).",
+  "hyperparams": {
+    "subsample_cap": 3000,
+    "seed": 42,
+    "copy_X_train": true,
+    "kernel__length_scale": 1.0,
+    "max_iter_predict": 100,
+    "multi_class": "one_vs_rest",
+    "n_jobs": -1,
+    "n_restarts_optimizer": 0,
+    "optimizer": "fmin_l_bfgs_b",
+    "random_state": 42,
+    "warm_start": false
+  },
+  "subsample_cap": 3000,
+  "train_time_sec": 44.2822151184082,
+  "inference_time_sec": 74.44173383712769,
+  "inference_time_per_sample_ms": 0.7497404958921108,
+  "accuracy": 0.6259643468627254,
+  "precision_macro": 0.6473730747101508,
+  "recall_macro": 0.3753161723223865,
+  "f1_macro": 0.3725441825014431,
+  "precision_weighted": 0.9091962635184178,
+  "recall_weighted": 0.6259643468627254,
+  "f1_weighted": 0.7196820218591857,
+  "confusion_matrix": [
+    [
+      837,
+      421,
+      0,
+      1013,
+      2080,
+      0
+    ],
+    [
+      0,
+      27866,
+      0,
+      42,
+      11169,
+      0
+    ],
+    [
+      0,
+      12,
+      0,
+      80,
+      92,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      31168,
+      18471,
+      0
+    ],
+    [
+      46,
+      320,
+      0,
+      1028,
+      1884,
+      0
+    ],
+    [
+      0,
+      115,
+      0,
+      810,
+      1439,
+      397
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.9479048697621744,
+      "recall": 0.19236957021374396,
+      "f1": 0.31983186855177687,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9697918841790214,
+      "recall": 0.7131048954628042,
+      "f1": 0.82187255754966,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9129199496206907,
+      "recall": 0.6278933902778058,
+      "f1": 0.7440439245643352,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.05362174469901807,
+      "recall": 0.5747406955460647,
+      "f1": 0.09809179184130372,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 0.14378848243390077,
+      "f1": 0.25142495250158325,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.95      0.19      0.32      4351\n         dos       0.97      0.71      0.82     39077\n       flood       0.00      0.00      0.00       184\n  legitimate       0.91      0.63      0.74     49639\n   malformed       0.05      0.57      0.10      3278\n     slowite       1.00      0.14      0.25      2761\n\n    accuracy                           0.63     99290\n   macro avg       0.65      0.38      0.37     99290\nweighted avg       0.91      0.63      0.72     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 3000,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

@@ -1,0 +1,145 @@
+{
+  "status": "ok",
+  "name": "SVM (Polynomial Kernel)",
+  "key": "svc_poly",
+  "category": "ml",
+  "family": "kernel",
+  "description": "Support vector machine with a degree-3 polynomial kernel.",
+  "hyperparams": {
+    "subsample_cap": 12000,
+    "seed": 42,
+    "C": 1.0,
+    "break_ties": false,
+    "cache_size": 200,
+    "class_weight": "balanced",
+    "coef0": 0.0,
+    "decision_function_shape": "ovr",
+    "degree": 3,
+    "gamma": "scale",
+    "kernel": "poly",
+    "max_iter": 20000,
+    "probability": "deprecated",
+    "random_state": 42,
+    "shrinking": true,
+    "tol": 0.001,
+    "verbose": false
+  },
+  "subsample_cap": 12000,
+  "train_time_sec": 2.190974235534668,
+  "inference_time_sec": 8.48177719116211,
+  "inference_time_per_sample_ms": 0.0854242843303667,
+  "accuracy": 0.6534092053580421,
+  "precision_macro": 0.7883953495169815,
+  "recall_macro": 0.546476577142126,
+  "f1_macro": 0.5453177340634264,
+  "precision_weighted": 0.9306939564881445,
+  "recall_weighted": 0.6534092053580421,
+  "f1_weighted": 0.744116730725557,
+  "confusion_matrix": [
+    [
+      3869,
+      0,
+      0,
+      58,
+      424,
+      0
+    ],
+    [
+      11198,
+      27866,
+      0,
+      13,
+      0,
+      0
+    ],
+    [
+      94,
+      0,
+      78,
+      6,
+      6,
+      0
+    ],
+    [
+      18471,
+      0,
+      0,
+      31166,
+      0,
+      2
+    ],
+    [
+      1425,
+      0,
+      0,
+      756,
+      1097,
+      0
+    ],
+    [
+      1439,
+      0,
+      0,
+      398,
+      123,
+      801
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.10601161771153003,
+      "recall": 0.889220868765801,
+      "f1": 0.1894386368643964,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 1.0,
+      "recall": 0.7131048954628042,
+      "f1": 0.8325291666044247,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 1.0,
+      "recall": 0.42391304347826086,
+      "f1": 0.5954198473282443,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9620026545667809,
+      "recall": 0.6278530993775056,
+      "f1": 0.759812765127505,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6648484848484848,
+      "recall": 0.3346552776082977,
+      "f1": 0.445211038961039,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 0.9975093399750934,
+      "recall": 0.29011227816008694,
+      "f1": 0.4494949494949495,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.11      0.89      0.19      4351\n         dos       1.00      0.71      0.83     39077\n       flood       1.00      0.42      0.60       184\n  legitimate       0.96      0.63      0.76     49639\n   malformed       0.66      0.33      0.45      3278\n     slowite       1.00      0.29      0.45      2761\n\n    accuracy                           0.65     99290\n   macro avg       0.79      0.55      0.55     99290\nweighted avg       0.93      0.65      0.74     99290\n",
+  "model_size": "7477 support vectors",
+  "n_train_samples": 12000,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

@@ -1,0 +1,138 @@
+{
+  "status": "ok",
+  "name": "K-Nearest Neighbors (k=5)",
+  "key": "knn5",
+  "category": "ml",
+  "family": "instance",
+  "description": "Classifies by majority vote among the 5 nearest training points.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "algorithm": "auto",
+    "leaf_size": 30,
+    "metric": "minkowski",
+    "metric_params": null,
+    "n_jobs": -1,
+    "n_neighbors": 5,
+    "p": 2,
+    "weights": "uniform"
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.014356851577758789,
+  "inference_time_sec": 9.237089157104492,
+  "inference_time_per_sample_ms": 0.09303141461481008,
+  "accuracy": 0.913616678416759,
+  "precision_macro": 0.8845362534810203,
+  "recall_macro": 0.7842384718223702,
+  "f1_macro": 0.8188283451308308,
+  "precision_weighted": 0.9135679244491351,
+  "recall_weighted": 0.913616678416759,
+  "f1_weighted": 0.9129977293154524,
+  "confusion_matrix": [
+    [
+      3338,
+      470,
+      4,
+      15,
+      524,
+      0
+    ],
+    [
+      262,
+      36248,
+      0,
+      2518,
+      49,
+      0
+    ],
+    [
+      1,
+      36,
+      86,
+      57,
+      4,
+      0
+    ],
+    [
+      0,
+      3364,
+      0,
+      46274,
+      1,
+      0
+    ],
+    [
+      944,
+      290,
+      0,
+      22,
+      2022,
+      0
+    ],
+    [
+      5,
+      0,
+      0,
+      0,
+      11,
+      2745
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7336263736263736,
+      "recall": 0.7671799586301999,
+      "f1": 0.7500280867318279,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.897050089091269,
+      "recall": 0.9276044732195409,
+      "f1": 0.9120714600239039,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.9555555555555556,
+      "recall": 0.4673913043478261,
+      "f1": 0.6277372262773723,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9465695700200466,
+      "recall": 0.9322105602449686,
+      "f1": 0.9393351941131692,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.7744159325928763,
+      "recall": 0.6168395363026236,
+      "f1": 0.6867040244523688,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 0.9942049981890619,
+      "f1": 0.9970940791863422,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.73      0.77      0.75      4351\n         dos       0.90      0.93      0.91     39077\n       flood       0.96      0.47      0.63       184\n  legitimate       0.95      0.93      0.94     49639\n   malformed       0.77      0.62      0.69      3278\n     slowite       1.00      0.99      1.00      2761\n\n    accuracy                           0.91     99290\n   macro avg       0.88      0.78      0.82     99290\nweighted avg       0.91      0.91      0.91     99290\n",
+  "model_size": "lazy (stores full training set)",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

@@ -1,0 +1,186 @@
+{
+  "status": "ok",
+  "name": "K-Nearest Neighbors (k=5)",
+  "key": "knn5",
+  "category": "ml",
+  "family": "instance",
+  "description": "Classifies by majority vote among the 5 nearest training points.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "algorithm": "auto",
+    "leaf_size": 30,
+    "metric": "minkowski",
+    "metric_params": null,
+    "n_jobs": -1,
+    "n_neighbors": 5,
+    "p": 2,
+    "weights": "uniform"
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.004213809967041016,
+  "inference_time_sec": 0.31408119201660156,
+  "inference_time_per_sample_ms": 0.023236013317792525,
+  "accuracy": 0.9128504845749796,
+  "precision_macro": 0.8773702571045785,
+  "recall_macro": 0.8196595611659729,
+  "f1_macro": 0.8452203533658152,
+  "precision_weighted": 0.9127502008829856,
+  "recall_weighted": 0.9128504845749796,
+  "f1_weighted": 0.9101974224674205,
+  "confusion_matrix": [
+    [
+      8100,
+      11,
+      5,
+      7,
+      3,
+      16,
+      65,
+      1
+    ],
+    [
+      23,
+      80,
+      0,
+      0,
+      1,
+      8,
+      0,
+      0
+    ],
+    [
+      78,
+      2,
+      799,
+      147,
+      5,
+      20,
+      4,
+      4
+    ],
+    [
+      18,
+      2,
+      77,
+      953,
+      0,
+      23,
+      6,
+      1
+    ],
+    [
+      46,
+      6,
+      0,
+      1,
+      384,
+      3,
+      4,
+      3
+    ],
+    [
+      130,
+      9,
+      1,
+      29,
+      1,
+      298,
+      5,
+      0
+    ],
+    [
+      379,
+      1,
+      2,
+      1,
+      9,
+      10,
+      1569,
+      0
+    ],
+    [
+      10,
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      156
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9221311475409836,
+      "recall": 0.9868421052631579,
+      "f1": 0.9533898305084746,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.7207207207207207,
+      "recall": 0.7142857142857143,
+      "f1": 0.7174887892376681,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9028248587570622,
+      "recall": 0.7544853635505193,
+      "f1": 0.8220164609053497,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.8374340949033392,
+      "recall": 0.8824074074074074,
+      "f1": 0.8593327321911632,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.9528535980148883,
+      "recall": 0.8590604026845637,
+      "f1": 0.9035294117647059,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.7883597883597884,
+      "recall": 0.6300211416490487,
+      "f1": 0.700352526439483,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9491833030852994,
+      "recall": 0.7960426179604262,
+      "f1": 0.8658940397350994,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9454545454545454,
+      "recall": 0.9341317365269461,
+      "f1": 0.9397590361445783,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.92      0.99      0.95      8208\n  bruteforce       0.72      0.71      0.72       112\n        ddos       0.90      0.75      0.82      1059\n         dos       0.84      0.88      0.86      1080\n     malware       0.95      0.86      0.90       447\n        mitm       0.79      0.63      0.70       473\n       recon       0.95      0.80      0.87      1971\n         web       0.95      0.93      0.94       167\n\n    accuracy                           0.91     13517\n   macro avg       0.88      0.82      0.85     13517\nweighted avg       0.91      0.91      0.91     13517\n",
+  "model_size": "lazy (stores full training set)",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

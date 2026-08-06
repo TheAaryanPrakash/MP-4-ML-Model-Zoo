@@ -1,0 +1,187 @@
+{
+  "status": "ok",
+  "name": "FIGS (Fast Interpretable Greedy-Sums)",
+  "key": "figs",
+  "category": "ml",
+  "family": "interpretable",
+  "description": "Sums a handful of small, jointly-fit trees into one interpretable additive model instead of one deep tree.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "class_weight": null,
+    "max_depth": null,
+    "max_features": null,
+    "max_rules": 30,
+    "max_trees": null,
+    "min_impurity_decrease": 0.0,
+    "n_jobs": null,
+    "random_state": null,
+    "verbose": 0
+  },
+  "subsample_cap": null,
+  "train_time_sec": 3.3481791019439697,
+  "inference_time_sec": 0.011482954025268555,
+  "inference_time_per_sample_ms": 0.0008495194218590335,
+  "accuracy": 0.9212103277354442,
+  "precision_macro": 0.8853957640864802,
+  "recall_macro": 0.7741014024375981,
+  "f1_macro": 0.7940304942551064,
+  "precision_weighted": 0.9249938366805882,
+  "recall_weighted": 0.9212103277354442,
+  "f1_weighted": 0.918715022708436,
+  "confusion_matrix": [
+    [
+      8137,
+      0,
+      0,
+      0,
+      24,
+      20,
+      27,
+      0
+    ],
+    [
+      9,
+      23,
+      0,
+      0,
+      63,
+      5,
+      12,
+      0
+    ],
+    [
+      83,
+      0,
+      854,
+      48,
+      22,
+      43,
+      7,
+      2
+    ],
+    [
+      50,
+      0,
+      35,
+      933,
+      33,
+      12,
+      4,
+      13
+    ],
+    [
+      24,
+      0,
+      1,
+      0,
+      364,
+      43,
+      13,
+      2
+    ],
+    [
+      50,
+      0,
+      4,
+      2,
+      9,
+      389,
+      19,
+      0
+    ],
+    [
+      325,
+      0,
+      0,
+      0,
+      11,
+      28,
+      1606,
+      1
+    ],
+    [
+      12,
+      0,
+      0,
+      0,
+      9,
+      0,
+      0,
+      146
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9363636363636364,
+      "recall": 0.991349902534113,
+      "f1": 0.963072552964848,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 1.0,
+      "recall": 0.20535714285714285,
+      "f1": 0.34074074074074073,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9552572706935123,
+      "recall": 0.8064211520302171,
+      "f1": 0.8745519713261649,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9491353001017294,
+      "recall": 0.8638888888888889,
+      "f1": 0.9045079980610761,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.680373831775701,
+      "recall": 0.814317673378076,
+      "f1": 0.7413441955193483,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.7203703703703703,
+      "recall": 0.8224101479915433,
+      "f1": 0.7680157946692991,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9514218009478673,
+      "recall": 0.8148148148148148,
+      "f1": 0.8778354741732713,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.8902439024390244,
+      "recall": 0.874251497005988,
+      "f1": 0.8821752265861027,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.94      0.99      0.96      8208\n  bruteforce       1.00      0.21      0.34       112\n        ddos       0.96      0.81      0.87      1059\n         dos       0.95      0.86      0.90      1080\n     malware       0.68      0.81      0.74       447\n        mitm       0.72      0.82      0.77       473\n       recon       0.95      0.81      0.88      1971\n         web       0.89      0.87      0.88       167\n\n    accuracy                           0.92     13517\n   macro avg       0.89      0.77      0.79     13517\nweighted avg       0.92      0.92      0.92     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

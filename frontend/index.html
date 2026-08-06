@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>50 Models, One Split: An ML Model Zoo for IoT/IIoT Intrusion Detection</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page">
+    <p class="eyebrow">MP-4 &middot; ML Model Zoo</p>
+    <h1>50 Models, One Split: An ML Model Zoo for IoT/IIoT Intrusion Detection</h1>
+    <p class="subtitle">
+      From everyday production staples to rare, rarely-packaged techniques pulled off GitHub/PyPI --
+      one identical preprocessing pipeline and train/test split per dataset, run through ~50 classic ML
+      classifiers each, to find out which model family actually earns its keep for network intrusion
+      detection. Companion to <a href="https://theaaryanprakash.github.io/MP-2-ML-vs-DL/" target="_blank" rel="noopener">MP-2-ML-vs-DL</a>
+      and <a href="https://theaaryanprakash.github.io/MP-3-DataSense-ML-vs-DL/" target="_blank" rel="noopener">MP-3-DataSense-ML-vs-DL</a>,
+      which each ran an 11-model ML-vs-DL comparison on these same two datasets.
+    </p>
+    <div class="dataset-switch" id="dataset-switch"></div>
+    <div class="meta-row" id="meta-row" style="margin-top:14px;"></div>
+    <p class="subtitle" id="dataset-note" style="font-size:13px;"></p>
+  </header>
+
+  <nav class="tabs">
+    <button class="active" data-target="view-overview">Overview</button>
+    <button data-target="view-families">Families</button>
+    <button data-target="view-scatter">Speed vs. Quality</button>
+    <button data-target="view-perclass">Per-Class Detail</button>
+    <button data-target="view-confusion">Confusion Explorer</button>
+    <button data-target="view-table">Full Table</button>
+    <button data-target="view-failed">Failed Runs</button>
+    <button data-target="view-guide">Model Guide</button>
+    <button data-target="view-methodology">Methodology</button>
+  </nav>
+
+  <section class="view active" id="view-overview">
+    <h2>Overview</h2>
+    <p class="section-note">Headline numbers for the currently selected dataset. Switch datasets above to compare MQTTset vs. DataSense.</p>
+    <div class="stat-grid" id="overview-stats" style="margin-bottom:20px;"></div>
+    <div class="chart-grid">
+      <div class="card" id="panel-top-f1"></div>
+      <div class="card" id="panel-top-speed"></div>
+    </div>
+    <div class="legend" id="overview-legend"></div>
+  </section>
+
+  <section class="view" id="view-families">
+    <h2>Family Comparison</h2>
+    <p class="section-note">The ~50 models fold into a handful of raw families (linear, tree ensembles, boosting, kernel methods, instance-based, interpretable/glass-box, exotic/experimental, and imbalance-aware ensembles). This view asks: which lineage of technique wins, not just which single model.</p>
+    <div class="card" style="margin-bottom:20px;" id="panel-family-best"></div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Family</th><th>Group</th><th># Models</th><th>Best model</th><th>Best F1-macro</th><th>Family avg F1-macro</th></tr></thead>
+        <tbody id="family-table-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="view" id="view-scatter">
+    <h2>Speed vs. Quality Trade-off</h2>
+    <p class="section-note">Train time (log scale) against F1-macro, colored by family group. Toggle families off to isolate a lineage -- useful for judging whether a slow model's accuracy gain is worth the training cost for a real IDS deployment.</p>
+    <div class="control-row" id="scatter-filters"></div>
+    <div class="card" id="scatter-tradeoff"></div>
+    <div class="legend" id="scatter-legend"></div>
+  </section>
+
+  <section class="view" id="view-perclass">
+    <h2>Per-Class Detail</h2>
+    <p class="section-note">Where each model actually struggles. A high overall F1-macro can still hide a model that's blind to the rarest attack class.</p>
+    <div class="card" style="overflow-x:auto;" id="heatmap-perclass"></div>
+  </section>
+
+  <section class="view" id="view-confusion">
+    <h2>Confusion Matrix Explorer</h2>
+    <p class="section-note">Pick any successful model to see exactly which classes it confuses for which.</p>
+    <div class="control-row">
+      <select id="cm-model-select"></select>
+    </div>
+    <div class="card" style="overflow-x:auto;" id="heatmap-confusion"></div>
+  </section>
+
+  <section class="view" id="view-table">
+    <h2>Full Table</h2>
+    <p class="section-note">Every metric, every attempted model (including failed runs, shown dimmed). Click a column header to sort.</p>
+    <div class="table-scroll">
+      <table>
+        <thead id="full-table-head"></thead>
+        <tbody id="full-table-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="view" id="view-failed">
+    <h2>Failed Runs</h2>
+    <p class="section-note">Not every rare GitHub package survives contact with a 6-8 class, tens-of-thousands-of-rows dataset. Reported here rather than silently dropped, in the interest of an honest accounting of what "trying 50 models" actually looks like.</p>
+    <div id="failed-runs-content"></div>
+  </section>
+
+  <section class="view" id="view-guide">
+    <h2>Model Guide</h2>
+    <p class="section-note">A plain-language card per model, grouped by family, with the exact hyperparameters used.</p>
+    <div id="model-cards"></div>
+  </section>
+
+  <section class="view" id="view-methodology">
+    <h2>Methodology</h2>
+    <div class="callout wide" style="margin-bottom:14px;">
+      <strong>Same split, every model.</strong> Every model on a given dataset sees the identical
+      preprocessed train/test split (reused verbatim from the sibling MP-2/MP-3 repos' <code>preprocess.py</code>),
+      so differences in the leaderboard reflect the model, not the data.
+    </div>
+    <div class="callout wide" style="margin-bottom:14px;">
+      <strong>Subsampling for models that don't scale.</strong> Kernel SVMs, Gaussian Processes, graph-based
+      Label Spreading, and a few ensemble methods that internally resample per base estimator (Bagging-KNN,
+      the imbalanced-learn ensemble family, Stacking) are capped to a fixed-seed random subsample of the
+      training set when the full set would make training impractical -- the same approach the sibling
+      projects used for kernel SVM. The exact cap used, if any, is recorded per model in the Full Table and
+      Model Guide.
+    </div>
+    <div class="callout wide" style="margin-bottom:14px;">
+      <strong>Model coloring.</strong> With ~50 models, a one-hue-per-model scheme is impossible under a
+      colorblind-safe categorical palette (the practical ceiling is about 8 distinguishable hues). Every model's
+      ~13 raw families instead fold into 8 broader color groups; every chart also direct-labels or tooltips
+      the exact model name so color is never the only way to identify a point.
+    </div>
+    <div class="callout wide" style="margin-bottom:14px;">
+      <strong>Two techniques implemented from scratch.</strong> The Extreme Learning Machine and the
+      Self-Organizing-Map classifier aren't well-packaged on PyPI for scikit-learn-style multiclass
+      classification, so both are small from-scratch implementations (see <code>scripts/custom_models.py</code>)
+      rather than a maintained library. Neither is deep learning: the ELM's hidden layer is fixed random
+      weights with a closed-form ridge-regression readout (no backpropagation), and the SOM classifier is a
+      competitive-learning lookup table, not a differentiable network.
+    </div>
+    <div class="callout wide">
+      <strong>Not every package survived.</strong> Deep Forest / gcForest (the <code>DF21</code> package) has
+      no compatible wheel for this environment and was dropped before training started. Standalone
+      <code>RuleFit</code> doesn't support multiclass classification at all (neither the standalone package
+      nor imodels' version) and was likewise dropped from the registry. Any model that failed <em>during</em>
+      training is reported in the Failed Runs tab rather than silently omitted.
+    </div>
+  </section>
+
+  <footer class="page">
+    Data generated by <code>scripts/train_zoo.py</code> against the model registry in
+    <code>scripts/model_zoo.py</code>. Companion projects:
+    <a href="https://github.com/TheAaryanPrakash/MP-2-ML-vs-DL" target="_blank" rel="noopener">MP-2-ML-vs-DL</a> (MQTTset, ML vs DL) &middot;
+    <a href="https://github.com/TheAaryanPrakash/MP-3-DataSense-ML-vs-DL" target="_blank" rel="noopener">MP-3-DataSense-ML-vs-DL</a> (DataSense, ML vs DL).
+  </footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

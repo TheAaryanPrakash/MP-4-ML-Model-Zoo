@@ -1,0 +1,210 @@
+{
+  "status": "ok",
+  "name": "Explainable Boosting Machine",
+  "key": "ebm",
+  "category": "ml",
+  "family": "interpretable",
+  "description": "Microsoft InterpretML's glass-box GAM-style booster -- near-blackbox accuracy with fully inspectable per-feature shape functions.",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "callback": null,
+    "cat_smooth": 10.0,
+    "cyclic_progress": false,
+    "early_stopping_rounds": 100,
+    "early_stopping_tolerance": 1e-05,
+    "exclude": null,
+    "feature_names": null,
+    "feature_types": null,
+    "gain_scale": 5.0,
+    "greedy_ratio": 10.0,
+    "inner_bags": 0,
+    "interaction_smoothing_rounds": 75,
+    "interactions": 0,
+    "learning_rate": 0.015,
+    "max_bins": 1024,
+    "max_delta_step": 0.0,
+    "max_interaction_bins": 64,
+    "max_leaves": 2,
+    "max_rounds": 50000,
+    "min_cat_samples": 10,
+    "min_hessian": 0.0001,
+    "min_samples_leaf": 4,
+    "missing": "separate",
+    "monotone_constraints": null,
+    "n_jobs": -1,
+    "objective": "log_loss",
+    "outer_bags": 14,
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "smoothing_rounds": 75,
+    "validation_size": 0.15
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 548.467679977417,
+  "inference_time_sec": 0.01318669319152832,
+  "inference_time_per_sample_ms": 0.0009755636007640986,
+  "accuracy": 0.9679662647037064,
+  "precision_macro": 0.9696318115321076,
+  "recall_macro": 0.942495587524882,
+  "f1_macro": 0.9554873966096407,
+  "precision_weighted": 0.9680482988292077,
+  "recall_weighted": 0.9679662647037064,
+  "f1_weighted": 0.9675567858894273,
+  "confusion_matrix": [
+    [
+      8178,
+      0,
+      1,
+      1,
+      1,
+      0,
+      24,
+      3
+    ],
+    [
+      7,
+      102,
+      0,
+      0,
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      35,
+      0,
+      972,
+      22,
+      7,
+      10,
+      13,
+      0
+    ],
+    [
+      7,
+      0,
+      23,
+      1037,
+      2,
+      7,
+      4,
+      0
+    ],
+    [
+      7,
+      1,
+      1,
+      1,
+      431,
+      4,
+      2,
+      0
+    ],
+    [
+      10,
+      0,
+      0,
+      3,
+      2,
+      448,
+      10,
+      0
+    ],
+    [
+      199,
+      0,
+      2,
+      1,
+      4,
+      8,
+      1757,
+      0
+    ],
+    [
+      8,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      159
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9676961306354278,
+      "recall": 0.9963450292397661,
+      "f1": 0.9818116333513416,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.9902912621359223,
+      "recall": 0.9107142857142857,
+      "f1": 0.9488372093023256,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.972972972972973,
+      "recall": 0.9178470254957507,
+      "f1": 0.9446064139941691,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9737089201877934,
+      "recall": 0.9601851851851851,
+      "f1": 0.9668997668997669,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.9620535714285714,
+      "recall": 0.9642058165548099,
+      "f1": 0.9631284916201117,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.939203354297694,
+      "recall": 0.9471458773784355,
+      "f1": 0.9431578947368421,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9696467991169978,
+      "recall": 0.8914256722475901,
+      "f1": 0.9288924134284959,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9814814814814815,
+      "recall": 0.9520958083832335,
+      "f1": 0.9665653495440729,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.97      1.00      0.98      8208\n  bruteforce       0.99      0.91      0.95       112\n        ddos       0.97      0.92      0.94      1059\n         dos       0.97      0.96      0.97      1080\n     malware       0.96      0.96      0.96       447\n        mitm       0.94      0.95      0.94       473\n       recon       0.97      0.89      0.93      1971\n         web       0.98      0.95      0.97       167\n\n    accuracy                           0.97     13517\n   macro avg       0.97      0.94      0.96     13517\nweighted avg       0.97      0.97      0.97     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

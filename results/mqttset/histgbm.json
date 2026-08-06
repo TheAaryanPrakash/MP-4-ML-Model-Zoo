@@ -1,0 +1,151 @@
+{
+  "status": "ok",
+  "name": "Hist Gradient Boosting",
+  "key": "histgbm",
+  "category": "ml",
+  "family": "boosting",
+  "description": "Histogram-binned gradient boosting (sklearn's LightGBM-style implementation) -- fast on large tabular data.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "categorical_features": "from_dtype",
+    "class_weight": null,
+    "early_stopping": "auto",
+    "interaction_cst": null,
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "loss": "log_loss",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 200,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "random_state": 42,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 3.493788242340088,
+  "inference_time_sec": 0.17627882957458496,
+  "inference_time_per_sample_ms": 0.0017753935902365288,
+  "accuracy": 0.935109275858596,
+  "precision_macro": 0.9139561575350381,
+  "recall_macro": 0.7955963490324965,
+  "f1_macro": 0.835018616761288,
+  "precision_weighted": 0.9358295835503754,
+  "recall_weighted": 0.935109275858596,
+  "f1_weighted": 0.9337592810309131,
+  "confusion_matrix": [
+    [
+      3510,
+      480,
+      0,
+      46,
+      315,
+      0
+    ],
+    [
+      231,
+      35489,
+      0,
+      3336,
+      21,
+      0
+    ],
+    [
+      1,
+      21,
+      88,
+      71,
+      3,
+      0
+    ],
+    [
+      0,
+      581,
+      0,
+      49058,
+      0,
+      0
+    ],
+    [
+      1029,
+      287,
+      0,
+      21,
+      1941,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7356948228882834,
+      "recall": 0.8067111008963457,
+      "f1": 0.7695680771760579,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9628574529274513,
+      "recall": 0.9081812831077104,
+      "f1": 0.9347204846250082,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 1.0,
+      "recall": 0.4782608695652174,
+      "f1": 0.6470588235294118,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9338688799208101,
+      "recall": 0.9882954934628014,
+      "f1": 0.960311634416811,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.8513157894736842,
+      "recall": 0.5921293471629042,
+      "f1": 0.698452680820439,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.74      0.81      0.77      4351\n         dos       0.96      0.91      0.93     39077\n       flood       1.00      0.48      0.65       184\n  legitimate       0.93      0.99      0.96     49639\n   malformed       0.85      0.59      0.70      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.94     99290\n   macro avg       0.91      0.80      0.84     99290\nweighted avg       0.94      0.94      0.93     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

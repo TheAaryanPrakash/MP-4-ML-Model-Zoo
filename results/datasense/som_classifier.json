@@ -1,0 +1,183 @@
+{
+  "status": "ok",
+  "name": "Self-Organizing Map Classifier",
+  "key": "som_classifier",
+  "category": "ml",
+  "family": "exotic",
+  "description": "Kohonen self-organizing map used as a nearest-prototype classifier via majority vote per map unit.",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "grid_size": 12,
+    "learning_rate": 0.5,
+    "n_iter": 3000,
+    "random_state": 42,
+    "sigma": 1.5
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 0.46532297134399414,
+  "inference_time_sec": 0.15354180335998535,
+  "inference_time_per_sample_ms": 0.011359162784640478,
+  "accuracy": 0.7936672338536658,
+  "precision_macro": 0.64237726710987,
+  "recall_macro": 0.5296877991069895,
+  "f1_macro": 0.5671605110026774,
+  "precision_weighted": 0.773339719080282,
+  "recall_weighted": 0.7936672338536658,
+  "f1_weighted": 0.7683642486237907,
+  "confusion_matrix": [
+    [
+      8134,
+      0,
+      0,
+      0,
+      8,
+      6,
+      60,
+      0
+    ],
+    [
+      52,
+      0,
+      0,
+      0,
+      16,
+      2,
+      42,
+      0
+    ],
+    [
+      200,
+      0,
+      460,
+      272,
+      20,
+      18,
+      87,
+      2
+    ],
+    [
+      173,
+      0,
+      129,
+      655,
+      22,
+      32,
+      59,
+      10
+    ],
+    [
+      90,
+      0,
+      0,
+      4,
+      289,
+      7,
+      56,
+      1
+    ],
+    [
+      323,
+      0,
+      5,
+      11,
+      2,
+      100,
+      32,
+      0
+    ],
+    [
+      941,
+      0,
+      0,
+      10,
+      43,
+      29,
+      945,
+      3
+    ],
+    [
+      11,
+      0,
+      0,
+      0,
+      11,
+      0,
+      0,
+      145
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.8196291817815397,
+      "recall": 0.9909844054580896,
+      "f1": 0.8971983234061328,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.7744107744107744,
+      "recall": 0.4343720491029273,
+      "f1": 0.5565638233514821,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.6880252100840336,
+      "recall": 0.6064814814814815,
+      "f1": 0.6446850393700787,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.7031630170316302,
+      "recall": 0.6465324384787472,
+      "f1": 0.6736596736596736,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.5154639175257731,
+      "recall": 0.21141649048625794,
+      "f1": 0.29985007496251875,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.7377049180327869,
+      "recall": 0.4794520547945205,
+      "f1": 0.5811808118081181,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9006211180124224,
+      "recall": 0.8682634730538922,
+      "f1": 0.8841463414634146,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.82      0.99      0.90      8208\n  bruteforce       0.00      0.00      0.00       112\n        ddos       0.77      0.43      0.56      1059\n         dos       0.69      0.61      0.64      1080\n     malware       0.70      0.65      0.67       447\n        mitm       0.52      0.21      0.30       473\n       recon       0.74      0.48      0.58      1971\n         web       0.90      0.87      0.88       167\n\n    accuracy                           0.79     13517\n   macro avg       0.64      0.53      0.57     13517\nweighted avg       0.77      0.79      0.77     13517\n",
+  "model_size": "12x12 map units",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

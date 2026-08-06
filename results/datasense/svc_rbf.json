@@ -1,0 +1,193 @@
+{
+  "status": "ok",
+  "name": "SVM (RBF Kernel)",
+  "key": "svc_rbf",
+  "category": "ml",
+  "family": "kernel",
+  "description": "Support vector machine with a Gaussian (RBF) kernel for nonlinear decision boundaries.",
+  "hyperparams": {
+    "subsample_cap": 12000,
+    "seed": 42,
+    "C": 1.0,
+    "break_ties": false,
+    "cache_size": 200,
+    "class_weight": "balanced",
+    "coef0": 0.0,
+    "decision_function_shape": "ovr",
+    "degree": 3,
+    "gamma": "scale",
+    "kernel": "rbf",
+    "max_iter": 20000,
+    "probability": "deprecated",
+    "random_state": 42,
+    "shrinking": true,
+    "tol": 0.001,
+    "verbose": false
+  },
+  "subsample_cap": 12000,
+  "train_time_sec": 1.9796380996704102,
+  "inference_time_sec": 4.417993068695068,
+  "inference_time_per_sample_ms": 0.3268471605160219,
+  "accuracy": 0.8674262040393579,
+  "precision_macro": 0.7655972869892205,
+  "recall_macro": 0.8359398217804761,
+  "f1_macro": 0.7656375664702149,
+  "precision_weighted": 0.9046763396777047,
+  "recall_weighted": 0.8674262040393579,
+  "f1_weighted": 0.8814159976669328,
+  "confusion_matrix": [
+    [
+      7474,
+      434,
+      10,
+      3,
+      22,
+      193,
+      69,
+      3
+    ],
+    [
+      3,
+      96,
+      0,
+      0,
+      4,
+      7,
+      0,
+      2
+    ],
+    [
+      54,
+      14,
+      889,
+      51,
+      23,
+      22,
+      3,
+      3
+    ],
+    [
+      10,
+      6,
+      56,
+      938,
+      4,
+      62,
+      2,
+      2
+    ],
+    [
+      26,
+      33,
+      0,
+      0,
+      375,
+      6,
+      0,
+      7
+    ],
+    [
+      82,
+      49,
+      4,
+      7,
+      1,
+      328,
+      2,
+      0
+    ],
+    [
+      437,
+      17,
+      7,
+      1,
+      23,
+      17,
+      1469,
+      0
+    ],
+    [
+      0,
+      9,
+      0,
+      0,
+      1,
+      0,
+      1,
+      156
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9243136284936928,
+      "recall": 0.9105750487329435,
+      "f1": 0.9173929053639377,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.1458966565349544,
+      "recall": 0.8571428571428571,
+      "f1": 0.24935064935064935,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9202898550724637,
+      "recall": 0.8394711992445704,
+      "f1": 0.8780246913580247,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.938,
+      "recall": 0.8685185185185185,
+      "f1": 0.9019230769230769,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.8278145695364238,
+      "recall": 0.8389261744966443,
+      "f1": 0.8333333333333334,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.5165354330708661,
+      "recall": 0.693446088794926,
+      "f1": 0.592057761732852,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9501940491591203,
+      "recall": 0.7453069507864029,
+      "f1": 0.835371054876315,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9017341040462428,
+      "recall": 0.9341317365269461,
+      "f1": 0.9176470588235294,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.92      0.91      0.92      8208\n  bruteforce       0.15      0.86      0.25       112\n        ddos       0.92      0.84      0.88      1059\n         dos       0.94      0.87      0.90      1080\n     malware       0.83      0.84      0.83       447\n        mitm       0.52      0.69      0.59       473\n       recon       0.95      0.75      0.84      1971\n         web       0.90      0.93      0.92       167\n\n    accuracy                           0.87     13517\n   macro avg       0.77      0.84      0.77     13517\nweighted avg       0.90      0.87      0.88     13517\n",
+  "model_size": "6761 support vectors",
+  "n_train_samples": 12000,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

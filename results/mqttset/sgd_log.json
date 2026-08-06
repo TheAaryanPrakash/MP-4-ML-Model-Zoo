@@ -1,0 +1,151 @@
+{
+  "status": "ok",
+  "name": "SGD (Log Loss)",
+  "key": "sgd_log",
+  "category": "ml",
+  "family": "linear",
+  "description": "Logistic regression trained via online stochastic gradient descent instead of a batch solver.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "alpha": 0.0001,
+    "average": false,
+    "class_weight": "balanced",
+    "early_stopping": false,
+    "epsilon": 0.1,
+    "eta0": 0.01,
+    "fit_intercept": true,
+    "l1_ratio": 0.15,
+    "learning_rate": "optimal",
+    "loss": "log_loss",
+    "max_iter": 1000,
+    "n_iter_no_change": 5,
+    "n_jobs": null,
+    "penalty": "l2",
+    "power_t": 0.5,
+    "random_state": 42,
+    "shuffle": true,
+    "tol": 0.001,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 3.393634080886841,
+  "inference_time_sec": 0.008980989456176758,
+  "inference_time_per_sample_ms": 9.045210450374417e-05,
+  "accuracy": 0.6329539732097895,
+  "precision_macro": 0.776431446615636,
+  "recall_macro": 0.49869550455164874,
+  "f1_macro": 0.5131826074389496,
+  "precision_weighted": 0.9363033838094006,
+  "recall_weighted": 0.6329539732097895,
+  "f1_weighted": 0.7375146547109304,
+  "confusion_matrix": [
+    [
+      836,
+      0,
+      0,
+      80,
+      420,
+      3015
+    ],
+    [
+      0,
+      27866,
+      0,
+      13,
+      0,
+      11198
+    ],
+    [
+      0,
+      0,
+      87,
+      4,
+      0,
+      93
+    ],
+    [
+      0,
+      0,
+      0,
+      31168,
+      0,
+      18471
+    ],
+    [
+      0,
+      0,
+      0,
+      816,
+      1053,
+      1409
+    ],
+    [
+      0,
+      0,
+      0,
+      802,
+      123,
+      1836
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 1.0,
+      "recall": 0.19213973799126638,
+      "f1": 0.32234432234432236,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 1.0,
+      "recall": 0.7131048954628042,
+      "f1": 0.8325291666044247,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 1.0,
+      "recall": 0.47282608695652173,
+      "f1": 0.6420664206642066,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9478453912355929,
+      "recall": 0.6278933902778058,
+      "f1": 0.7553864424032379,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6597744360902256,
+      "recall": 0.32123245881635143,
+      "f1": 0.43208863356585964,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 0.050968852367997336,
+      "recall": 0.664976457805143,
+      "f1": 0.09468065905164634,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       1.00      0.19      0.32      4351\n         dos       1.00      0.71      0.83     39077\n       flood       1.00      0.47      0.64       184\n  legitimate       0.95      0.63      0.76     49639\n   malformed       0.66      0.32      0.43      3278\n     slowite       0.05      0.66      0.09      2761\n\n    accuracy                           0.63     99290\n   macro avg       0.78      0.50      0.51     99290\nweighted avg       0.94      0.63      0.74     99290\n",
+  "model_size": "198 weights",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

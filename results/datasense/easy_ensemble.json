@@ -1,0 +1,186 @@
+{
+  "status": "ok",
+  "name": "Easy Ensemble",
+  "key": "easy_ensemble",
+  "category": "ml",
+  "family": "imbalanced",
+  "description": "Trains many AdaBoost ensembles, each on an independently balanced under-sample, then votes across all of them.",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "estimator": null,
+    "n_estimators": 15,
+    "n_jobs": -1,
+    "random_state": 42,
+    "replacement": false,
+    "sampling_strategy": "auto",
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 2.0032267570495605,
+  "inference_time_sec": 0.30361390113830566,
+  "inference_time_per_sample_ms": 0.022461633582770264,
+  "accuracy": 0.8068358363542206,
+  "precision_macro": 0.6203342407735046,
+  "recall_macro": 0.7390803673233325,
+  "f1_macro": 0.6338976772415208,
+  "precision_weighted": 0.8602482041533547,
+  "recall_weighted": 0.8068358363542206,
+  "f1_weighted": 0.8180927973050673,
+  "confusion_matrix": [
+    [
+      7375,
+      23,
+      0,
+      0,
+      28,
+      510,
+      64,
+      208
+    ],
+    [
+      1,
+      82,
+      0,
+      0,
+      19,
+      6,
+      0,
+      4
+    ],
+    [
+      39,
+      8,
+      793,
+      122,
+      19,
+      63,
+      11,
+      4
+    ],
+    [
+      22,
+      5,
+      633,
+      363,
+      33,
+      22,
+      0,
+      2
+    ],
+    [
+      7,
+      56,
+      2,
+      0,
+      328,
+      44,
+      10,
+      0
+    ],
+    [
+      12,
+      0,
+      80,
+      6,
+      12,
+      360,
+      2,
+      1
+    ],
+    [
+      240,
+      5,
+      13,
+      0,
+      61,
+      180,
+      1443,
+      29
+    ],
+    [
+      0,
+      5,
+      0,
+      0,
+      0,
+      0,
+      0,
+      162
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9582900207900208,
+      "recall": 0.8985136452241715,
+      "f1": 0.9274396378269618,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.44565217391304346,
+      "recall": 0.7321428571428571,
+      "f1": 0.5540540540540541,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.5213675213675214,
+      "recall": 0.7488196411709159,
+      "f1": 0.6147286821705427,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.7393075356415478,
+      "recall": 0.33611111111111114,
+      "f1": 0.4621260343730108,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.656,
+      "recall": 0.7337807606263982,
+      "f1": 0.6927138331573389,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.3037974683544304,
+      "recall": 0.7610993657505285,
+      "f1": 0.43425814234016885,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9431372549019608,
+      "recall": 0.7321156773211568,
+      "f1": 0.8243359040274207,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.3951219512195122,
+      "recall": 0.9700598802395209,
+      "f1": 0.561525129982669,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.96      0.90      0.93      8208\n  bruteforce       0.45      0.73      0.55       112\n        ddos       0.52      0.75      0.61      1059\n         dos       0.74      0.34      0.46      1080\n     malware       0.66      0.73      0.69       447\n        mitm       0.30      0.76      0.43       473\n       recon       0.94      0.73      0.82      1971\n         web       0.40      0.97      0.56       167\n\n    accuracy                           0.81     13517\n   macro avg       0.62      0.74      0.63     13517\nweighted avg       0.86      0.81      0.82     13517\n",
+  "model_size": "15 base estimators",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

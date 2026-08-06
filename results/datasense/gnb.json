@@ -1,0 +1,180 @@
+{
+  "status": "ok",
+  "name": "Gaussian Naive Bayes",
+  "key": "gnb",
+  "category": "ml",
+  "family": "naive_bayes",
+  "description": "Assumes each feature is independently Gaussian within a class -- a fast, strong baseline floor.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "priors": null,
+    "var_smoothing": 1e-09
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.019756078720092773,
+  "inference_time_sec": 0.011940717697143555,
+  "inference_time_per_sample_ms": 0.0008833851962080014,
+  "accuracy": 0.4654879041207369,
+  "precision_macro": 0.48071424287231296,
+  "recall_macro": 0.630886179764787,
+  "f1_macro": 0.4343763654207239,
+  "precision_weighted": 0.8080346128468798,
+  "recall_weighted": 0.4654879041207369,
+  "f1_weighted": 0.5465540970748548,
+  "confusion_matrix": [
+    [
+      3242,
+      780,
+      0,
+      1,
+      1108,
+      2846,
+      16,
+      215
+    ],
+    [
+      0,
+      75,
+      0,
+      0,
+      1,
+      0,
+      0,
+      36
+    ],
+    [
+      23,
+      17,
+      658,
+      187,
+      39,
+      119,
+      7,
+      9
+    ],
+    [
+      12,
+      2,
+      366,
+      555,
+      27,
+      100,
+      12,
+      6
+    ],
+    [
+      0,
+      100,
+      0,
+      0,
+      319,
+      0,
+      0,
+      28
+    ],
+    [
+      2,
+      132,
+      0,
+      1,
+      31,
+      306,
+      0,
+      1
+    ],
+    [
+      294,
+      84,
+      41,
+      73,
+      320,
+      180,
+      971,
+      8
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      166
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9073607612650434,
+      "recall": 0.3949805068226121,
+      "f1": 0.5503777268483151,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.06297229219143577,
+      "recall": 0.6696428571428571,
+      "f1": 0.11511895625479662,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.6178403755868545,
+      "recall": 0.6213408876298395,
+      "f1": 0.6195856873822976,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.6793145654834761,
+      "recall": 0.5138888888888888,
+      "f1": 0.5851344227727991,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.17289972899728998,
+      "recall": 0.7136465324384788,
+      "f1": 0.27835951134380454,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.08617290903970712,
+      "recall": 0.6469344608879493,
+      "f1": 0.15208747514910537,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9652087475149106,
+      "recall": 0.4926433282597666,
+      "f1": 0.6523345649983204,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.35394456289978676,
+      "recall": 0.9940119760479041,
+      "f1": 0.5220125786163522,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.91      0.39      0.55      8208\n  bruteforce       0.06      0.67      0.12       112\n        ddos       0.62      0.62      0.62      1059\n         dos       0.68      0.51      0.59      1080\n     malware       0.17      0.71      0.28       447\n        mitm       0.09      0.65      0.15       473\n       recon       0.97      0.49      0.65      1971\n         web       0.35      0.99      0.52       167\n\n    accuracy                           0.47     13517\n   macro avg       0.48      0.63      0.43     13517\nweighted avg       0.81      0.47      0.55     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

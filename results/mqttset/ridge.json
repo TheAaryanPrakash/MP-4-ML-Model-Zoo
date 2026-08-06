@@ -1,0 +1,139 @@
+{
+  "status": "ok",
+  "name": "Ridge Classifier",
+  "key": "ridge",
+  "category": "ml",
+  "family": "linear",
+  "description": "Least-squares classification with L2-regularized weights (no probabilistic loss).",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "alpha": 1.0,
+    "class_weight": "balanced",
+    "copy_X": true,
+    "fit_intercept": true,
+    "max_iter": null,
+    "positive": false,
+    "random_state": 42,
+    "solver": "auto",
+    "tol": 0.0001
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.07443618774414062,
+  "inference_time_sec": 0.008485794067382812,
+  "inference_time_per_sample_ms": 8.546474033017235e-05,
+  "accuracy": 0.6538926377278679,
+  "precision_macro": 0.7046261585460677,
+  "recall_macro": 0.5805802155162944,
+  "f1_macro": 0.5673128882554447,
+  "precision_weighted": 0.9165874635298862,
+  "recall_weighted": 0.6538926377278679,
+  "f1_weighted": 0.7468454957730228,
+  "confusion_matrix": [
+    [
+      2497,
+      0,
+      0,
+      14,
+      422,
+      1418
+    ],
+    [
+      11169,
+      27866,
+      0,
+      13,
+      0,
+      29
+    ],
+    [
+      92,
+      0,
+      79,
+      11,
+      0,
+      2
+    ],
+    [
+      18471,
+      0,
+      0,
+      31168,
+      0,
+      0
+    ],
+    [
+      864,
+      0,
+      0,
+      769,
+      1075,
+      570
+    ],
+    [
+      0,
+      0,
+      0,
+      398,
+      123,
+      2240
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.07545402350950352,
+      "recall": 0.5738910595265456,
+      "f1": 0.13337250293772032,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 1.0,
+      "recall": 0.7131048954628042,
+      "f1": 0.8325291666044247,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 1.0,
+      "recall": 0.42934782608695654,
+      "f1": 0.6007604562737643,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.962777623328082,
+      "recall": 0.6278933902778058,
+      "f1": 0.7600838901624153,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6635802469135802,
+      "recall": 0.3279438682123246,
+      "f1": 0.43895467537770516,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 0.5259450575252407,
+      "recall": 0.8113002535313292,
+      "f1": 0.6381766381766382,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.08      0.57      0.13      4351\n         dos       1.00      0.71      0.83     39077\n       flood       1.00      0.43      0.60       184\n  legitimate       0.96      0.63      0.76     49639\n   malformed       0.66      0.33      0.44      3278\n     slowite       0.53      0.81      0.64      2761\n\n    accuracy                           0.65     99290\n   macro avg       0.70      0.58      0.57     99290\nweighted avg       0.92      0.65      0.75     99290\n",
+  "model_size": "198 weights",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

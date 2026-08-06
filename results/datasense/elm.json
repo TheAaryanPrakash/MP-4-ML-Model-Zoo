@@ -1,0 +1,181 @@
+{
+  "status": "ok",
+  "name": "Extreme Learning Machine",
+  "key": "elm",
+  "category": "ml",
+  "family": "exotic",
+  "description": "Single hidden layer of fixed random (untrained) weights + closed-form ridge-regression readout -- no backprop.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "alpha": 1.0,
+    "n_hidden": 512,
+    "random_state": 42
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.091156005859375,
+  "inference_time_sec": 0.028432130813598633,
+  "inference_time_per_sample_ms": 0.0021034349939778522,
+  "accuracy": 0.8947251609084856,
+  "precision_macro": 0.8714848900427253,
+  "recall_macro": 0.7409972275122287,
+  "f1_macro": 0.7919952343656563,
+  "precision_weighted": 0.89444677297951,
+  "recall_weighted": 0.8947251609084856,
+  "f1_weighted": 0.8886275783228202,
+  "confusion_matrix": [
+    [
+      8172,
+      3,
+      6,
+      5,
+      1,
+      8,
+      12,
+      1
+    ],
+    [
+      39,
+      50,
+      1,
+      2,
+      8,
+      6,
+      4,
+      2
+    ],
+    [
+      92,
+      0,
+      813,
+      110,
+      7,
+      14,
+      21,
+      2
+    ],
+    [
+      43,
+      2,
+      98,
+      887,
+      5,
+      29,
+      14,
+      2
+    ],
+    [
+      63,
+      7,
+      11,
+      2,
+      345,
+      3,
+      8,
+      8
+    ],
+    [
+      204,
+      0,
+      12,
+      32,
+      0,
+      217,
+      8,
+      0
+    ],
+    [
+      506,
+      2,
+      1,
+      2,
+      2,
+      3,
+      1455,
+      0
+    ],
+    [
+      11,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      155
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.8950711938663746,
+      "recall": 0.9956140350877193,
+      "f1": 0.9426692813473295,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.78125,
+      "recall": 0.44642857142857145,
+      "f1": 0.5681818181818182,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.8630573248407644,
+      "recall": 0.7677053824362606,
+      "f1": 0.8125937031484258,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.8528846153846154,
+      "recall": 0.8212962962962963,
+      "f1": 0.8367924528301887,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.9375,
+      "recall": 0.7718120805369127,
+      "f1": 0.8466257668711656,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.775,
+      "recall": 0.4587737843551797,
+      "f1": 0.5763612217795485,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9553512803676953,
+      "recall": 0.7382039573820396,
+      "f1": 0.8328563251287923,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9117647058823529,
+      "recall": 0.9281437125748503,
+      "f1": 0.9198813056379822,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.90      1.00      0.94      8208\n  bruteforce       0.78      0.45      0.57       112\n        ddos       0.86      0.77      0.81      1059\n         dos       0.85      0.82      0.84      1080\n     malware       0.94      0.77      0.85       447\n        mitm       0.78      0.46      0.58       473\n       recon       0.96      0.74      0.83      1971\n         web       0.91      0.93      0.92       167\n\n    accuracy                           0.89     13517\n   macro avg       0.87      0.74      0.79     13517\nweighted avg       0.89      0.89      0.89     13517\n",
+  "model_size": "4096 readout weights",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

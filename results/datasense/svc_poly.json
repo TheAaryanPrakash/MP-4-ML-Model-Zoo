@@ -1,0 +1,193 @@
+{
+  "status": "ok",
+  "name": "SVM (Polynomial Kernel)",
+  "key": "svc_poly",
+  "category": "ml",
+  "family": "kernel",
+  "description": "Support vector machine with a degree-3 polynomial kernel.",
+  "hyperparams": {
+    "subsample_cap": 12000,
+    "seed": 42,
+    "C": 1.0,
+    "break_ties": false,
+    "cache_size": 200,
+    "class_weight": "balanced",
+    "coef0": 0.0,
+    "decision_function_shape": "ovr",
+    "degree": 3,
+    "gamma": "scale",
+    "kernel": "poly",
+    "max_iter": 20000,
+    "probability": "deprecated",
+    "random_state": 42,
+    "shrinking": true,
+    "tol": 0.001,
+    "verbose": false
+  },
+  "subsample_cap": 12000,
+  "train_time_sec": 2.5265941619873047,
+  "inference_time_sec": 1.780120849609375,
+  "inference_time_per_sample_ms": 0.1316949655699767,
+  "accuracy": 0.8600281127469113,
+  "precision_macro": 0.7577265687072845,
+  "recall_macro": 0.8206761282733626,
+  "f1_macro": 0.7521176995608222,
+  "precision_weighted": 0.9023413609901888,
+  "recall_weighted": 0.8600281127469113,
+  "f1_weighted": 0.8751376867381881,
+  "confusion_matrix": [
+    [
+      7489,
+      427,
+      1,
+      5,
+      14,
+      231,
+      39,
+      2
+    ],
+    [
+      3,
+      94,
+      4,
+      0,
+      0,
+      9,
+      0,
+      2
+    ],
+    [
+      68,
+      11,
+      845,
+      37,
+      30,
+      59,
+      3,
+      6
+    ],
+    [
+      16,
+      8,
+      55,
+      915,
+      5,
+      77,
+      2,
+      2
+    ],
+    [
+      25,
+      38,
+      0,
+      1,
+      370,
+      5,
+      0,
+      8
+    ],
+    [
+      92,
+      46,
+      10,
+      3,
+      1,
+      321,
+      0,
+      0
+    ],
+    [
+      459,
+      19,
+      5,
+      0,
+      24,
+      29,
+      1435,
+      0
+    ],
+    [
+      1,
+      9,
+      0,
+      0,
+      0,
+      1,
+      0,
+      156
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.918557586164602,
+      "recall": 0.9124025341130604,
+      "f1": 0.9154697145651244,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.1441717791411043,
+      "recall": 0.8392857142857143,
+      "f1": 0.24607329842931938,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9184782608695652,
+      "recall": 0.7979225684608121,
+      "f1": 0.853966649823143,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9521331945889698,
+      "recall": 0.8472222222222222,
+      "f1": 0.8966193042626164,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.8333333333333334,
+      "recall": 0.8277404921700223,
+      "f1": 0.8305274971941639,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.4385245901639344,
+      "recall": 0.678646934460888,
+      "f1": 0.5327800829875519,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9702501690331304,
+      "recall": 0.7280568239472349,
+      "f1": 0.8318840579710145,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.8863636363636364,
+      "recall": 0.9341317365269461,
+      "f1": 0.9096209912536443,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.92      0.91      0.92      8208\n  bruteforce       0.14      0.84      0.25       112\n        ddos       0.92      0.80      0.85      1059\n         dos       0.95      0.85      0.90      1080\n     malware       0.83      0.83      0.83       447\n        mitm       0.44      0.68      0.53       473\n       recon       0.97      0.73      0.83      1971\n         web       0.89      0.93      0.91       167\n\n    accuracy                           0.86     13517\n   macro avg       0.76      0.82      0.75     13517\nweighted avg       0.90      0.86      0.88     13517\n",
+  "model_size": "7277 support vectors",
+  "n_train_samples": 12000,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

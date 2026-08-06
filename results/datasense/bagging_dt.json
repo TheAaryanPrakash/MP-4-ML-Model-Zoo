@@ -1,0 +1,201 @@
+{
+  "status": "ok",
+  "name": "Bagging (Decision Trees)",
+  "key": "bagging_dt",
+  "category": "ml",
+  "family": "ensemble_bagging",
+  "description": "Classic bootstrap-aggregated decision trees (the general recipe Random Forest specializes).",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "bootstrap": true,
+    "bootstrap_features": false,
+    "estimator__ccp_alpha": 0.0,
+    "estimator__class_weight": "balanced",
+    "estimator__criterion": "gini",
+    "estimator__max_depth": null,
+    "estimator__max_features": null,
+    "estimator__max_leaf_nodes": null,
+    "estimator__min_impurity_decrease": 0.0,
+    "estimator__min_samples_leaf": 1,
+    "estimator__min_samples_split": 2,
+    "estimator__min_weight_fraction_leaf": 0.0,
+    "estimator__monotonic_cst": null,
+    "estimator__random_state": null,
+    "estimator__splitter": "best",
+    "max_features": 1.0,
+    "max_samples": null,
+    "n_estimators": 50,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 3.2071008682250977,
+  "inference_time_sec": 0.16423511505126953,
+  "inference_time_per_sample_ms": 0.012150263745747543,
+  "accuracy": 0.9550935858548495,
+  "precision_macro": 0.9066328390138297,
+  "recall_macro": 0.9418477912562992,
+  "f1_macro": 0.9161655419609983,
+  "precision_weighted": 0.9591786980619417,
+  "recall_weighted": 0.9550935858548495,
+  "f1_weighted": 0.9561013585350726,
+  "confusion_matrix": [
+    [
+      8016,
+      1,
+      2,
+      0,
+      0,
+      0,
+      63,
+      126
+    ],
+    [
+      2,
+      102,
+      0,
+      0,
+      1,
+      0,
+      2,
+      5
+    ],
+    [
+      36,
+      4,
+      971,
+      19,
+      3,
+      14,
+      11,
+      1
+    ],
+    [
+      9,
+      0,
+      21,
+      1040,
+      2,
+      3,
+      3,
+      2
+    ],
+    [
+      7,
+      0,
+      2,
+      2,
+      427,
+      4,
+      5,
+      0
+    ],
+    [
+      9,
+      0,
+      2,
+      4,
+      0,
+      451,
+      6,
+      1
+    ],
+    [
+      208,
+      2,
+      4,
+      0,
+      5,
+      9,
+      1740,
+      3
+    ],
+    [
+      4,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      163
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9668315040405259,
+      "recall": 0.9766081871345029,
+      "f1": 0.9716952542578338,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.9357798165137615,
+      "recall": 0.9107142857142857,
+      "f1": 0.9230769230769231,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.969061876247505,
+      "recall": 0.9169027384324835,
+      "f1": 0.9422610383309074,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9765258215962441,
+      "recall": 0.9629629629629629,
+      "f1": 0.9696969696969697,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.9748858447488584,
+      "recall": 0.9552572706935123,
+      "f1": 0.9649717514124294,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.9376299376299376,
+      "recall": 0.9534883720930233,
+      "f1": 0.9454926624737946,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9508196721311475,
+      "recall": 0.882800608828006,
+      "f1": 0.9155485398579322,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.5415282392026578,
+      "recall": 0.9760479041916168,
+      "f1": 0.6965811965811965,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.97      0.98      0.97      8208\n  bruteforce       0.94      0.91      0.92       112\n        ddos       0.97      0.92      0.94      1059\n         dos       0.98      0.96      0.97      1080\n     malware       0.97      0.96      0.96       447\n        mitm       0.94      0.95      0.95       473\n       recon       0.95      0.88      0.92      1971\n         web       0.54      0.98      0.70       167\n\n    accuracy                           0.96     13517\n   macro avg       0.91      0.94      0.92     13517\nweighted avg       0.96      0.96      0.96     13517\n",
+  "model_size": "50 base estimators",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

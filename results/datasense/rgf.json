@@ -1,0 +1,196 @@
+{
+  "status": "ok",
+  "name": "Regularized Greedy Forest",
+  "key": "rgf",
+  "category": "ml",
+  "family": "boosting",
+  "description": "Builds one shared tree structure that's fully re-optimized at every boosting step, rather than a growing ensemble.",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "algorithm": "RGF",
+    "calc_prob": "sigmoid",
+    "init_model": null,
+    "l2": 0.1,
+    "learning_rate": 0.5,
+    "loss": "Log",
+    "max_leaf": 500,
+    "memory_policy": "generous",
+    "min_samples_leaf": 10,
+    "n_iter": null,
+    "n_jobs": -1,
+    "n_tree_search": 1,
+    "normalize": false,
+    "opt_interval": 100,
+    "reg_depth": 1.0,
+    "sl2": null,
+    "test_interval": 100,
+    "verbose": 0
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 11.427102088928223,
+  "inference_time_sec": 3.5668721199035645,
+  "inference_time_per_sample_ms": 0.26388045571528923,
+  "accuracy": 0.9441444107420286,
+  "precision_macro": 0.9186750680552362,
+  "recall_macro": 0.8576032963162823,
+  "f1_macro": 0.8844957427297693,
+  "precision_weighted": 0.9447098653735566,
+  "recall_weighted": 0.9441444107420286,
+  "f1_weighted": 0.942845515553827,
+  "confusion_matrix": [
+    [
+      8202,
+      0,
+      0,
+      0,
+      0,
+      0,
+      6,
+      0
+    ],
+    [
+      8,
+      68,
+      0,
+      0,
+      14,
+      7,
+      14,
+      1
+    ],
+    [
+      61,
+      1,
+      904,
+      43,
+      7,
+      35,
+      8,
+      0
+    ],
+    [
+      29,
+      5,
+      6,
+      1005,
+      12,
+      17,
+      6,
+      0
+    ],
+    [
+      15,
+      8,
+      4,
+      0,
+      379,
+      25,
+      15,
+      1
+    ],
+    [
+      28,
+      0,
+      1,
+      6,
+      1,
+      404,
+      33,
+      0
+    ],
+    [
+      297,
+      0,
+      0,
+      0,
+      11,
+      19,
+      1644,
+      0
+    ],
+    [
+      11,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      156
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9480984857241938,
+      "recall": 0.9992690058479532,
+      "f1": 0.973011447891334,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.8292682926829268,
+      "recall": 0.6071428571428571,
+      "f1": 0.7010309278350515,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9879781420765027,
+      "recall": 0.8536355051935789,
+      "f1": 0.9159067882472138,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9535104364326376,
+      "recall": 0.9305555555555556,
+      "f1": 0.9418931583880038,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.8938679245283019,
+      "recall": 0.8478747203579419,
+      "f1": 0.870264064293915,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.796844181459566,
+      "recall": 0.854122621564482,
+      "f1": 0.8244897959183674,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9524913093858632,
+      "recall": 0.8340943683409436,
+      "f1": 0.8893697592642683,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9873417721518988,
+      "recall": 0.9341317365269461,
+      "f1": 0.96,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.95      1.00      0.97      8208\n  bruteforce       0.83      0.61      0.70       112\n        ddos       0.99      0.85      0.92      1059\n         dos       0.95      0.93      0.94      1080\n     malware       0.89      0.85      0.87       447\n        mitm       0.80      0.85      0.82       473\n       recon       0.95      0.83      0.89      1971\n         web       0.99      0.93      0.96       167\n\n    accuracy                           0.94     13517\n   macro avg       0.92      0.86      0.88     13517\nweighted avg       0.94      0.94      0.94     13517\n",
+  "model_size": "8 base estimators",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

@@ -1,0 +1,182 @@
+{
+  "status": "ok",
+  "name": "AdaBoost",
+  "key": "adaboost",
+  "category": "ml",
+  "family": "boosting",
+  "description": "Sequentially reweights misclassified samples across shallow trees -- the original boosting algorithm.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "estimator": null,
+    "learning_rate": 1.0,
+    "n_estimators": 200,
+    "random_state": 42
+  },
+  "subsample_cap": null,
+  "train_time_sec": 7.700922012329102,
+  "inference_time_sec": 0.10612893104553223,
+  "inference_time_per_sample_ms": 0.00785151520644612,
+  "accuracy": 0.8814085965820818,
+  "precision_macro": 0.768801397582624,
+  "recall_macro": 0.6918023252409928,
+  "f1_macro": 0.7166627673740653,
+  "precision_weighted": 0.8834477246459772,
+  "recall_weighted": 0.8814085965820818,
+  "f1_weighted": 0.8772734043503694,
+  "confusion_matrix": [
+    [
+      8189,
+      1,
+      0,
+      0,
+      6,
+      0,
+      10,
+      2
+    ],
+    [
+      10,
+      64,
+      0,
+      0,
+      22,
+      7,
+      9,
+      0
+    ],
+    [
+      57,
+      9,
+      847,
+      64,
+      17,
+      15,
+      49,
+      1
+    ],
+    [
+      25,
+      4,
+      346,
+      660,
+      14,
+      12,
+      18,
+      1
+    ],
+    [
+      16,
+      43,
+      2,
+      0,
+      311,
+      24,
+      51,
+      0
+    ],
+    [
+      50,
+      0,
+      102,
+      50,
+      10,
+      203,
+      58,
+      0
+    ],
+    [
+      292,
+      3,
+      70,
+      1,
+      51,
+      23,
+      1531,
+      0
+    ],
+    [
+      39,
+      19,
+      0,
+      0,
+      0,
+      0,
+      0,
+      109
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9436506107398018,
+      "recall": 0.9976851851851852,
+      "f1": 0.9699159066682459,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.44755244755244755,
+      "recall": 0.5714285714285714,
+      "f1": 0.5019607843137255,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.6196049743964887,
+      "recall": 0.7998111425873465,
+      "f1": 0.6982687551525144,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.8516129032258064,
+      "recall": 0.6111111111111112,
+      "f1": 0.7115902964959568,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.7215777262180975,
+      "recall": 0.6957494407158836,
+      "f1": 0.7084282460136674,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.7147887323943662,
+      "recall": 0.42917547568710357,
+      "f1": 0.5363276089828269,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.8870220162224797,
+      "recall": 0.7767630644342973,
+      "f1": 0.8282391127941574,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.9646017699115044,
+      "recall": 0.6526946107784432,
+      "f1": 0.7785714285714286,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.94      1.00      0.97      8208\n  bruteforce       0.45      0.57      0.50       112\n        ddos       0.62      0.80      0.70      1059\n         dos       0.85      0.61      0.71      1080\n     malware       0.72      0.70      0.71       447\n        mitm       0.71      0.43      0.54       473\n       recon       0.89      0.78      0.83      1971\n         web       0.96      0.65      0.78       167\n\n    accuracy                           0.88     13517\n   macro avg       0.77      0.69      0.72     13517\nweighted avg       0.88      0.88      0.88     13517\n",
+  "model_size": "200 base estimators",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

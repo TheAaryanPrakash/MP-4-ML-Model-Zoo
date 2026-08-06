@@ -1,0 +1,162 @@
+{
+  "status": "ok",
+  "name": "Explainable Boosting Machine",
+  "key": "ebm",
+  "category": "ml",
+  "family": "interpretable",
+  "description": "Microsoft InterpretML's glass-box GAM-style booster -- near-blackbox accuracy with fully inspectable per-feature shape functions.",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "callback": null,
+    "cat_smooth": 10.0,
+    "cyclic_progress": false,
+    "early_stopping_rounds": 100,
+    "early_stopping_tolerance": 1e-05,
+    "exclude": null,
+    "feature_names": null,
+    "feature_types": null,
+    "gain_scale": 5.0,
+    "greedy_ratio": 10.0,
+    "inner_bags": 0,
+    "interaction_smoothing_rounds": 75,
+    "interactions": 0,
+    "learning_rate": 0.015,
+    "max_bins": 1024,
+    "max_delta_step": 0.0,
+    "max_interaction_bins": 64,
+    "max_leaves": 2,
+    "max_rounds": 50000,
+    "min_cat_samples": 10,
+    "min_hessian": 0.0001,
+    "min_samples_leaf": 4,
+    "missing": "separate",
+    "monotone_constraints": null,
+    "n_jobs": -1,
+    "objective": "log_loss",
+    "outer_bags": 14,
+    "random_state": 42,
+    "reg_alpha": 0.0,
+    "reg_lambda": 0.0,
+    "smoothing_rounds": 75,
+    "validation_size": 0.15
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 175.7050678730011,
+  "inference_time_sec": 0.03297615051269531,
+  "inference_time_per_sample_ms": 0.0003321195539600696,
+  "accuracy": 0.9337899083492799,
+  "precision_macro": 0.9138667997097043,
+  "recall_macro": 0.7879149527858239,
+  "f1_macro": 0.8284344512827193,
+  "precision_weighted": 0.9350058851752693,
+  "recall_weighted": 0.9337899083492799,
+  "f1_weighted": 0.9319655255851391,
+  "confusion_matrix": [
+    [
+      3560,
+      541,
+      0,
+      44,
+      206,
+      0
+    ],
+    [
+      215,
+      35578,
+      0,
+      3281,
+      3,
+      0
+    ],
+    [
+      2,
+      21,
+      89,
+      72,
+      0,
+      0
+    ],
+    [
+      0,
+      642,
+      0,
+      48997,
+      0,
+      0
+    ],
+    [
+      1167,
+      346,
+      2,
+      32,
+      1731,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7200647249190939,
+      "recall": 0.8182027120202252,
+      "f1": 0.766003227541689,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9582525317819436,
+      "recall": 0.9104588376794533,
+      "f1": 0.9337445049537432,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.978021978021978,
+      "recall": 0.483695652173913,
+      "f1": 0.6472727272727272,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9345935222980963,
+      "recall": 0.9870666210036463,
+      "f1": 0.9601136530642238,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.8922680412371135,
+      "recall": 0.528065893837706,
+      "f1": 0.6634725948639325,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.72      0.82      0.77      4351\n         dos       0.96      0.91      0.93     39077\n       flood       0.98      0.48      0.65       184\n  legitimate       0.93      0.99      0.96     49639\n   malformed       0.89      0.53      0.66      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.93     99290\n   macro avg       0.91      0.79      0.83     99290\nweighted avg       0.94      0.93      0.93     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 40000,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

@@ -1,0 +1,151 @@
+{
+  "status": "ok",
+  "name": "SGD (Modified Huber)",
+  "key": "sgd_modified_huber",
+  "category": "ml",
+  "family": "linear",
+  "description": "Linear classifier with a loss that's robust to outliers while still yielding probability estimates.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "alpha": 0.0001,
+    "average": false,
+    "class_weight": "balanced",
+    "early_stopping": false,
+    "epsilon": 0.1,
+    "eta0": 0.01,
+    "fit_intercept": true,
+    "l1_ratio": 0.15,
+    "learning_rate": "optimal",
+    "loss": "modified_huber",
+    "max_iter": 1000,
+    "n_iter_no_change": 5,
+    "n_jobs": null,
+    "penalty": "l2",
+    "power_t": 0.5,
+    "random_state": 42,
+    "shuffle": true,
+    "tol": 0.001,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 3.0539352893829346,
+  "inference_time_sec": 0.00867915153503418,
+  "inference_time_per_sample_ms": 8.741214155538503e-05,
+  "accuracy": 0.6303756672373855,
+  "precision_macro": 0.7761577990238927,
+  "recall_macro": 0.5690363943107367,
+  "f1_macro": 0.49665746958230433,
+  "precision_weighted": 0.9687583140880687,
+  "recall_weighted": 0.6303756672373855,
+  "f1_weighted": 0.7517953117582257,
+  "confusion_matrix": [
+    [
+      836,
+      0,
+      3448,
+      61,
+      6,
+      0
+    ],
+    [
+      0,
+      27866,
+      11198,
+      13,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      180,
+      2,
+      2,
+      0
+    ],
+    [
+      0,
+      0,
+      18471,
+      31168,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2194,
+      771,
+      300,
+      13
+    ],
+    [
+      0,
+      0,
+      0,
+      398,
+      123,
+      2240
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 1.0,
+      "recall": 0.19213973799126638,
+      "f1": 0.32234432234432236,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 1.0,
+      "recall": 0.7131048954628042,
+      "f1": 0.8325291666044247,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.005071708320419261,
+      "recall": 0.9782608695652174,
+      "f1": 0.010091100210231255,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.961589485700182,
+      "recall": 0.6278933902778058,
+      "f1": 0.7597133525081655,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6960556844547564,
+      "recall": 0.09151921903599756,
+      "f1": 0.1617686708007549,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 0.9942299156679982,
+      "recall": 0.8113002535313292,
+      "f1": 0.8934982050259274,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       1.00      0.19      0.32      4351\n         dos       1.00      0.71      0.83     39077\n       flood       0.01      0.98      0.01       184\n  legitimate       0.96      0.63      0.76     49639\n   malformed       0.70      0.09      0.16      3278\n     slowite       0.99      0.81      0.89      2761\n\n    accuracy                           0.63     99290\n   macro avg       0.78      0.57      0.50     99290\nweighted avg       0.97      0.63      0.75     99290\n",
+  "model_size": "198 weights",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

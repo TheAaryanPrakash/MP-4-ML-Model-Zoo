@@ -1,0 +1,193 @@
+{
+  "status": "ok",
+  "name": "RBF Sampler + Ridge",
+  "key": "rbf_sampler_ridge",
+  "category": "ml",
+  "family": "kernel",
+  "description": "Random Fourier Features approximation of an RBF kernel feeding a closed-form ridge classifier.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "memory": null,
+    "transform_input": null,
+    "verbose": false,
+    "rbfsampler__gamma": 1.0,
+    "rbfsampler__n_components": 200,
+    "rbfsampler__random_state": 42,
+    "ridgeclassifier__alpha": 1.0,
+    "ridgeclassifier__class_weight": "balanced",
+    "ridgeclassifier__copy_X": true,
+    "ridgeclassifier__fit_intercept": true,
+    "ridgeclassifier__max_iter": null,
+    "ridgeclassifier__positive": false,
+    "ridgeclassifier__random_state": 42,
+    "ridgeclassifier__solver": "auto",
+    "ridgeclassifier__tol": 0.0001
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.07085108757019043,
+  "inference_time_sec": 0.019379854202270508,
+  "inference_time_per_sample_ms": 0.001433739306227011,
+  "accuracy": 0.30339572390323294,
+  "precision_macro": 0.23161716881363428,
+  "recall_macro": 0.39996143413450147,
+  "f1_macro": 0.21106064831225696,
+  "precision_weighted": 0.5847414024365795,
+  "recall_weighted": 0.30339572390323294,
+  "f1_weighted": 0.36225846849623383,
+  "confusion_matrix": [
+    [
+      2548,
+      1130,
+      400,
+      507,
+      1116,
+      781,
+      991,
+      735
+    ],
+    [
+      7,
+      72,
+      2,
+      1,
+      8,
+      12,
+      3,
+      7
+    ],
+    [
+      119,
+      145,
+      146,
+      97,
+      176,
+      115,
+      133,
+      128
+    ],
+    [
+      113,
+      127,
+      101,
+      165,
+      158,
+      139,
+      166,
+      111
+    ],
+    [
+      27,
+      73,
+      25,
+      25,
+      185,
+      32,
+      35,
+      45
+    ],
+    [
+      52,
+      68,
+      29,
+      29,
+      55,
+      154,
+      46,
+      40
+    ],
+    [
+      225,
+      263,
+      123,
+      147,
+      193,
+      164,
+      686,
+      170
+    ],
+    [
+      2,
+      8,
+      2,
+      2,
+      1,
+      2,
+      5,
+      145
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.8237956676365987,
+      "recall": 0.3104288499025341,
+      "f1": 0.45093354570392,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.03817603393425239,
+      "recall": 0.6428571428571429,
+      "f1": 0.07207207207207207,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.17632850241545894,
+      "recall": 0.13786591123701605,
+      "f1": 0.15474297827239003,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.1695786228160329,
+      "recall": 0.1527777777777778,
+      "f1": 0.16074037993180712,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.09778012684989429,
+      "recall": 0.41387024608501116,
+      "f1": 0.15818725951261223,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.11007862759113653,
+      "recall": 0.32558139534883723,
+      "f1": 0.16452991452991453,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.33220338983050846,
+      "recall": 0.3480466768138001,
+      "f1": 0.3399405351833499,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.10499637943519188,
+      "recall": 0.8682634730538922,
+      "f1": 0.18733850129198967,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.82      0.31      0.45      8208\n  bruteforce       0.04      0.64      0.07       112\n        ddos       0.18      0.14      0.15      1059\n         dos       0.17      0.15      0.16      1080\n     malware       0.10      0.41      0.16       447\n        mitm       0.11      0.33      0.16       473\n       recon       0.33      0.35      0.34      1971\n         web       0.10      0.87      0.19       167\n\n    accuracy                           0.30     13517\n   macro avg       0.23      0.40      0.21     13517\nweighted avg       0.58      0.30      0.36     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

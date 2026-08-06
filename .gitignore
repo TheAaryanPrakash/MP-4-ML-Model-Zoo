@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# no dataset files live in this repo -- v3 reads directly from the sibling
+# v1 and v2-datasense repos' data/ directories (see scripts/preprocess_*.py)

@@ -1,0 +1,149 @@
+{
+  "status": "ok",
+  "name": "Extra Trees",
+  "key": "extra_trees",
+  "category": "ml",
+  "family": "ensemble_bagging",
+  "description": "200 extremely-randomized trees bagged together -- usually faster to train than Random Forest, similar accuracy.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "bootstrap": false,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 2.1308159828186035,
+  "inference_time_sec": 0.227125883102417,
+  "inference_time_per_sample_ms": 0.002287500081603555,
+  "accuracy": 0.8855977439822742,
+  "precision_macro": 0.7193930542951441,
+  "recall_macro": 0.8414669476116424,
+  "f1_macro": 0.7159233524214118,
+  "precision_weighted": 0.9403760537464771,
+  "recall_weighted": 0.8855977439822742,
+  "f1_weighted": 0.9110322405952352,
+  "confusion_matrix": [
+    [
+      3323,
+      245,
+      15,
+      12,
+      756,
+      0
+    ],
+    [
+      382,
+      34490,
+      1496,
+      2338,
+      371,
+      0
+    ],
+    [
+      2,
+      1,
+      155,
+      26,
+      0,
+      0
+    ],
+    [
+      1,
+      390,
+      4159,
+      45064,
+      25,
+      0
+    ],
+    [
+      959,
+      130,
+      46,
+      5,
+      2138,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7120205699592886,
+      "recall": 0.7637324752930361,
+      "f1": 0.7369705034375693,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9782732017245291,
+      "recall": 0.8826163728024158,
+      "f1": 0.9279862241534715,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.026400953840912962,
+      "recall": 0.842391304347826,
+      "f1": 0.05119735755573906,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9498155759300242,
+      "recall": 0.9078345655633675,
+      "f1": 0.9283507066045898,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6498480243161094,
+      "recall": 0.6522269676632093,
+      "f1": 0.6510353227771011,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.71      0.76      0.74      4351\n         dos       0.98      0.88      0.93     39077\n       flood       0.03      0.84      0.05       184\n  legitimate       0.95      0.91      0.93     49639\n   malformed       0.65      0.65      0.65      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.89     99290\n   macro avg       0.72      0.84      0.72     99290\nweighted avg       0.94      0.89      0.91     99290\n",
+  "model_size": "200 base estimators",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

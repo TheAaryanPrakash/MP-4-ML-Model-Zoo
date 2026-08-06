@@ -1,0 +1,199 @@
+{
+  "status": "ok",
+  "name": "Balanced Random Forest",
+  "key": "balanced_random_forest",
+  "category": "ml",
+  "family": "imbalanced",
+  "description": "Random Forest where every tree's bootstrap sample is rebalanced across classes -- built for exactly this kind of rare-attack-class skew.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "bootstrap": false,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "replacement": true,
+    "sampling_strategy": "all",
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.43537211418151855,
+  "inference_time_sec": 0.02573394775390625,
+  "inference_time_per_sample_ms": 0.0019038209479844824,
+  "accuracy": 0.9333431974550566,
+  "precision_macro": 0.8156316715917599,
+  "recall_macro": 0.9391439076552336,
+  "f1_macro": 0.8554017144736479,
+  "precision_weighted": 0.9448706031208755,
+  "recall_weighted": 0.9333431974550566,
+  "f1_weighted": 0.9368779125536358,
+  "confusion_matrix": [
+    [
+      7761,
+      88,
+      1,
+      0,
+      8,
+      7,
+      163,
+      180
+    ],
+    [
+      3,
+      105,
+      0,
+      0,
+      0,
+      0,
+      0,
+      4
+    ],
+    [
+      35,
+      3,
+      953,
+      27,
+      6,
+      26,
+      5,
+      4
+    ],
+    [
+      9,
+      3,
+      24,
+      1027,
+      2,
+      12,
+      1,
+      2
+    ],
+    [
+      9,
+      3,
+      1,
+      0,
+      426,
+      7,
+      0,
+      1
+    ],
+    [
+      9,
+      1,
+      0,
+      1,
+      1,
+      456,
+      4,
+      1
+    ],
+    [
+      176,
+      11,
+      0,
+      0,
+      21,
+      36,
+      1723,
+      4
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      165
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9698825293676581,
+      "recall": 0.9455409356725146,
+      "f1": 0.9575570635410241,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.4861111111111111,
+      "recall": 0.9375,
+      "f1": 0.6402439024390244,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9734422880490297,
+      "recall": 0.8999055712936733,
+      "f1": 0.9352306182531894,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9734597156398104,
+      "recall": 0.950925925925926,
+      "f1": 0.9620608899297424,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.9181034482758621,
+      "recall": 0.9530201342281879,
+      "f1": 0.9352360043907794,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.8382352941176471,
+      "recall": 0.9640591966173362,
+      "f1": 0.8967551622418879,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9087552742616034,
+      "recall": 0.8741755454084221,
+      "f1": 0.891130074993535,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.45706371191135736,
+      "recall": 0.9880239520958084,
+      "f1": 0.625,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.97      0.95      0.96      8208\n  bruteforce       0.49      0.94      0.64       112\n        ddos       0.97      0.90      0.94      1059\n         dos       0.97      0.95      0.96      1080\n     malware       0.92      0.95      0.94       447\n        mitm       0.84      0.96      0.90       473\n       recon       0.91      0.87      0.89      1971\n         web       0.46      0.99      0.62       167\n\n    accuracy                           0.93     13517\n   macro avg       0.82      0.94      0.86     13517\nweighted avg       0.94      0.93      0.94     13517\n",
+  "model_size": "200 base estimators",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

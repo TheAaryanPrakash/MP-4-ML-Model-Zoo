@@ -1,0 +1,187 @@
+{
+  "status": "ok",
+  "name": "Gaussian Process Classifier",
+  "key": "gaussian_process",
+  "category": "ml",
+  "family": "probabilistic",
+  "description": "Bayesian non-parametric classifier over an RBF-kernel Gaussian Process posterior (O(n^3) -- heavily subsampled).",
+  "hyperparams": {
+    "subsample_cap": 3000,
+    "seed": 42,
+    "copy_X_train": true,
+    "kernel__length_scale": 1.0,
+    "max_iter_predict": 100,
+    "multi_class": "one_vs_rest",
+    "n_jobs": -1,
+    "n_restarts_optimizer": 0,
+    "optimizer": "fmin_l_bfgs_b",
+    "random_state": 42,
+    "warm_start": false
+  },
+  "subsample_cap": 3000,
+  "train_time_sec": 122.52522087097168,
+  "inference_time_sec": 13.664529085159302,
+  "inference_time_per_sample_ms": 1.0109143364029962,
+  "accuracy": 0.8301398239254273,
+  "precision_macro": 0.49765709159585103,
+  "recall_macro": 0.44637529329578385,
+  "f1_macro": 0.46149719192928246,
+  "precision_weighted": 0.7837525944802365,
+  "recall_weighted": 0.8301398239254273,
+  "f1_weighted": 0.7982741104380662,
+  "confusion_matrix": [
+    [
+      8165,
+      0,
+      0,
+      0,
+      4,
+      0,
+      39,
+      0
+    ],
+    [
+      63,
+      0,
+      0,
+      0,
+      7,
+      0,
+      42,
+      0
+    ],
+    [
+      140,
+      0,
+      496,
+      304,
+      2,
+      0,
+      117,
+      0
+    ],
+    [
+      136,
+      0,
+      65,
+      846,
+      8,
+      0,
+      25,
+      0
+    ],
+    [
+      82,
+      0,
+      0,
+      4,
+      263,
+      0,
+      98,
+      0
+    ],
+    [
+      402,
+      0,
+      10,
+      52,
+      0,
+      0,
+      9,
+      0
+    ],
+    [
+      519,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1451,
+      0
+    ],
+    [
+      14,
+      0,
+      0,
+      38,
+      48,
+      0,
+      67,
+      0
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.8575779855057242,
+      "recall": 0.994761208576998,
+      "f1": 0.9210897399740539,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.8686514886164624,
+      "recall": 0.4683663833805477,
+      "f1": 0.6085889570552148,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.680064308681672,
+      "recall": 0.7833333333333333,
+      "f1": 0.7280550774526678,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.7897897897897898,
+      "recall": 0.5883668903803132,
+      "f1": 0.6743589743589744,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.7851731601731602,
+      "recall": 0.7361745306950787,
+      "f1": 0.759884786593349,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.86      0.99      0.92      8208\n  bruteforce       0.00      0.00      0.00       112\n        ddos       0.87      0.47      0.61      1059\n         dos       0.68      0.78      0.73      1080\n     malware       0.79      0.59      0.67       447\n        mitm       0.00      0.00      0.00       473\n       recon       0.79      0.74      0.76      1971\n         web       0.00      0.00      0.00       167\n\n    accuracy                           0.83     13517\n   macro avg       0.50      0.45      0.46     13517\nweighted avg       0.78      0.83      0.80     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 3000,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

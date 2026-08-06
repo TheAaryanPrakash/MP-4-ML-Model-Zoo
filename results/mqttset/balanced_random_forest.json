@@ -1,0 +1,151 @@
+{
+  "status": "ok",
+  "name": "Balanced Random Forest",
+  "key": "balanced_random_forest",
+  "category": "ml",
+  "family": "imbalanced",
+  "description": "Random Forest where every tree's bootstrap sample is rebalanced across classes -- built for exactly this kind of rare-attack-class skew.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "bootstrap": false,
+    "ccp_alpha": 0.0,
+    "class_weight": null,
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": "sqrt",
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 200,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "replacement": true,
+    "sampling_strategy": "all",
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 1.426621913909912,
+  "inference_time_sec": 0.08812212944030762,
+  "inference_time_per_sample_ms": 0.000887522705612928,
+  "accuracy": 0.8878235471850136,
+  "precision_macro": 0.7217679300673819,
+  "recall_macro": 0.8502313444065653,
+  "f1_macro": 0.7215307505563864,
+  "precision_weighted": 0.9416488917153102,
+  "recall_weighted": 0.8878235471850136,
+  "f1_weighted": 0.9128304532133497,
+  "confusion_matrix": [
+    [
+      3458,
+      195,
+      24,
+      6,
+      668,
+      0
+    ],
+    [
+      367,
+      34730,
+      1416,
+      2085,
+      479,
+      0
+    ],
+    [
+      1,
+      1,
+      155,
+      26,
+      1,
+      0
+    ],
+    [
+      1,
+      660,
+      4103,
+      44845,
+      30,
+      0
+    ],
+    [
+      953,
+      79,
+      36,
+      7,
+      2203,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7234309623430962,
+      "recall": 0.7947598253275109,
+      "f1": 0.7574197787755996,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.97378382167391,
+      "recall": 0.8887580929958799,
+      "f1": 0.9293302293222017,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.027031740495291244,
+      "recall": 0.842391304347826,
+      "f1": 0.05238256167624197,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9547786838127276,
+      "recall": 0.9034227119804992,
+      "f1": 0.9283910235177211,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6515823720792665,
+      "recall": 0.6720561317876754,
+      "f1": 0.6616609100465536,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.72      0.79      0.76      4351\n         dos       0.97      0.89      0.93     39077\n       flood       0.03      0.84      0.05       184\n  legitimate       0.95      0.90      0.93     49639\n   malformed       0.65      0.67      0.66      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.89     99290\n   macro avg       0.72      0.85      0.72     99290\nweighted avg       0.94      0.89      0.91     99290\n",
+  "model_size": "200 base estimators",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

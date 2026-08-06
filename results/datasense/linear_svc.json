@@ -1,0 +1,190 @@
+{
+  "status": "ok",
+  "name": "Linear SVC (liblinear)",
+  "key": "linear_svc",
+  "category": "ml",
+  "family": "kernel",
+  "description": "Linear support vector classifier via liblinear's coordinate-descent solver -- scales far better than kernel SVC.",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "C": 1.0,
+    "class_weight": "balanced",
+    "dual": false,
+    "fit_intercept": true,
+    "intercept_scaling": 1,
+    "loss": "squared_hinge",
+    "max_iter": 3000,
+    "multi_class": "ovr",
+    "penalty": "l2",
+    "random_state": 42,
+    "tol": 0.0001,
+    "verbose": 0
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 27.192148208618164,
+  "inference_time_sec": 0.0015900135040283203,
+  "inference_time_per_sample_ms": 0.00011763065059024343,
+  "accuracy": 0.8774136272841607,
+  "precision_macro": 0.7298032561995942,
+  "recall_macro": 0.8255592405683196,
+  "f1_macro": 0.7507335870153422,
+  "precision_weighted": 0.8946961051145286,
+  "recall_weighted": 0.8774136272841607,
+  "f1_weighted": 0.881775845761368,
+  "confusion_matrix": [
+    [
+      7666,
+      87,
+      9,
+      10,
+      34,
+      127,
+      61,
+      214
+    ],
+    [
+      3,
+      91,
+      0,
+      0,
+      2,
+      10,
+      0,
+      6
+    ],
+    [
+      75,
+      7,
+      856,
+      81,
+      13,
+      19,
+      2,
+      6
+    ],
+    [
+      24,
+      1,
+      55,
+      917,
+      10,
+      60,
+      10,
+      3
+    ],
+    [
+      23,
+      22,
+      0,
+      3,
+      388,
+      10,
+      1,
+      0
+    ],
+    [
+      120,
+      30,
+      1,
+      14,
+      2,
+      303,
+      2,
+      1
+    ],
+    [
+      445,
+      5,
+      3,
+      1,
+      22,
+      6,
+      1482,
+      7
+    ],
+    [
+      1,
+      9,
+      0,
+      0,
+      0,
+      0,
+      0,
+      157
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9173148258944598,
+      "recall": 0.9339668615984406,
+      "f1": 0.9255659523090854,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.3611111111111111,
+      "recall": 0.8125,
+      "f1": 0.5,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9264069264069265,
+      "recall": 0.8083097261567517,
+      "f1": 0.8633383761976803,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.8937621832358674,
+      "recall": 0.8490740740740741,
+      "f1": 0.8708452041785375,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.8237791932059448,
+      "recall": 0.8680089485458613,
+      "f1": 0.8453159041394336,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.5663551401869159,
+      "recall": 0.6405919661733616,
+      "f1": 0.6011904761904762,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9512195121951219,
+      "recall": 0.7519025875190258,
+      "f1": 0.8398979880986115,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.39847715736040606,
+      "recall": 0.9401197604790419,
+      "f1": 0.5597147950089126,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.92      0.93      0.93      8208\n  bruteforce       0.36      0.81      0.50       112\n        ddos       0.93      0.81      0.86      1059\n         dos       0.89      0.85      0.87      1080\n     malware       0.82      0.87      0.85       447\n        mitm       0.57      0.64      0.60       473\n       recon       0.95      0.75      0.84      1971\n         web       0.40      0.94      0.56       167\n\n    accuracy                           0.88     13517\n   macro avg       0.73      0.83      0.75     13517\nweighted avg       0.89      0.88      0.88     13517\n",
+  "model_size": "872 weights",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

@@ -1,0 +1,80 @@
+# MP-4-ML-Model-Zoo
+
+A model zoo of ~50 classic machine learning classifiers — from everyday production staples to
+rare, rarely-packaged techniques pulled off GitHub/PyPI — benchmarked on the same two IoT/IIoT
+intrusion detection datasets used by the sibling projects
+[MP-2-ML-vs-DL](https://github.com/TheAaryanPrakash/MP-2-ML-vs-DL) (MQTTset) and
+[MP-3-DataSense-ML-vs-DL](https://github.com/TheAaryanPrakash/MP-3-DataSense-ML-vs-DL) (DataSense /
+CIC IIoT 2025). Where MP-2/MP-3 asked "ML vs DL, 11 models total," this project asks a narrower
+question in much more depth: **within classical ML alone, which model family actually wins, and
+what does it cost to get there?**
+
+**Live dashboard:** https://theaaryanprakash.github.io/MP-4-ML-Model-Zoo/ (auto-deployed from
+`frontend/` on every push to `main` via GitHub Actions).
+
+## What's here
+
+- **~50 ML classifiers per dataset** (see `scripts/model_zoo.py` for the full registry), spanning:
+  - Linear models & discriminant analysis (Logistic Regression, Ridge, SGD variants, Perceptron,
+    Passive-Aggressive, LDA, QDA)
+  - Naive Bayes variants (Gaussian, Bernoulli, Complement)
+  - Trees & bagging ensembles (Decision Tree, Extra Tree, Random Forest, Extra Trees, Bagging)
+  - Gradient boosting (sklearn, HistGBM, XGBoost + DART, LightGBM + GOSS, CatBoost, NGBoost,
+    Regularized Greedy Forest)
+  - Kernel methods (SVM linear/RBF/poly, LinearSVC, Nystroem/RBF-sampler kernel approximation)
+  - Instance-based & graph-based (KNN, Nearest Centroid, Label Spreading, Gaussian Process)
+  - Interpretable / glass-box (Explainable Boosting Machine, FIGS)
+  - Exotic / experimental, implemented from scratch (Extreme Learning Machine, Self-Organizing Map
+    classifier — see `scripts/custom_models.py`)
+  - Meta-ensembles (Voting, Stacking) and imbalance-aware ensembles (Balanced Random Forest,
+    RUSBoost, Easy Ensemble, Balanced Bagging — chosen specifically because these datasets have
+    severely under-represented attack classes)
+- Every model on a given dataset sees the **exact same preprocessed train/test split**, reused
+  verbatim from the sibling MP-2/MP-3 repos, so the leaderboard reflects the model, not the data.
+- Models that don't scale to the full training set (kernel SVMs, Gaussian Process, Label
+  Spreading, a few ensembles that internally resample) are trained on a fixed-seed subsample —
+  the cap is recorded per model in the results.
+- A hard 15-minute-per-model timeout, enforced via a subprocess (not a Python signal, since
+  blocking C-extension calls like libsvm's fit can't be interrupted mid-call), so one slow or
+  hung model can't stall the whole ~100-run batch.
+- A static, dependency-free HTML/CSS/JS dashboard with a dataset switcher, family-grouped
+  coloring, a speed-vs-quality trade-off view, per-class heatmaps, a confusion-matrix explorer, a
+  sortable full results table, and an honest "failed runs" tab for anything that didn't survive
+  training.
+
+## Datasets
+
+Both datasets are read directly from the sibling repos rather than duplicated here — see
+`scripts/preprocess_mqttset.py` and `scripts/preprocess_datasense.py`, which point at
+`../v1/data` and `../v2-datasense/data` respectively. Clone those two repos as siblings of this
+one (or point `DATA_DIR` in each preprocess script wherever you keep the CSVs) and follow their
+READMEs to fetch the raw data before running training here.
+
+- **MQTTset** (Vaccari et al., 2020) — per-packet MQTT/TCP header features, 6 classes.
+- **DataSense / CIC IIoT 2025** (Firouzi et al., 2025) — per-device 5-second-window aggregated
+  sensor + network telemetry, 8 classes.
+
+## Reproducing
+
+```bash
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+
+cd scripts
+python3 train_zoo.py --dataset mqttset
+python3 train_zoo.py --dataset datasense
+python3 build_frontend_data.py
+```
+
+`train_zoo.py --only key1,key2` runs a subset of the registry by key (see `model_zoo.py` for the
+full list of keys) — useful for iterating on one model without re-running all ~50.
+
+## Notes on what didn't make it in
+
+- **Deep Forest / gcForest** (the `DF21` package) has no compatible wheel for this environment and
+  was dropped before training started.
+- **Standalone RuleFit** doesn't support multiclass classification (neither the standalone
+  `rulefit` package nor imodels' version), so it was dropped from the registry rather than forced
+  into a one-vs-rest wrapper.
+- Any model that failed *during* training (rather than at registry-build time) is reported in the
+  dashboard's Failed Runs tab, not silently dropped.

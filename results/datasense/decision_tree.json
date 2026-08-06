@@ -1,0 +1,191 @@
+{
+  "status": "ok",
+  "name": "Decision Tree",
+  "key": "decision_tree",
+  "category": "ml",
+  "family": "tree",
+  "description": "A single greedy-split tree -- the interpretable building block every ensemble below is made of.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": 42,
+    "splitter": "best"
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.37966108322143555,
+  "inference_time_sec": 0.0022428035736083984,
+  "inference_time_per_sample_ms": 0.00016592465588580296,
+  "accuracy": 0.9372641858400532,
+  "precision_macro": 0.8402067504679473,
+  "recall_macro": 0.9266119912730644,
+  "f1_macro": 0.8717758382517738,
+  "precision_weighted": 0.9432402265419527,
+  "recall_weighted": 0.9372641858400532,
+  "f1_weighted": 0.93916927748634,
+  "confusion_matrix": [
+    [
+      7799,
+      63,
+      30,
+      5,
+      6,
+      6,
+      170,
+      129
+    ],
+    [
+      2,
+      99,
+      0,
+      0,
+      3,
+      1,
+      2,
+      5
+    ],
+    [
+      33,
+      5,
+      975,
+      15,
+      6,
+      13,
+      11,
+      1
+    ],
+    [
+      7,
+      0,
+      27,
+      1031,
+      3,
+      4,
+      6,
+      2
+    ],
+    [
+      7,
+      1,
+      4,
+      3,
+      419,
+      6,
+      7,
+      0
+    ],
+    [
+      10,
+      0,
+      8,
+      3,
+      4,
+      435,
+      12,
+      1
+    ],
+    [
+      186,
+      3,
+      10,
+      1,
+      7,
+      10,
+      1751,
+      3
+    ],
+    [
+      6,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      160
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9688198757763975,
+      "recall": 0.9501705653021443,
+      "f1": 0.959404600811908,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.5789473684210527,
+      "recall": 0.8839285714285714,
+      "f1": 0.6996466431095406,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9250474383301708,
+      "recall": 0.9206798866855525,
+      "f1": 0.922858495030762,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9744801512287334,
+      "recall": 0.9546296296296296,
+      "f1": 0.9644527595884004,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.933184855233853,
+      "recall": 0.9373601789709173,
+      "f1": 0.9352678571428571,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.9157894736842105,
+      "recall": 0.919661733615222,
+      "f1": 0.9177215189873418,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.8938233792751403,
+      "recall": 0.8883815322171487,
+      "f1": 0.8910941475826972,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.53156146179402,
+      "recall": 0.9580838323353293,
+      "f1": 0.6837606837606838,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.97      0.95      0.96      8208\n  bruteforce       0.58      0.88      0.70       112\n        ddos       0.93      0.92      0.92      1059\n         dos       0.97      0.95      0.96      1080\n     malware       0.93      0.94      0.94       447\n        mitm       0.92      0.92      0.92       473\n       recon       0.89      0.89      0.89      1971\n         web       0.53      0.96      0.68       167\n\n    accuracy                           0.94     13517\n   macro avg       0.84      0.93      0.87     13517\nweighted avg       0.94      0.94      0.94     13517\n",
+  "model_size": "2985 nodes",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

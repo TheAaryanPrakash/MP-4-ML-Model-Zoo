@@ -1,0 +1,151 @@
+{
+  "status": "ok",
+  "name": "SGD (Hinge / Linear SVM)",
+  "key": "sgd_hinge",
+  "category": "ml",
+  "family": "linear",
+  "description": "Linear support vector machine trained via online stochastic gradient descent.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "alpha": 0.0001,
+    "average": false,
+    "class_weight": "balanced",
+    "early_stopping": false,
+    "epsilon": 0.1,
+    "eta0": 0.01,
+    "fit_intercept": true,
+    "l1_ratio": 0.15,
+    "learning_rate": "optimal",
+    "loss": "hinge",
+    "max_iter": 1000,
+    "n_iter_no_change": 5,
+    "n_jobs": null,
+    "penalty": "l2",
+    "power_t": 0.5,
+    "random_state": 42,
+    "shuffle": true,
+    "tol": 0.001,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 2.0649960041046143,
+  "inference_time_sec": 0.008549928665161133,
+  "inference_time_per_sample_ms": 8.611067242583475e-05,
+  "accuracy": 0.6380400846006647,
+  "precision_macro": 0.7702153480650901,
+  "recall_macro": 0.6085836394496072,
+  "f1_macro": 0.5421120367162845,
+  "precision_weighted": 0.967060468160221,
+  "recall_weighted": 0.6380400846006647,
+  "f1_weighted": 0.7606255900642996,
+  "confusion_matrix": [
+    [
+      836,
+      0,
+      3023,
+      71,
+      421,
+      0
+    ],
+    [
+      0,
+      27866,
+      11198,
+      13,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      181,
+      3,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      18471,
+      31168,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1409,
+      797,
+      1060,
+      12
+    ],
+    [
+      0,
+      0,
+      0,
+      398,
+      123,
+      2240
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 1.0,
+      "recall": 0.19213973799126638,
+      "f1": 0.32234432234432236,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 1.0,
+      "recall": 0.7131048954628042,
+      "f1": 0.8325291666044247,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.005279738638352488,
+      "recall": 0.9836956521739131,
+      "f1": 0.010503104508791272,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9604930662557781,
+      "recall": 0.6278933902778058,
+      "f1": 0.7593709266771431,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6608478802992519,
+      "recall": 0.3233679072605247,
+      "f1": 0.4342482589102827,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 0.9946714031971581,
+      "recall": 0.8113002535313292,
+      "f1": 0.8936764412527428,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       1.00      0.19      0.32      4351\n         dos       1.00      0.71      0.83     39077\n       flood       0.01      0.98      0.01       184\n  legitimate       0.96      0.63      0.76     49639\n   malformed       0.66      0.32      0.43      3278\n     slowite       0.99      0.81      0.89      2761\n\n    accuracy                           0.64     99290\n   macro avg       0.77      0.61      0.54     99290\nweighted avg       0.97      0.64      0.76     99290\n",
+  "model_size": "198 weights",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

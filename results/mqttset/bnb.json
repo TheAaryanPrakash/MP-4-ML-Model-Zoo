@@ -1,0 +1,135 @@
+{
+  "status": "ok",
+  "name": "Bernoulli Naive Bayes",
+  "key": "bnb",
+  "category": "ml",
+  "family": "naive_bayes",
+  "description": "Naive Bayes over binarized (thresholded) features -- tests whether feature presence/absence alone is informative.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "alpha": 1.0,
+    "binarize": 0.0,
+    "class_prior": null,
+    "fit_prior": true,
+    "force_alpha": true
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.06011509895324707,
+  "inference_time_sec": 0.019823789596557617,
+  "inference_time_per_sample_ms": 0.00019965544965814904,
+  "accuracy": 0.793584449592104,
+  "precision_macro": 0.9104772978042993,
+  "recall_macro": 0.3700522206436801,
+  "f1_macro": 0.4197081858672591,
+  "precision_weighted": 0.8434591661319184,
+  "recall_weighted": 0.793584449592104,
+  "f1_weighted": 0.764194305699296,
+  "confusion_matrix": [
+    [
+      836,
+      54,
+      0,
+      3461,
+      0,
+      0
+    ],
+    [
+      0,
+      27866,
+      0,
+      11211,
+      0,
+      0
+    ],
+    [
+      0,
+      59,
+      30,
+      95,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      49639,
+      0,
+      0
+    ],
+    [
+      224,
+      55,
+      0,
+      2959,
+      27,
+      13
+    ],
+    [
+      0,
+      0,
+      0,
+      2364,
+      0,
+      397
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7886792452830189,
+      "recall": 0.19213973799126638,
+      "f1": 0.309000184808723,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9940072768780767,
+      "recall": 0.7131048954628042,
+      "f1": 0.8304450835183502,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 1.0,
+      "recall": 0.16304347826086957,
+      "f1": 0.2803738317757009,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.711884581737871,
+      "recall": 1.0,
+      "f1": 0.8316969372026004,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 1.0,
+      "recall": 0.00823672971323978,
+      "f1": 0.016338880484114977,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 0.9682926829268292,
+      "recall": 0.14378848243390077,
+      "f1": 0.250394197414065,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.79      0.19      0.31      4351\n         dos       0.99      0.71      0.83     39077\n       flood       1.00      0.16      0.28       184\n  legitimate       0.71      1.00      0.83     49639\n   malformed       1.00      0.01      0.02      3278\n     slowite       0.97      0.14      0.25      2761\n\n    accuracy                           0.79     99290\n   macro avg       0.91      0.37      0.42     99290\nweighted avg       0.84      0.79      0.76     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

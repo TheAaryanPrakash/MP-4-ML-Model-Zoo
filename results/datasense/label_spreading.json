@@ -1,0 +1,185 @@
+{
+  "status": "ok",
+  "name": "Label Spreading",
+  "key": "label_spreading",
+  "category": "ml",
+  "family": "graph",
+  "description": "Graph-based transductive classifier that propagates labels through a similarity graph over the data.",
+  "hyperparams": {
+    "subsample_cap": 5000,
+    "seed": 42,
+    "alpha": 0.2,
+    "gamma": 20,
+    "kernel": "knn",
+    "max_iter": 30,
+    "n_jobs": null,
+    "n_neighbors": 7,
+    "tol": 0.001
+  },
+  "subsample_cap": 5000,
+  "train_time_sec": 0.05990123748779297,
+  "inference_time_sec": 0.0704648494720459,
+  "inference_time_per_sample_ms": 0.005213053893026996,
+  "accuracy": 0.8438262928164534,
+  "precision_macro": 0.7505215756868917,
+  "recall_macro": 0.6384631150484653,
+  "f1_macro": 0.6818483850198569,
+  "precision_weighted": 0.8328473249007076,
+  "recall_weighted": 0.8438262928164534,
+  "f1_weighted": 0.8318234692795634,
+  "confusion_matrix": [
+    [
+      8106,
+      4,
+      3,
+      0,
+      3,
+      17,
+      72,
+      3
+    ],
+    [
+      23,
+      44,
+      0,
+      0,
+      7,
+      16,
+      21,
+      1
+    ],
+    [
+      122,
+      4,
+      507,
+      270,
+      22,
+      21,
+      110,
+      3
+    ],
+    [
+      106,
+      2,
+      148,
+      688,
+      15,
+      30,
+      83,
+      8
+    ],
+    [
+      63,
+      27,
+      5,
+      4,
+      294,
+      3,
+      46,
+      5
+    ],
+    [
+      263,
+      0,
+      15,
+      17,
+      0,
+      160,
+      18,
+      0
+    ],
+    [
+      492,
+      4,
+      0,
+      1,
+      4,
+      6,
+      1461,
+      3
+    ],
+    [
+      21,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      146
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.8814702044367116,
+      "recall": 0.9875730994152047,
+      "f1": 0.9315099977016777,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.5176470588235295,
+      "recall": 0.39285714285714285,
+      "f1": 0.4467005076142132,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.7477876106194691,
+      "recall": 0.47875354107648727,
+      "f1": 0.5837651122625216,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.7020408163265306,
+      "recall": 0.6370370370370371,
+      "f1": 0.6679611650485436,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.8521739130434782,
+      "recall": 0.6577181208053692,
+      "f1": 0.7424242424242424,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.6324110671936759,
+      "recall": 0.3382663847780127,
+      "f1": 0.44077134986225897,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.8067366096079515,
+      "recall": 0.741248097412481,
+      "f1": 0.772607086197779,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.863905325443787,
+      "recall": 0.874251497005988,
+      "f1": 0.8690476190476191,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.88      0.99      0.93      8208\n  bruteforce       0.52      0.39      0.45       112\n        ddos       0.75      0.48      0.58      1059\n         dos       0.70      0.64      0.67      1080\n     malware       0.85      0.66      0.74       447\n        mitm       0.63      0.34      0.44       473\n       recon       0.81      0.74      0.77      1971\n         web       0.86      0.87      0.87       167\n\n    accuracy                           0.84     13517\n   macro avg       0.75      0.64      0.68     13517\nweighted avg       0.83      0.84      0.83     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 5000,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

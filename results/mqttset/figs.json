@@ -1,0 +1,139 @@
+{
+  "status": "ok",
+  "name": "FIGS (Fast Interpretable Greedy-Sums)",
+  "key": "figs",
+  "category": "ml",
+  "family": "interpretable",
+  "description": "Sums a handful of small, jointly-fit trees into one interpretable additive model instead of one deep tree.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "class_weight": null,
+    "max_depth": null,
+    "max_features": null,
+    "max_rules": 30,
+    "max_trees": null,
+    "min_impurity_decrease": 0.0,
+    "n_jobs": null,
+    "random_state": null,
+    "verbose": 0
+  },
+  "subsample_cap": null,
+  "train_time_sec": 5.9786529541015625,
+  "inference_time_sec": 0.05010199546813965,
+  "inference_time_per_sample_ms": 0.000504602633378383,
+  "accuracy": 0.9322892537012791,
+  "precision_macro": 0.9094830193541119,
+  "recall_macro": 0.7830174632707626,
+  "f1_macro": 0.8172317464000551,
+  "precision_weighted": 0.9361633389658962,
+  "recall_weighted": 0.9322892537012791,
+  "f1_weighted": 0.9301369250242985,
+  "confusion_matrix": [
+    [
+      3779,
+      502,
+      0,
+      10,
+      60,
+      0
+    ],
+    [
+      311,
+      35726,
+      0,
+      3040,
+      0,
+      0
+    ],
+    [
+      2,
+      21,
+      89,
+      72,
+      0,
+      0
+    ],
+    [
+      51,
+      851,
+      0,
+      48737,
+      0,
+      0
+    ],
+    [
+      1442,
+      307,
+      7,
+      44,
+      1478,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      3,
+      2758
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.6766338406445838,
+      "recall": 0.8685359687428177,
+      "f1": 0.7606682769726248,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9550618868126286,
+      "recall": 0.9142462317987563,
+      "f1": 0.9342084619005282,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.9270833333333334,
+      "recall": 0.483695652173913,
+      "f1": 0.6357142857142857,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9390015991368514,
+      "recall": 0.9818288039646246,
+      "f1": 0.9599377597447362,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.9591174561972745,
+      "recall": 0.45088468578401464,
+      "f1": 0.6134052708030712,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 0.9989134371604491,
+      "f1": 0.9994564232650842,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.68      0.87      0.76      4351\n         dos       0.96      0.91      0.93     39077\n       flood       0.93      0.48      0.64       184\n  legitimate       0.94      0.98      0.96     49639\n   malformed       0.96      0.45      0.61      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.93     99290\n   macro avg       0.91      0.78      0.82     99290\nweighted avg       0.94      0.93      0.93     99290\n",
+  "model_size": "n/a",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

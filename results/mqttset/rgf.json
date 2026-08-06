@@ -1,0 +1,148 @@
+{
+  "status": "ok",
+  "name": "Regularized Greedy Forest",
+  "key": "rgf",
+  "category": "ml",
+  "family": "boosting",
+  "description": "Builds one shared tree structure that's fully re-optimized at every boosting step, rather than a growing ensemble.",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "algorithm": "RGF",
+    "calc_prob": "sigmoid",
+    "init_model": null,
+    "l2": 0.1,
+    "learning_rate": 0.5,
+    "loss": "Log",
+    "max_leaf": 500,
+    "memory_policy": "generous",
+    "min_samples_leaf": 10,
+    "n_iter": null,
+    "n_jobs": -1,
+    "n_tree_search": 1,
+    "normalize": false,
+    "opt_interval": 100,
+    "reg_depth": 1.0,
+    "sl2": null,
+    "test_interval": 100,
+    "verbose": 0
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 4.159341812133789,
+  "inference_time_sec": 4.990572214126587,
+  "inference_time_per_sample_ms": 0.05026258650545459,
+  "accuracy": 0.9207573773793937,
+  "precision_macro": 0.753020610870542,
+  "recall_macro": 0.6711133798990682,
+  "f1_macro": 0.6795530912120151,
+  "precision_weighted": 0.9260096027898407,
+  "recall_weighted": 0.9207573773793937,
+  "f1_weighted": 0.9154358691842962,
+  "confusion_matrix": [
+    [
+      3642,
+      505,
+      0,
+      195,
+      9,
+      0
+    ],
+    [
+      307,
+      34732,
+      0,
+      4038,
+      0,
+      0
+    ],
+    [
+      2,
+      0,
+      0,
+      182,
+      0,
+      0
+    ],
+    [
+      49,
+      313,
+      0,
+      49277,
+      0,
+      0
+    ],
+    [
+      1632,
+      358,
+      0,
+      278,
+      1010,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.6466619318181818,
+      "recall": 0.8370489542633878,
+      "f1": 0.7296403886607232,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.967249637963685,
+      "recall": 0.8888092739974921,
+      "f1": 0.9263719410548776,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9130442838614045,
+      "recall": 0.9927073470456698,
+      "f1": 0.9512108021503923,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.9911678115799804,
+      "recall": 0.30811470408785846,
+      "f1": 0.4700954154060973,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.65      0.84      0.73      4351\n         dos       0.97      0.89      0.93     39077\n       flood       0.00      0.00      0.00       184\n  legitimate       0.91      0.99      0.95     49639\n   malformed       0.99      0.31      0.47      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.92     99290\n   macro avg       0.75      0.67      0.68     99290\nweighted avg       0.93      0.92      0.92     99290\n",
+  "model_size": "6 base estimators",
+  "n_train_samples": 40000,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

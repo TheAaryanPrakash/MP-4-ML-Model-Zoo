@@ -1,0 +1,210 @@
+{
+  "status": "ok",
+  "name": "Nystroem + SGD",
+  "key": "nystroem_sgd",
+  "category": "ml",
+  "family": "kernel",
+  "description": "Approximates an RBF kernel with a low-rank Nystroem feature map, then a fast linear SGD classifier on top.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "memory": null,
+    "transform_input": null,
+    "verbose": false,
+    "nystroem__coef0": null,
+    "nystroem__degree": null,
+    "nystroem__gamma": null,
+    "nystroem__kernel": "rbf",
+    "nystroem__kernel_params": null,
+    "nystroem__n_components": 200,
+    "nystroem__n_jobs": null,
+    "nystroem__random_state": 42,
+    "sgdclassifier__alpha": 0.0001,
+    "sgdclassifier__average": false,
+    "sgdclassifier__class_weight": "balanced",
+    "sgdclassifier__early_stopping": false,
+    "sgdclassifier__epsilon": 0.1,
+    "sgdclassifier__eta0": 0.01,
+    "sgdclassifier__fit_intercept": true,
+    "sgdclassifier__l1_ratio": 0.15,
+    "sgdclassifier__learning_rate": "optimal",
+    "sgdclassifier__loss": "log_loss",
+    "sgdclassifier__max_iter": 1000,
+    "sgdclassifier__n_iter_no_change": 5,
+    "sgdclassifier__n_jobs": null,
+    "sgdclassifier__penalty": "l2",
+    "sgdclassifier__power_t": 0.5,
+    "sgdclassifier__random_state": 42,
+    "sgdclassifier__shuffle": true,
+    "sgdclassifier__tol": 0.001,
+    "sgdclassifier__validation_fraction": 0.1,
+    "sgdclassifier__verbose": 0,
+    "sgdclassifier__warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.880789041519165,
+  "inference_time_sec": 0.016609907150268555,
+  "inference_time_per_sample_ms": 0.0012288160945674747,
+  "accuracy": 0.8288081674927869,
+  "precision_macro": 0.6556156376891065,
+  "recall_macro": 0.7144943395963137,
+  "f1_macro": 0.6648809070068499,
+  "precision_weighted": 0.8351689729530171,
+  "recall_weighted": 0.8288081674927869,
+  "f1_weighted": 0.8281295036227406,
+  "confusion_matrix": [
+    [
+      7756,
+      96,
+      58,
+      0,
+      24,
+      147,
+      39,
+      88
+    ],
+    [
+      7,
+      83,
+      0,
+      0,
+      6,
+      13,
+      1,
+      2
+    ],
+    [
+      99,
+      11,
+      587,
+      221,
+      23,
+      28,
+      81,
+      9
+    ],
+    [
+      68,
+      6,
+      216,
+      684,
+      9,
+      69,
+      21,
+      7
+    ],
+    [
+      26,
+      34,
+      6,
+      0,
+      326,
+      12,
+      27,
+      16
+    ],
+    [
+      176,
+      29,
+      27,
+      7,
+      1,
+      225,
+      6,
+      2
+    ],
+    [
+      484,
+      8,
+      53,
+      3,
+      23,
+      9,
+      1386,
+      5
+    ],
+    [
+      5,
+      6,
+      0,
+      0,
+      0,
+      0,
+      0,
+      156
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.899663612109964,
+      "recall": 0.9449317738791423,
+      "f1": 0.9217422306732426,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.304029304029304,
+      "recall": 0.7410714285714286,
+      "f1": 0.43116883116883115,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.6198521647307286,
+      "recall": 0.554296506137866,
+      "f1": 0.5852442671984048,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.7475409836065574,
+      "recall": 0.6333333333333333,
+      "f1": 0.6857142857142857,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.7912621359223301,
+      "recall": 0.7293064876957495,
+      "f1": 0.7590221187427241,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.44731610337972166,
+      "recall": 0.47568710359408034,
+      "f1": 0.4610655737704918,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.8878923766816144,
+      "recall": 0.7031963470319634,
+      "f1": 0.7848244620611552,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.5473684210526316,
+      "recall": 0.9341317365269461,
+      "f1": 0.6902654867256637,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.90      0.94      0.92      8208\n  bruteforce       0.30      0.74      0.43       112\n        ddos       0.62      0.55      0.59      1059\n         dos       0.75      0.63      0.69      1080\n     malware       0.79      0.73      0.76       447\n        mitm       0.45      0.48      0.46       473\n       recon       0.89      0.70      0.78      1971\n         web       0.55      0.93      0.69       167\n\n    accuracy                           0.83     13517\n   macro avg       0.66      0.71      0.66     13517\nweighted avg       0.84      0.83      0.83     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

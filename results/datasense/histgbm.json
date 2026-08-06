@@ -1,0 +1,199 @@
+{
+  "status": "ok",
+  "name": "Hist Gradient Boosting",
+  "key": "histgbm",
+  "category": "ml",
+  "family": "boosting",
+  "description": "Histogram-binned gradient boosting (sklearn's LightGBM-style implementation) -- fast on large tabular data.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "categorical_features": "from_dtype",
+    "class_weight": null,
+    "early_stopping": "auto",
+    "interaction_cst": null,
+    "l2_regularization": 0.0,
+    "learning_rate": 0.1,
+    "loss": "log_loss",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 200,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "random_state": 42,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 2.484896183013916,
+  "inference_time_sec": 0.06316065788269043,
+  "inference_time_per_sample_ms": 0.004672683131071276,
+  "accuracy": 0.9696678257009691,
+  "precision_macro": 0.9725240685077905,
+  "recall_macro": 0.9453869846856946,
+  "f1_macro": 0.9585483527606088,
+  "precision_weighted": 0.9696959789092319,
+  "recall_weighted": 0.9696678257009691,
+  "f1_weighted": 0.9693314959285664,
+  "confusion_matrix": [
+    [
+      8164,
+      2,
+      3,
+      1,
+      0,
+      0,
+      37,
+      1
+    ],
+    [
+      7,
+      102,
+      0,
+      0,
+      1,
+      0,
+      2,
+      0
+    ],
+    [
+      37,
+      0,
+      983,
+      16,
+      2,
+      8,
+      12,
+      1
+    ],
+    [
+      8,
+      0,
+      19,
+      1047,
+      2,
+      2,
+      2,
+      0
+    ],
+    [
+      8,
+      1,
+      1,
+      1,
+      431,
+      2,
+      2,
+      1
+    ],
+    [
+      11,
+      0,
+      1,
+      1,
+      0,
+      453,
+      7,
+      0
+    ],
+    [
+      189,
+      1,
+      4,
+      0,
+      1,
+      6,
+      1770,
+      0
+    ],
+    [
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      157
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9679867204173583,
+      "recall": 0.9946393762183235,
+      "f1": 0.9811320754716981,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.9622641509433962,
+      "recall": 0.9107142857142857,
+      "f1": 0.9357798165137615,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.9723046488625123,
+      "recall": 0.9282341831916903,
+      "f1": 0.9497584541062802,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.9821763602251408,
+      "recall": 0.9694444444444444,
+      "f1": 0.9757688723205965,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.9862700228832952,
+      "recall": 0.9642058165548099,
+      "f1": 0.9751131221719457,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.9617834394904459,
+      "recall": 0.9577167019027484,
+      "f1": 0.9597457627118644,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.9661572052401747,
+      "recall": 0.898021308980213,
+      "f1": 0.9308440704706811,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.98125,
+      "recall": 0.9401197604790419,
+      "f1": 0.9602446483180428,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.97      0.99      0.98      8208\n  bruteforce       0.96      0.91      0.94       112\n        ddos       0.97      0.93      0.95      1059\n         dos       0.98      0.97      0.98      1080\n     malware       0.99      0.96      0.98       447\n        mitm       0.96      0.96      0.96       473\n       recon       0.97      0.90      0.93      1971\n         web       0.98      0.94      0.96       167\n\n    accuracy                           0.97     13517\n   macro avg       0.97      0.95      0.96     13517\nweighted avg       0.97      0.97      0.97     13517\n",
+  "model_size": "n/a",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

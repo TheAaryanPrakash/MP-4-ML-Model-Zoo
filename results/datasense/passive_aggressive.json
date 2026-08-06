@@ -1,0 +1,193 @@
+{
+  "status": "ok",
+  "name": "Passive-Aggressive Classifier",
+  "key": "passive_aggressive",
+  "category": "ml",
+  "family": "linear",
+  "description": "Online linear classifier that stays passive on correct predictions and aggressively corrects on mistakes.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "C": 1.0,
+    "average": false,
+    "class_weight": "balanced",
+    "early_stopping": false,
+    "fit_intercept": true,
+    "loss": "hinge",
+    "max_iter": 1000,
+    "n_iter_no_change": 5,
+    "n_jobs": null,
+    "random_state": 42,
+    "shuffle": true,
+    "tol": 0.001,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.36635804176330566,
+  "inference_time_sec": 0.002148866653442383,
+  "inference_time_per_sample_ms": 0.00015897511677460849,
+  "accuracy": 0.7665902197233114,
+  "precision_macro": 0.6303699845102604,
+  "recall_macro": 0.7461887481536351,
+  "f1_macro": 0.6527096470228986,
+  "precision_weighted": 0.819925828491443,
+  "recall_weighted": 0.7665902197233114,
+  "f1_weighted": 0.7843861235906915,
+  "confusion_matrix": [
+    [
+      6453,
+      230,
+      735,
+      211,
+      33,
+      241,
+      291,
+      14
+    ],
+    [
+      8,
+      99,
+      0,
+      0,
+      1,
+      0,
+      4,
+      0
+    ],
+    [
+      48,
+      11,
+      714,
+      253,
+      7,
+      21,
+      5,
+      0
+    ],
+    [
+      12,
+      11,
+      51,
+      935,
+      4,
+      46,
+      20,
+      1
+    ],
+    [
+      25,
+      65,
+      7,
+      2,
+      319,
+      13,
+      15,
+      1
+    ],
+    [
+      75,
+      118,
+      50,
+      30,
+      2,
+      197,
+      1,
+      0
+    ],
+    [
+      323,
+      11,
+      41,
+      18,
+      42,
+      34,
+      1500,
+      2
+    ],
+    [
+      10,
+      11,
+      0,
+      0,
+      0,
+      0,
+      1,
+      145
+    ]
+  ],
+  "class_names": [
+    "benign",
+    "bruteforce",
+    "ddos",
+    "dos",
+    "malware",
+    "mitm",
+    "recon",
+    "web"
+  ],
+  "per_class": [
+    {
+      "class": "benign",
+      "precision": 0.9279551337359793,
+      "recall": 0.7861842105263158,
+      "f1": 0.8512069647803719,
+      "support": 8208
+    },
+    {
+      "class": "bruteforce",
+      "precision": 0.17805755395683454,
+      "recall": 0.8839285714285714,
+      "f1": 0.2964071856287425,
+      "support": 112
+    },
+    {
+      "class": "ddos",
+      "precision": 0.44680851063829785,
+      "recall": 0.6742209631728046,
+      "f1": 0.5374482499059089,
+      "support": 1059
+    },
+    {
+      "class": "dos",
+      "precision": 0.6452726017943409,
+      "recall": 0.8657407407407407,
+      "f1": 0.7394226967180704,
+      "support": 1080
+    },
+    {
+      "class": "malware",
+      "precision": 0.7818627450980392,
+      "recall": 0.7136465324384788,
+      "f1": 0.7461988304093568,
+      "support": 447
+    },
+    {
+      "class": "mitm",
+      "precision": 0.35688405797101447,
+      "recall": 0.4164904862579281,
+      "f1": 0.38439024390243903,
+      "support": 473
+    },
+    {
+      "class": "recon",
+      "precision": 0.8165487207403375,
+      "recall": 0.76103500761035,
+      "f1": 0.7878151260504201,
+      "support": 1971
+    },
+    {
+      "class": "web",
+      "precision": 0.8895705521472392,
+      "recall": 0.8682634730538922,
+      "f1": 0.8787878787878788,
+      "support": 167
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n      benign       0.93      0.79      0.85      8208\n  bruteforce       0.18      0.88      0.30       112\n        ddos       0.45      0.67      0.54      1059\n         dos       0.65      0.87      0.74      1080\n     malware       0.78      0.71      0.75       447\n        mitm       0.36      0.42      0.38       473\n       recon       0.82      0.76      0.79      1971\n         web       0.89      0.87      0.88       167\n\n    accuracy                           0.77     13517\n   macro avg       0.63      0.75      0.65     13517\nweighted avg       0.82      0.77      0.78     13517\n",
+  "model_size": "872 weights",
+  "n_train_samples": 31538,
+  "n_test_samples": 13517,
+  "n_features": 109
+}

@@ -1,0 +1,148 @@
+{
+  "status": "ok",
+  "name": "Bagging (KNN)",
+  "key": "bagging_knn",
+  "category": "ml",
+  "family": "ensemble_bagging",
+  "description": "Bootstrap-aggregated k-nearest-neighbors -- tests whether bagging helps an already-low-bias model.",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "bootstrap": true,
+    "bootstrap_features": false,
+    "estimator__algorithm": "auto",
+    "estimator__leaf_size": 30,
+    "estimator__metric": "minkowski",
+    "estimator__metric_params": null,
+    "estimator__n_jobs": null,
+    "estimator__n_neighbors": 5,
+    "estimator__p": 2,
+    "estimator__weights": "uniform",
+    "max_features": 1.0,
+    "max_samples": null,
+    "n_estimators": 15,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 2.5002050399780273,
+  "inference_time_sec": 35.77195978164673,
+  "inference_time_per_sample_ms": 0.360277568553195,
+  "accuracy": 0.9329741162251989,
+  "precision_macro": 0.8994350285636287,
+  "recall_macro": 0.7816792698873077,
+  "f1_macro": 0.8204743550400698,
+  "precision_weighted": 0.9325753156968387,
+  "recall_weighted": 0.9329741162251989,
+  "f1_weighted": 0.9316782444153539,
+  "confusion_matrix": [
+    [
+      3274,
+      506,
+      0,
+      32,
+      539,
+      0
+    ],
+    [
+      181,
+      35533,
+      0,
+      3281,
+      82,
+      0
+    ],
+    [
+      1,
+      21,
+      80,
+      72,
+      10,
+      0
+    ],
+    [
+      0,
+      642,
+      0,
+      48996,
+      1,
+      0
+    ],
+    [
+      940,
+      289,
+      0,
+      42,
+      2007,
+      0
+    ],
+    [
+      6,
+      0,
+      0,
+      0,
+      10,
+      2745
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7437528396183553,
+      "recall": 0.7524706963916341,
+      "f1": 0.7480863703872958,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9605850071639047,
+      "recall": 0.9093072651431788,
+      "f1": 0.9342430456959563,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 1.0,
+      "recall": 0.43478260869565216,
+      "f1": 0.6060606060606061,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.934627930488526,
+      "recall": 0.9870464755534962,
+      "f1": 0.9601222786149596,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.7576443941109853,
+      "recall": 0.6122635753508237,
+      "f1": 0.677239750295259,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 0.9942049981890619,
+      "f1": 0.9970940791863422,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.74      0.75      0.75      4351\n         dos       0.96      0.91      0.93     39077\n       flood       1.00      0.43      0.61       184\n  legitimate       0.93      0.99      0.96     49639\n   malformed       0.76      0.61      0.68      3278\n     slowite       1.00      0.99      1.00      2761\n\n    accuracy                           0.93     99290\n   macro avg       0.90      0.78      0.82     99290\nweighted avg       0.93      0.93      0.93     99290\n",
+  "model_size": "15 base estimators",
+  "n_train_samples": 40000,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

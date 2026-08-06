@@ -1,0 +1,144 @@
+{
+  "status": "ok",
+  "name": "Balanced Bagging",
+  "key": "balanced_bagging",
+  "category": "ml",
+  "family": "imbalanced",
+  "description": "Bagged decision trees where every bootstrap sample is class-balanced before fitting.",
+  "hyperparams": {
+    "subsample_cap": 40000,
+    "seed": 42,
+    "bootstrap": true,
+    "bootstrap_features": false,
+    "estimator": null,
+    "max_features": 1.0,
+    "max_samples": 1.0,
+    "n_estimators": 50,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "replacement": false,
+    "sampler": null,
+    "sampling_strategy": "auto",
+    "verbose": 0,
+    "warm_start": false
+  },
+  "subsample_cap": 40000,
+  "train_time_sec": 1.689729928970337,
+  "inference_time_sec": 0.20519614219665527,
+  "inference_time_per_sample_ms": 0.002066634527109027,
+  "accuracy": 0.8788599053278275,
+  "precision_macro": 0.7137404583122567,
+  "recall_macro": 0.8462447554201126,
+  "f1_macro": 0.7125361073108943,
+  "precision_weighted": 0.9419672794380259,
+  "recall_weighted": 0.8788599053278275,
+  "f1_weighted": 0.9074854164031672,
+  "confusion_matrix": [
+    [
+      3655,
+      179,
+      59,
+      5,
+      453,
+      0
+    ],
+    [
+      519,
+      33892,
+      1738,
+      2368,
+      560,
+      0
+    ],
+    [
+      2,
+      0,
+      157,
+      25,
+      0,
+      0
+    ],
+    [
+      62,
+      178,
+      4495,
+      44782,
+      122,
+      0
+    ],
+    [
+      1121,
+      60,
+      62,
+      20,
+      2015,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.6820302295204329,
+      "recall": 0.8400367731555964,
+      "f1": 0.752832131822863,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9878457547582267,
+      "recall": 0.8673132533203675,
+      "f1": 0.9236639140980568,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.02411303947166334,
+      "recall": 0.8532608695652174,
+      "f1": 0.04690067214339059,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9487711864406779,
+      "recall": 0.9021535486210439,
+      "f1": 0.92487530850174,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6396825396825396,
+      "recall": 0.6147040878584503,
+      "f1": 0.6269446172993155,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.68      0.84      0.75      4351\n         dos       0.99      0.87      0.92     39077\n       flood       0.02      0.85      0.05       184\n  legitimate       0.95      0.90      0.92     49639\n   malformed       0.64      0.61      0.63      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.88     99290\n   macro avg       0.71      0.85      0.71     99290\nweighted avg       0.94      0.88      0.91     99290\n",
+  "model_size": "50 base estimators",
+  "n_train_samples": 40000,
+  "n_test_samples": 99290,
+  "n_features": 33
+}

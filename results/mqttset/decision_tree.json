@@ -1,0 +1,143 @@
+{
+  "status": "ok",
+  "name": "Decision Tree",
+  "key": "decision_tree",
+  "category": "ml",
+  "family": "tree",
+  "description": "A single greedy-split tree -- the interpretable building block every ensemble below is made of.",
+  "hyperparams": {
+    "subsample_cap": null,
+    "seed": 42,
+    "ccp_alpha": 0.0,
+    "class_weight": "balanced",
+    "criterion": "gini",
+    "max_depth": null,
+    "max_features": null,
+    "max_leaf_nodes": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 1,
+    "min_samples_split": 2,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "random_state": 42,
+    "splitter": "best"
+  },
+  "subsample_cap": null,
+  "train_time_sec": 0.1920337677001953,
+  "inference_time_sec": 0.009734153747558594,
+  "inference_time_per_sample_ms": 9.803760446730379e-05,
+  "accuracy": 0.8854567428744083,
+  "precision_macro": 0.7189495715180714,
+  "recall_macro": 0.8401939544695286,
+  "f1_macro": 0.7155007131537197,
+  "precision_weighted": 0.9402310729064933,
+  "recall_weighted": 0.8854567428744083,
+  "f1_weighted": 0.9109021372688548,
+  "confusion_matrix": [
+    [
+      3307,
+      248,
+      15,
+      12,
+      769,
+      0
+    ],
+    [
+      380,
+      34488,
+      1496,
+      2338,
+      375,
+      0
+    ],
+    [
+      1,
+      2,
+      154,
+      26,
+      1,
+      0
+    ],
+    [
+      1,
+      390,
+      4159,
+      45064,
+      25,
+      0
+    ],
+    [
+      951,
+      132,
+      46,
+      6,
+      2143,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      2761
+    ]
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_class": [
+    {
+      "class": "bruteforce",
+      "precision": 0.7127155172413793,
+      "recall": 0.7600551597333947,
+      "f1": 0.7356245134022912,
+      "support": 4351
+    },
+    {
+      "class": "dos",
+      "precision": 0.9781055019852524,
+      "recall": 0.8825651918008035,
+      "f1": 0.9278824811332177,
+      "support": 39077
+    },
+    {
+      "class": "flood",
+      "precision": 0.026235093696763204,
+      "recall": 0.8369565217391305,
+      "f1": 0.05087545424512719,
+      "support": 184
+    },
+    {
+      "class": "legitimate",
+      "precision": 0.9497955570543355,
+      "recall": 0.9078345655633675,
+      "f1": 0.9283411443580367,
+      "support": 49639
+    },
+    {
+      "class": "malformed",
+      "precision": 0.6468457591306973,
+      "recall": 0.6537522879804759,
+      "f1": 0.6502806857836444,
+      "support": 3278
+    },
+    {
+      "class": "slowite",
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2761
+    }
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n  bruteforce       0.71      0.76      0.74      4351\n         dos       0.98      0.88      0.93     39077\n       flood       0.03      0.84      0.05       184\n  legitimate       0.95      0.91      0.93     49639\n   malformed       0.65      0.65      0.65      3278\n     slowite       1.00      1.00      1.00      2761\n\n    accuracy                           0.89     99290\n   macro avg       0.72      0.84      0.72     99290\nweighted avg       0.94      0.89      0.91     99290\n",
+  "model_size": "4069 nodes",
+  "n_train_samples": 231646,
+  "n_test_samples": 99290,
+  "n_features": 33
+}
