@@ -1,0 +1,3328 @@
+{
+  "datasets": {
+    "mqttset": {
+      "feature_selection": {
+        "dataset": "mqttset",
+        "n_train": 231646,
+        "n_test": 99290,
+        "n_features": 33,
+        "feature_names": [
+          "tcp.flags",
+          "tcp.time_delta",
+          "tcp.len",
+          "mqtt.conack.flags",
+          "mqtt.conack.flags.reserved",
+          "mqtt.conack.flags.sp",
+          "mqtt.conack.val",
+          "mqtt.conflag.cleansess",
+          "mqtt.conflag.passwd",
+          "mqtt.conflag.qos",
+          "mqtt.conflag.reserved",
+          "mqtt.conflag.retain",
+          "mqtt.conflag.uname",
+          "mqtt.conflag.willflag",
+          "mqtt.conflags",
+          "mqtt.dupflag",
+          "mqtt.hdrflags",
+          "mqtt.kalive",
+          "mqtt.len",
+          "mqtt.msgid",
+          "mqtt.msgtype",
+          "mqtt.proto_len",
+          "mqtt.protoname",
+          "mqtt.qos",
+          "mqtt.retain",
+          "mqtt.sub.qos",
+          "mqtt.suback.qos",
+          "mqtt.ver",
+          "mqtt.willmsg",
+          "mqtt.willmsg_len",
+          "mqtt.willtopic",
+          "mqtt.willtopic_len",
+          "mqtt_msg_len"
+        ],
+        "class_names": [
+          "bruteforce",
+          "dos",
+          "flood",
+          "legitimate",
+          "malformed",
+          "slowite"
+        ],
+        "per_model_feature_selection": {
+          "xgboost": {
+            "family": "boosting",
+            "fit_time_sec": 1.5746808052062988,
+            "native_importance_top15": [
+              {
+                "feature": "mqtt.msgid",
+                "importance": 0.4610808594346241
+              },
+              {
+                "feature": "mqtt.kalive",
+                "importance": 0.11361106003699523
+              },
+              {
+                "feature": "mqtt.hdrflags",
+                "importance": 0.1033186272708722
+              },
+              {
+                "feature": "mqtt_msg_len",
+                "importance": 0.09124613911686527
+              },
+              {
+                "feature": "mqtt.conflag.cleansess",
+                "importance": 0.0908032766249505
+              },
+              {
+                "feature": "mqtt.conack.val",
+                "importance": 0.0333914742625206
+              },
+              {
+                "feature": "mqtt.conflag.passwd",
+                "importance": 0.031389093559045574
+              },
+              {
+                "feature": "tcp.flags",
+                "importance": 0.0312655256850818
+              },
+              {
+                "feature": "mqtt.retain",
+                "importance": 0.01231997501053022
+              },
+              {
+                "feature": "tcp.time_delta",
+                "importance": 0.011783250108232833
+              },
+              {
+                "feature": "mqtt.qos",
+                "importance": 0.008330840264397458
+              },
+              {
+                "feature": "tcp.len",
+                "importance": 0.007741768516366866
+              },
+              {
+                "feature": "mqtt.len",
+                "importance": 0.0037181101095173415
+              },
+              {
+                "feature": "mqtt.conflag.uname",
+                "importance": 0.0
+              },
+              {
+                "feature": "mqtt.conack.flags",
+                "importance": 0.0
+              }
+            ],
+            "permutation_importance_top15": [
+              {
+                "feature": "mqtt.hdrflags",
+                "importance": 0.2633661926467349
+              },
+              {
+                "feature": "mqtt_msg_len",
+                "importance": 0.21242725287564568
+              },
+              {
+                "feature": "tcp.time_delta",
+                "importance": 0.139282266717711
+              },
+              {
+                "feature": "mqtt.msgid",
+                "importance": 0.13604767109149618
+              },
+              {
+                "feature": "tcp.flags",
+                "importance": 0.12505128807448165
+              },
+              {
+                "feature": "tcp.len",
+                "importance": 0.07856680367488188
+              },
+              {
+                "feature": "mqtt.conack.val",
+                "importance": 0.023352122256996555
+              },
+              {
+                "feature": "mqtt.conflag.passwd",
+                "importance": 0.018608575635131904
+              },
+              {
+                "feature": "mqtt.len",
+                "importance": 0.0028093663828671588
+              },
+              {
+                "feature": "mqtt.qos",
+                "importance": 0.000488460644052877
+              },
+              {
+                "feature": "mqtt.conack.flags.reserved",
+                "importance": 0.0
+              },
+              {
+                "feature": "mqtt.conack.flags.sp",
+                "importance": 0.0
+              },
+              {
+                "feature": "mqtt.conflag.willflag",
+                "importance": 0.0
+              },
+              {
+                "feature": "mqtt.conflag.cleansess",
+                "importance": 0.0
+              },
+              {
+                "feature": "mqtt.conack.flags",
+                "importance": 0.0
+              }
+            ],
+            "permutation_importance_runtime_sec": 1.8678278923034668
+          },
+          "random_forest": {
+            "family": "ensemble_bagging",
+            "fit_time_sec": 10.453285932540894,
+            "native_importance_top15": [
+              {
+                "feature": "tcp.time_delta",
+                "importance": 0.23551973192390294
+              },
+              {
+                "feature": "mqtt_msg_len",
+                "importance": 0.21436467090356853
+              },
+              {
+                "feature": "tcp.len",
+                "importance": 0.10043096008987094
+              },
+              {
+                "feature": "tcp.flags",
+                "importance": 0.09222765359658545
+              },
+              {
+                "feature": "mqtt.hdrflags",
+                "importance": 0.08359357014544411
+              },
+              {
+                "feature": "mqtt.len",
+                "importance": 0.08269801161296644
+              },
+              {
+                "feature": "mqtt.msgid",
+                "importance": 0.07343211118416511
+              },
+              {
+                "feature": "mqtt.msgtype",
+                "importance": 0.05236099059037743
+              },
+              {
+                "feature": "mqtt.conack.val",
+                "importance": 0.015593528668433564
+              },
+              {
+                "feature": "mqtt.qos",
+                "importance": 0.014333963042938668
+              },
+              {
+                "feature": "mqtt.conflags",
+                "importance": 0.006427121575948614
+              },
+              {
+                "feature": "mqtt.kalive",
+                "importance": 0.005878958689654096
+              },
+              {
+                "feature": "mqtt.conflag.uname",
+                "importance": 0.005766704563208843
+              },
+              {
+                "feature": "mqtt.conflag.passwd",
+                "importance": 0.004499954624189148
+              },
+              {
+                "feature": "mqtt.proto_len",
+                "importance": 0.0031648478522258742
+              }
+            ],
+            "permutation_importance_top15": [
+              {
+                "feature": "mqtt_msg_len",
+                "importance": 0.37502074512253686
+              },
+              {
+                "feature": "tcp.time_delta",
+                "importance": 0.26146744576888564
+              },
+              {
+                "feature": "tcp.flags",
+                "importance": 0.1969254995026666
+              },
+              {
+                "feature": "mqtt.msgid",
+                "importance": 0.07607774755892918
+              },
+              {
+                "feature": "mqtt.len",
+                "importance": 0.045737253019110545
+              },
+              {
+                "feature": "mqtt.conack.val",
+                "importance": 0.043019116177594616
+              },
+              {
+                "feature": "mqtt.conflags",
+                "importance": 0.00029203214171275396
+              },
+              {
+                "feature": "mqtt.ver",
+                "importance": 0.00029203214171275396
+              },
+              {
+                "feature": "mqtt.conflag.cleansess",
+                "importance": 0.00029203214171275396
+              },
+              {
+                "feature": "mqtt.protoname",
+                "importance": 0.00029203214171275396
+              },
+              {
+                "feature": "mqtt.proto_len",
+                "importance": 0.00029203214171275396
+              },
+              {
+                "feature": "mqtt.kalive",
+                "importance": 0.00029203214171275396
+              },
+              {
+                "feature": "mqtt.conflag.qos",
+                "importance": 0.0
+              },
+              {
+                "feature": "mqtt.conflag.passwd",
+                "importance": 0.0
+              },
+              {
+                "feature": "mqtt.conack.flags.sp",
+                "importance": 0.0
+              }
+            ],
+            "permutation_importance_runtime_sec": 2.579058885574341
+          },
+          "logreg": {
+            "family": "linear",
+            "fit_time_sec": 9.109240055084229,
+            "native_importance_top15": [
+              {
+                "feature": "mqtt_msg_len",
+                "importance": 0.37896524550362304
+              },
+              {
+                "feature": "mqtt.len",
+                "importance": 0.19418570398670748
+              },
+              {
+                "feature": "mqtt.qos",
+                "importance": 0.11283267034715276
+              },
+              {
+                "feature": "mqtt.msgid",
+                "importance": 0.08969352701290488
+              },
+              {
+                "feature": "tcp.len",
+                "importance": 0.042272104731906804
+              },
+              {
+                "feature": "mqtt.hdrflags",
+                "importance": 0.03458654887194462
+              },
+              {
+                "feature": "mqtt.msgtype",
+                "importance": 0.033804766112278194
+              },
+              {
+                "feature": "tcp.time_delta",
+                "importance": 0.028528783364951304
+              },
+              {
+                "feature": "mqtt.conflag.cleansess",
+                "importance": 0.01184555030502147
+              },
+              {
+                "feature": "mqtt.ver",
+                "importance": 0.01184555030502147
+              },
+              {
+                "feature": "mqtt.protoname",
+                "importance": 0.01184555030502147
+              },
+              {
+                "feature": "mqtt.proto_len",
+                "importance": 0.01184555030502147
+              },
+              {
+                "feature": "mqtt.kalive",
+                "importance": 0.009688395960498508
+              },
+              {
+                "feature": "mqtt.dupflag",
+                "importance": 0.008028068416274478
+              },
+              {
+                "feature": "mqtt.conack.val",
+                "importance": 0.006654584123902376
+              }
+            ],
+            "permutation_importance_top15": [
+              {
+                "feature": "mqtt.len",
+                "importance": 0.17712565382514478
+              },
+              {
+                "feature": "mqtt_msg_len",
+                "importance": 0.1737759096308518
+              },
+              {
+                "feature": "mqtt.qos",
+                "importance": 0.1598794325634956
+              },
+              {
+                "feature": "mqtt.msgid",
+                "importance": 0.11500229299940219
+              },
+              {
+                "feature": "mqtt.msgtype",
+                "importance": 0.1041491701836417
+              },
+              {
+                "feature": "mqtt.hdrflags",
+                "importance": 0.09257907624562238
+              },
+              {
+                "feature": "tcp.len",
+                "importance": 0.0805053018417486
+              },
+              {
+                "feature": "tcp.flags",
+                "importance": 0.03451101779845071
+              },
+              {
+                "feature": "mqtt.kalive",
+                "importance": 0.017209665566455493
+              },
+              {
+                "feature": "mqtt.dupflag",
+                "importance": 0.012217786950848814
+              },
+              {
+                "feature": "tcp.time_delta",
+                "importance": 0.007816320000264592
+              },
+              {
+                "feature": "mqtt.conack.val",
+                "importance": 0.00572407656438276
+              },
+              {
+                "feature": "mqtt.retain",
+                "importance": 0.003245500345536579
+              },
+              {
+                "feature": "mqtt.conflag.cleansess",
+                "importance": 0.003129450605429073
+              },
+              {
+                "feature": "mqtt.proto_len",
+                "importance": 0.003129450605429073
+              }
+            ],
+            "permutation_importance_runtime_sec": 0.07171797752380371
+          },
+          "knn5": {
+            "family": "instance",
+            "fit_time_sec": 0.0007982254028320312,
+            "permutation_importance_top15": [
+              {
+                "feature": "tcp.flags",
+                "importance": 0.19828371527744126
+              },
+              {
+                "feature": "mqtt_msg_len",
+                "importance": 0.1512874797630946
+              },
+              {
+                "feature": "tcp.time_delta",
+                "importance": 0.1336838293358117
+              },
+              {
+                "feature": "mqtt.hdrflags",
+                "importance": 0.13335497711155983
+              },
+              {
+                "feature": "mqtt.msgtype",
+                "importance": 0.13180421634347284
+              },
+              {
+                "feature": "tcp.len",
+                "importance": 0.09502269871943074
+              },
+              {
+                "feature": "mqtt.len",
+                "importance": 0.054801902137672436
+              },
+              {
+                "feature": "mqtt.msgid",
+                "importance": 0.05317654250446223
+              },
+              {
+                "feature": "mqtt.conack.val",
+                "importance": 0.029264907340156462
+              },
+              {
+                "feature": "mqtt.kalive",
+                "importance": 0.013827061203599894
+              },
+              {
+                "feature": "mqtt.dupflag",
+                "importance": 0.005162737126581018
+              },
+              {
+                "feature": "mqtt.retain",
+                "importance": 0.0003299331367170182
+              },
+              {
+                "feature": "mqtt.proto_len",
+                "importance": 0.0
+              },
+              {
+                "feature": "mqtt.conflag.qos",
+                "importance": 0.0
+              },
+              {
+                "feature": "mqtt.willmsg",
+                "importance": 0.0
+              }
+            ],
+            "permutation_importance_runtime_sec": 2.368182897567749
+          },
+          "ebm": {
+            "family": "interpretable",
+            "fit_time_sec": 639.9037520885468,
+            "native_importance_top15": [
+              {
+                "feature": "mqtt_msg_len",
+                "importance": 0.19788388435773802
+              },
+              {
+                "feature": "tcp.time_delta",
+                "importance": 0.14088416694484487
+              },
+              {
+                "feature": "mqtt.len",
+                "importance": 0.1266991398780294
+              },
+              {
+                "feature": "mqtt.msgid",
+                "importance": 0.11813342196116448
+              },
+              {
+                "feature": "mqtt.msgtype",
+                "importance": 0.11484948406219275
+              },
+              {
+                "feature": "mqtt.hdrflags",
+                "importance": 0.1097730004978009
+              },
+              {
+                "feature": "tcp.len",
+                "importance": 0.08345203001491491
+              },
+              {
+                "feature": "tcp.flags",
+                "importance": 0.0776526260236569
+              },
+              {
+                "feature": "mqtt.qos",
+                "importance": 0.01818319793121223
+              },
+              {
+                "feature": "mqtt.dupflag",
+                "importance": 0.0062652505351253095
+              },
+              {
+                "feature": "mqtt.conack.val",
+                "importance": 0.0012866122384895332
+              },
+              {
+                "feature": "mqtt.ver",
+                "importance": 0.0006813603519251513
+              },
+              {
+                "feature": "mqtt.proto_len",
+                "importance": 0.0006751722369164881
+              },
+              {
+                "feature": "mqtt.protoname",
+                "importance": 0.0006736317334188342
+              },
+              {
+                "feature": "mqtt.conflag.cleansess",
+                "importance": 0.0006716237987439613
+              }
+            ],
+            "permutation_importance_top15": [
+              {
+                "feature": "mqtt_msg_len",
+                "importance": 0.2444468898079238
+              },
+              {
+                "feature": "tcp.time_delta",
+                "importance": 0.14976713234050804
+              },
+              {
+                "feature": "tcp.len",
+                "importance": 0.12064164847204836
+              },
+              {
+                "feature": "tcp.flags",
+                "importance": 0.11734509328059212
+              },
+              {
+                "feature": "mqtt.len",
+                "importance": 0.1172735394564531
+              },
+              {
+                "feature": "mqtt.msgtype",
+                "importance": 0.0694490741462261
+              },
+              {
+                "feature": "mqtt.msgid",
+                "importance": 0.06894283266767089
+              },
+              {
+                "feature": "mqtt.hdrflags",
+                "importance": 0.06716838565665088
+              },
+              {
+                "feature": "mqtt.conack.val",
+                "importance": 0.028583099773104734
+              },
+              {
+                "feature": "mqtt.qos",
+                "importance": 0.010564883920296617
+              },
+              {
+                "feature": "mqtt.dupflag",
+                "importance": 0.003976375279999064
+              },
+              {
+                "feature": "mqtt.retain",
+                "importance": 0.0006229584784440947
+              },
+              {
+                "feature": "mqtt.conflag.passwd",
+                "importance": 0.0005068754955591059
+              },
+              {
+                "feature": "mqtt.conflag.uname",
+                "importance": 0.0005068754955591059
+              },
+              {
+                "feature": "mqtt.conflag.cleansess",
+                "importance": 3.405595482732665e-05
+              }
+            ],
+            "permutation_importance_runtime_sec": 1.3213629722595215
+          }
+        },
+        "benign_vs_malicious_feature_selection": {
+          "benign_class_name": "legitimate",
+          "n_benign_train": 115824,
+          "n_malicious_train": 115822,
+          "mutual_info_top15": [
+            {
+              "feature": "mqtt.hdrflags",
+              "importance": 0.15902135323638564
+            },
+            {
+              "feature": "mqtt.len",
+              "importance": 0.15790633801417708
+            },
+            {
+              "feature": "tcp.time_delta",
+              "importance": 0.15598559152017968
+            },
+            {
+              "feature": "tcp.len",
+              "importance": 0.15329777501589273
+            },
+            {
+              "feature": "mqtt_msg_len",
+              "importance": 0.10384502936186278
+            },
+            {
+              "feature": "mqtt.msgid",
+              "importance": 0.10218384827347718
+            },
+            {
+              "feature": "mqtt.qos",
+              "importance": 0.05405161484115429
+            },
+            {
+              "feature": "mqtt.msgtype",
+              "importance": 0.05152318953930037
+            },
+            {
+              "feature": "tcp.flags",
+              "importance": 0.016720612298213387
+            },
+            {
+              "feature": "mqtt.dupflag",
+              "importance": 0.016392564535369292
+            },
+            {
+              "feature": "mqtt.ver",
+              "importance": 0.0038737985903484267
+            },
+            {
+              "feature": "mqtt.protoname",
+              "importance": 0.0036619490832891697
+            },
+            {
+              "feature": "mqtt.kalive",
+              "importance": 0.0032286796251983765
+            },
+            {
+              "feature": "mqtt.conflags",
+              "importance": 0.003163312694372611
+            },
+            {
+              "feature": "mqtt.conflag.cleansess",
+              "importance": 0.0028087609770328743
+            }
+          ],
+          "mutual_info_runtime_sec": 4.14979887008667,
+          "anova_f_top15": [
+            {
+              "feature": "mqtt.msgid",
+              "importance": 0.2936201251034614
+            },
+            {
+              "feature": "mqtt.qos",
+              "importance": 0.2009472843999086
+            },
+            {
+              "feature": "mqtt_msg_len",
+              "importance": 0.19227190218793405
+            },
+            {
+              "feature": "mqtt.len",
+              "importance": 0.1643483216214559
+            },
+            {
+              "feature": "mqtt.dupflag",
+              "importance": 0.04865789662096007
+            },
+            {
+              "feature": "tcp.flags",
+              "importance": 0.024027928696219527
+            },
+            {
+              "feature": "tcp.len",
+              "importance": 0.019141223652435414
+            },
+            {
+              "feature": "mqtt.protoname",
+              "importance": 0.008108235207756602
+            },
+            {
+              "feature": "mqtt.proto_len",
+              "importance": 0.008108235207756602
+            },
+            {
+              "feature": "mqtt.conflag.cleansess",
+              "importance": 0.008108235207756602
+            },
+            {
+              "feature": "mqtt.ver",
+              "importance": 0.008108235207756602
+            },
+            {
+              "feature": "tcp.time_delta",
+              "importance": 0.006982503545561107
+            },
+            {
+              "feature": "mqtt.conflags",
+              "importance": 0.00373375924558222
+            },
+            {
+              "feature": "mqtt.conack.val",
+              "importance": 0.003658691128198375
+            },
+            {
+              "feature": "mqtt.conflag.uname",
+              "importance": 0.00364408863498108
+            }
+          ]
+        }
+      },
+      "malicious_vs_benign": {
+        "dataset": "mqttset",
+        "benign_class_name": "legitimate",
+        "n_models": 50,
+        "models": [
+          {
+            "key": "gbm_sklearn",
+            "name": "Gradient Boosting (sklearn)",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.8333905992005016,
+            "train_time_sec": 95.35678434371948,
+            "tp_malicious_caught": 46279,
+            "tn_benign_passed": 48996,
+            "fp_benign_flagged_as_attack": 643,
+            "fn_attack_missed_as_benign": 3372,
+            "accuracy": 0.9595628965656159,
+            "precision_malicious": 0.9862964068027791,
+            "recall_malicious": 0.9320859600008056,
+            "f1_malicious": 0.958425232725503,
+            "false_positive_rate": 0.012953524446503757,
+            "false_negative_rate": 0.06791403999919438
+          },
+          {
+            "key": "knn15_distance",
+            "name": "K-Nearest Neighbors (k=15, distance-weighted)",
+            "family": "instance",
+            "f1_macro_multiclass": 0.8274185649045137,
+            "train_time_sec": 0.014661788940429688,
+            "tp_malicious_caught": 46196,
+            "tn_benign_passed": 49058,
+            "fp_benign_flagged_as_attack": 581,
+            "fn_attack_missed_as_benign": 3455,
+            "accuracy": 0.9593513949038172,
+            "precision_malicious": 0.9875793659276995,
+            "recall_malicious": 0.9304142917564601,
+            "f1_malicious": 0.9581449371551831,
+            "false_positive_rate": 0.011704506537198574,
+            "false_negative_rate": 0.0695857082435399
+          },
+          {
+            "key": "figs",
+            "name": "FIGS (Fast Interpretable Greedy-Sums)",
+            "family": "interpretable",
+            "f1_macro_multiclass": 0.8172317464000551,
+            "train_time_sec": 5.9786529541015625,
+            "tp_malicious_caught": 46485,
+            "tn_benign_passed": 48737,
+            "fp_benign_flagged_as_attack": 902,
+            "fn_attack_missed_as_benign": 3166,
+            "accuracy": 0.9590291066572666,
+            "precision_malicious": 0.9809652436322198,
+            "recall_malicious": 0.9362349197397837,
+            "f1_malicious": 0.9580782786125024,
+            "false_positive_rate": 0.01817119603537541,
+            "false_negative_rate": 0.06376508026021631
+          },
+          {
+            "key": "catboost",
+            "name": "CatBoost",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.833922082813903,
+            "train_time_sec": 4.909843921661377,
+            "tp_malicious_caught": 46246,
+            "tn_benign_passed": 48996,
+            "fp_benign_flagged_as_attack": 643,
+            "fn_attack_missed_as_benign": 3405,
+            "accuracy": 0.9592305368113606,
+            "precision_malicious": 0.9862867623536438,
+            "recall_malicious": 0.9314213208193188,
+            "f1_malicious": 0.9580691941164284,
+            "false_positive_rate": 0.012953524446503757,
+            "false_negative_rate": 0.06857867918068115
+          },
+          {
+            "key": "lightgbm",
+            "name": "LightGBM",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.8369680084566958,
+            "train_time_sec": 6.699424982070923,
+            "tp_malicious_caught": 46243,
+            "tn_benign_passed": 48997,
+            "fp_benign_flagged_as_attack": 642,
+            "fn_attack_missed_as_benign": 3408,
+            "accuracy": 0.9592103937959513,
+            "precision_malicious": 0.9863069211901461,
+            "recall_malicious": 0.9313608990755473,
+            "f1_malicious": 0.958046739040358,
+            "false_positive_rate": 0.012933378996353674,
+            "false_negative_rate": 0.06863910092445268
+          },
+          {
+            "key": "xgboost",
+            "name": "XGBoost",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.8371205420250712,
+            "train_time_sec": 3.6118078231811523,
+            "tp_malicious_caught": 46237,
+            "tn_benign_passed": 48997,
+            "fp_benign_flagged_as_attack": 642,
+            "fn_attack_missed_as_benign": 3414,
+            "accuracy": 0.959149964749723,
+            "precision_malicious": 0.9863051686256106,
+            "recall_malicious": 0.9312400555880043,
+            "f1_malicious": 0.9579819745156947,
+            "false_positive_rate": 0.012933378996353674,
+            "false_negative_rate": 0.06875994441199573
+          },
+          {
+            "key": "xgboost_dart",
+            "name": "XGBoost (DART)",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.8371205420250712,
+            "train_time_sec": 3.669919013977051,
+            "tp_malicious_caught": 46237,
+            "tn_benign_passed": 48997,
+            "fp_benign_flagged_as_attack": 642,
+            "fn_attack_missed_as_benign": 3414,
+            "accuracy": 0.959149964749723,
+            "precision_malicious": 0.9863051686256106,
+            "recall_malicious": 0.9312400555880043,
+            "f1_malicious": 0.9579819745156947,
+            "false_positive_rate": 0.012933378996353674,
+            "false_negative_rate": 0.06875994441199573
+          },
+          {
+            "key": "histgbm",
+            "name": "Hist Gradient Boosting",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.835018616761288,
+            "train_time_sec": 3.493788242340088,
+            "tp_malicious_caught": 46177,
+            "tn_benign_passed": 49058,
+            "fp_benign_flagged_as_attack": 581,
+            "fn_attack_missed_as_benign": 3474,
+            "accuracy": 0.9591600362574277,
+            "precision_malicious": 0.9875743188331408,
+            "recall_malicious": 0.9300316207125737,
+            "f1_malicious": 0.957939611447064,
+            "false_positive_rate": 0.011704506537198574,
+            "false_negative_rate": 0.06996837928742623
+          },
+          {
+            "key": "bagging_knn",
+            "name": "Bagging (KNN)",
+            "family": "ensemble_bagging",
+            "f1_macro_multiclass": 0.8204743550400698,
+            "train_time_sec": 2.5002050399780273,
+            "tp_malicious_caught": 46224,
+            "tn_benign_passed": 48996,
+            "fp_benign_flagged_as_attack": 643,
+            "fn_attack_missed_as_benign": 3427,
+            "accuracy": 0.9590089636418572,
+            "precision_malicious": 0.9862803251754966,
+            "recall_malicious": 0.930978228031661,
+            "f1_malicious": 0.9578316997865682,
+            "false_positive_rate": 0.012953524446503757,
+            "false_negative_rate": 0.069021771968339
+          },
+          {
+            "key": "ebm",
+            "name": "Explainable Boosting Machine",
+            "family": "interpretable",
+            "f1_macro_multiclass": 0.8284344512827193,
+            "train_time_sec": 175.7050678730011,
+            "tp_malicious_caught": 46222,
+            "tn_benign_passed": 48997,
+            "fp_benign_flagged_as_attack": 642,
+            "fn_attack_missed_as_benign": 3429,
+            "accuracy": 0.9589988921341525,
+            "precision_malicious": 0.9863007852509389,
+            "recall_malicious": 0.9309379468691467,
+            "f1_malicious": 0.957820027974926,
+            "false_positive_rate": 0.012933378996353674,
+            "false_negative_rate": 0.06906205313085335
+          },
+          {
+            "key": "voting_soft",
+            "name": "Voting Classifier (soft)",
+            "family": "meta",
+            "f1_macro_multiclass": 0.761838680868934,
+            "train_time_sec": 16.55044984817505,
+            "tp_malicious_caught": 46336,
+            "tn_benign_passed": 48806,
+            "fp_benign_flagged_as_attack": 833,
+            "fn_attack_missed_as_benign": 3315,
+            "accuracy": 0.9582233860408903,
+            "precision_malicious": 0.9823400962496555,
+            "recall_malicious": 0.9332339731324646,
+            "f1_malicious": 0.9571576120636233,
+            "false_positive_rate": 0.016781159975019642,
+            "false_negative_rate": 0.0667660268675354
+          },
+          {
+            "key": "label_spreading",
+            "name": "Label Spreading",
+            "family": "graph",
+            "f1_macro_multiclass": 0.7183067679467762,
+            "train_time_sec": 0.041320085525512695,
+            "tp_malicious_caught": 46233,
+            "tn_benign_passed": 48820,
+            "fp_benign_flagged_as_attack": 819,
+            "fn_attack_missed_as_benign": 3418,
+            "accuracy": 0.9573270218551717,
+            "precision_malicious": 0.9825937260902831,
+            "recall_malicious": 0.9311594932629755,
+            "f1_malicious": 0.9561854337507626,
+            "false_positive_rate": 0.016499123672918472,
+            "false_negative_rate": 0.06884050673702444
+          },
+          {
+            "key": "rgf",
+            "name": "Regularized Greedy Forest",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.6795530912120151,
+            "train_time_sec": 4.159341812133789,
+            "tp_malicious_caught": 44958,
+            "tn_benign_passed": 49277,
+            "fp_benign_flagged_as_attack": 362,
+            "fn_attack_missed_as_benign": 4693,
+            "accuracy": 0.9490885285527243,
+            "precision_malicious": 0.9920123565754634,
+            "recall_malicious": 0.9054802521600773,
+            "f1_malicious": 0.9467732255109453,
+            "false_positive_rate": 0.007292652954330264,
+            "false_negative_rate": 0.09451974783992266
+          },
+          {
+            "key": "ngboost",
+            "name": "NGBoost",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.7709043835295543,
+            "train_time_sec": 85.85880613327026,
+            "tp_malicious_caught": 44554,
+            "tn_benign_passed": 49309,
+            "fp_benign_flagged_as_attack": 330,
+            "fn_attack_missed_as_benign": 5097,
+            "accuracy": 0.9453419276865747,
+            "precision_malicious": 0.9926477141074771,
+            "recall_malicious": 0.8973434573321786,
+            "f1_malicious": 0.9425926905378961,
+            "false_positive_rate": 0.006647998549527589,
+            "false_negative_rate": 0.1026565426678214
+          },
+          {
+            "key": "knn5",
+            "name": "K-Nearest Neighbors (k=5)",
+            "family": "instance",
+            "f1_macro_multiclass": 0.8188283451308308,
+            "train_time_sec": 0.014356851577758789,
+            "tp_malicious_caught": 47039,
+            "tn_benign_passed": 46274,
+            "fp_benign_flagged_as_attack": 3365,
+            "fn_attack_missed_as_benign": 2612,
+            "accuracy": 0.9398025984489878,
+            "precision_malicious": 0.9332394254424252,
+            "recall_malicious": 0.9473928017562587,
+            "f1_malicious": 0.9402628554295138,
+            "false_positive_rate": 0.06778943975503132,
+            "false_negative_rate": 0.05260719824374131
+          },
+          {
+            "key": "adaboost",
+            "name": "AdaBoost",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.5932639397533382,
+            "train_time_sec": 8.311092853546143,
+            "tp_malicious_caught": 44207,
+            "tn_benign_passed": 48774,
+            "fp_benign_flagged_as_attack": 865,
+            "fn_attack_missed_as_benign": 5444,
+            "accuracy": 0.9364588578910263,
+            "precision_malicious": 0.9808084842030529,
+            "recall_malicious": 0.8903546756359388,
+            "f1_malicious": 0.9333952683086474,
+            "false_positive_rate": 0.017425814379822317,
+            "false_negative_rate": 0.10964532436406114
+          },
+          {
+            "key": "bagging_dt",
+            "name": "Bagging (Decision Trees)",
+            "family": "ensemble_bagging",
+            "f1_macro_multiclass": 0.7185289157090459,
+            "train_time_sec": 2.889631986618042,
+            "tp_malicious_caught": 47192,
+            "tn_benign_passed": 45288,
+            "fp_benign_flagged_as_attack": 4351,
+            "fn_attack_missed_as_benign": 2459,
+            "accuracy": 0.9314130325309699,
+            "precision_malicious": 0.9155850454959936,
+            "recall_malicious": 0.9504743106886064,
+            "f1_malicious": 0.9327035199715399,
+            "false_positive_rate": 0.08765285360301375,
+            "false_negative_rate": 0.04952568931139353
+          },
+          {
+            "key": "stacking",
+            "name": "Stacking Classifier",
+            "family": "meta",
+            "f1_macro_multiclass": 0.7235782269753166,
+            "train_time_sec": 6.009346008300781,
+            "tp_malicious_caught": 47553,
+            "tn_benign_passed": 44862,
+            "fp_benign_flagged_as_attack": 4777,
+            "fn_attack_missed_as_benign": 2098,
+            "accuracy": 0.9307583845301641,
+            "precision_malicious": 0.9087139308236193,
+            "recall_malicious": 0.9577450605224467,
+            "f1_malicious": 0.9325854816093194,
+            "false_positive_rate": 0.09623481536694937,
+            "false_negative_rate": 0.04225493947755332
+          },
+          {
+            "key": "balanced_random_forest",
+            "name": "Balanced Random Forest",
+            "family": "imbalanced",
+            "f1_macro_multiclass": 0.7215307505563864,
+            "train_time_sec": 1.426621913909912,
+            "tp_malicious_caught": 47527,
+            "tn_benign_passed": 44845,
+            "fp_benign_flagged_as_attack": 4794,
+            "fn_attack_missed_as_benign": 2124,
+            "accuracy": 0.930325309698862,
+            "precision_malicious": 0.9083733109076662,
+            "recall_malicious": 0.9572214054097601,
+            "f1_malicious": 0.9321578472521869,
+            "false_positive_rate": 0.0965772880195008,
+            "false_negative_rate": 0.042778594590239874
+          },
+          {
+            "key": "random_forest",
+            "name": "Random Forest",
+            "family": "ensemble_bagging",
+            "f1_macro_multiclass": 0.7159081425750203,
+            "train_time_sec": 3.074847936630249,
+            "tp_malicious_caught": 47276,
+            "tn_benign_passed": 45061,
+            "fp_benign_flagged_as_attack": 4578,
+            "fn_attack_missed_as_benign": 2375,
+            "accuracy": 0.9299728069291973,
+            "precision_malicious": 0.9117136575770433,
+            "recall_malicious": 0.9521661195142092,
+            "f1_malicious": 0.9315009112851583,
+            "false_positive_rate": 0.09222587078708273,
+            "false_negative_rate": 0.04783388048579082
+          },
+          {
+            "key": "extra_trees",
+            "name": "Extra Trees",
+            "family": "ensemble_bagging",
+            "f1_macro_multiclass": 0.7159233524214118,
+            "train_time_sec": 2.1308159828186035,
+            "tp_malicious_caught": 47270,
+            "tn_benign_passed": 45064,
+            "fp_benign_flagged_as_attack": 4575,
+            "fn_attack_missed_as_benign": 2381,
+            "accuracy": 0.9299425924060832,
+            "precision_malicious": 0.9117561963545183,
+            "recall_malicious": 0.9520452760266661,
+            "f1_malicious": 0.9314652794198787,
+            "false_positive_rate": 0.09216543443663248,
+            "false_negative_rate": 0.04795472397333387
+          },
+          {
+            "key": "decision_tree",
+            "name": "Decision Tree",
+            "family": "tree",
+            "f1_macro_multiclass": 0.7155007131537197,
+            "train_time_sec": 0.1920337677001953,
+            "tp_malicious_caught": 47269,
+            "tn_benign_passed": 45064,
+            "fp_benign_flagged_as_attack": 4575,
+            "fn_attack_missed_as_benign": 2382,
+            "accuracy": 0.9299325208983785,
+            "precision_malicious": 0.9117544942519867,
+            "recall_malicious": 0.952025135445409,
+            "f1_malicious": 0.9314547514655894,
+            "false_positive_rate": 0.09216543443663248,
+            "false_negative_rate": 0.047974864554591046
+          },
+          {
+            "key": "extra_tree",
+            "name": "Extra Tree (single)",
+            "family": "tree",
+            "f1_macro_multiclass": 0.7158698932199304,
+            "train_time_sec": 0.08160281181335449,
+            "tp_malicious_caught": 47269,
+            "tn_benign_passed": 45064,
+            "fp_benign_flagged_as_attack": 4575,
+            "fn_attack_missed_as_benign": 2382,
+            "accuracy": 0.9299325208983785,
+            "precision_malicious": 0.9117544942519867,
+            "recall_malicious": 0.952025135445409,
+            "f1_malicious": 0.9314547514655894,
+            "false_positive_rate": 0.09216543443663248,
+            "false_negative_rate": 0.047974864554591046
+          },
+          {
+            "key": "balanced_bagging",
+            "name": "Balanced Bagging",
+            "family": "imbalanced",
+            "f1_macro_multiclass": 0.7125361073108943,
+            "train_time_sec": 1.689729928970337,
+            "tp_malicious_caught": 47233,
+            "tn_benign_passed": 44782,
+            "fp_benign_flagged_as_attack": 4857,
+            "fn_attack_missed_as_benign": 2418,
+            "accuracy": 0.9267297814482828,
+            "precision_malicious": 0.9067575350355155,
+            "recall_malicious": 0.9513000745201506,
+            "f1_malicious": 0.9284949037261282,
+            "false_positive_rate": 0.09784645137895606,
+            "false_negative_rate": 0.048699925479849346
+          },
+          {
+            "key": "rbf_sampler_ridge",
+            "name": "RBF Sampler + Ridge",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.6508793820278541,
+            "train_time_sec": 0.3378317356109619,
+            "tp_malicious_caught": 49640,
+            "tn_benign_passed": 31156,
+            "fp_benign_flagged_as_attack": 18483,
+            "fn_attack_missed_as_benign": 11,
+            "accuracy": 0.8137375365092154,
+            "precision_malicious": 0.7286819429561234,
+            "recall_malicious": 0.9997784536061711,
+            "f1_malicious": 0.8429704349007421,
+            "false_positive_rate": 0.3723483551239952,
+            "false_negative_rate": 0.00022154639382892591
+          },
+          {
+            "key": "svc_rbf",
+            "name": "SVM (RBF Kernel)",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.5574909814346736,
+            "train_time_sec": 1.7754700183868408,
+            "tp_malicious_caught": 49145,
+            "tn_benign_passed": 31166,
+            "fp_benign_flagged_as_attack": 18473,
+            "fn_attack_missed_as_benign": 506,
+            "accuracy": 0.8088528552724343,
+            "precision_malicious": 0.7268035138572569,
+            "recall_malicious": 0.9898088658838694,
+            "f1_malicious": 0.8381584220893842,
+            "false_positive_rate": 0.3721469006224944,
+            "false_negative_rate": 0.010191134116130592
+          },
+          {
+            "key": "svc_linear",
+            "name": "SVM (Linear Kernel)",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.6186584195089259,
+            "train_time_sec": 1.6923000812530518,
+            "tp_malicious_caught": 49049,
+            "tn_benign_passed": 31166,
+            "fp_benign_flagged_as_attack": 18473,
+            "fn_attack_missed_as_benign": 602,
+            "accuracy": 0.8078859905327828,
+            "precision_malicious": 0.7264150943396226,
+            "recall_malicious": 0.9878753700831806,
+            "f1_malicious": 0.8372065236871975,
+            "false_positive_rate": 0.3721469006224944,
+            "false_negative_rate": 0.0121246299168194
+          },
+          {
+            "key": "passive_aggressive",
+            "name": "Passive-Aggressive Classifier",
+            "family": "linear",
+            "f1_macro_multiclass": 0.514642372490797,
+            "train_time_sec": 1.366687297821045,
+            "tp_malicious_caught": 49279,
+            "tn_benign_passed": 30733,
+            "fp_benign_flagged_as_attack": 18906,
+            "fn_attack_missed_as_benign": 372,
+            "accuracy": 0.805841474468728,
+            "precision_malicious": 0.7227249395028232,
+            "recall_malicious": 0.9925077037723309,
+            "f1_malicious": 0.836399742014325,
+            "false_positive_rate": 0.3808698805374806,
+            "false_negative_rate": 0.007492296227669131
+          },
+          {
+            "key": "elm",
+            "name": "Extreme Learning Machine",
+            "family": "exotic",
+            "f1_macro_multiclass": 0.7662825066509654,
+            "train_time_sec": 0.5925378799438477,
+            "tp_malicious_caught": 35638,
+            "tn_benign_passed": 49637,
+            "fp_benign_flagged_as_attack": 2,
+            "fn_attack_missed_as_benign": 14013,
+            "accuracy": 0.8588478195185819,
+            "precision_malicious": 0.9999438832772166,
+            "recall_malicious": 0.7177700348432056,
+            "f1_malicious": 0.8356802007245783,
+            "false_positive_rate": 4.029090030016721e-05,
+            "false_negative_rate": 0.28222996515679444
+          },
+          {
+            "key": "som_classifier",
+            "name": "Self-Organizing Map Classifier",
+            "family": "exotic",
+            "f1_macro_multiclass": 0.7151079451908956,
+            "train_time_sec": 0.2898859977722168,
+            "tp_malicious_caught": 35324,
+            "tn_benign_passed": 49637,
+            "fp_benign_flagged_as_attack": 2,
+            "fn_attack_missed_as_benign": 14327,
+            "accuracy": 0.855685366099305,
+            "precision_malicious": 0.9999433844760234,
+            "recall_malicious": 0.7114458923284526,
+            "f1_malicious": 0.8313779022559046,
+            "false_positive_rate": 4.029090030016721e-05,
+            "false_negative_rate": 0.2885541076715474
+          },
+          {
+            "key": "ridge",
+            "name": "Ridge Classifier",
+            "family": "linear",
+            "f1_macro_multiclass": 0.5673128882554447,
+            "train_time_sec": 0.07443618774414062,
+            "tp_malicious_caught": 48446,
+            "tn_benign_passed": 31168,
+            "fp_benign_flagged_as_attack": 18471,
+            "fn_attack_missed_as_benign": 1205,
+            "accuracy": 0.8018330144022561,
+            "precision_malicious": 0.723971487066067,
+            "recall_malicious": 0.975730599585104,
+            "f1_malicious": 0.8312058197790131,
+            "false_positive_rate": 0.3721066097221942,
+            "false_negative_rate": 0.024269400414895975
+          },
+          {
+            "key": "svc_poly",
+            "name": "SVM (Polynomial Kernel)",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.5453177340634264,
+            "train_time_sec": 2.190974235534668,
+            "tp_malicious_caught": 48420,
+            "tn_benign_passed": 31166,
+            "fp_benign_flagged_as_attack": 18473,
+            "fn_attack_missed_as_benign": 1231,
+            "accuracy": 0.8015510121865244,
+            "precision_malicious": 0.7238425545273796,
+            "recall_malicious": 0.9752069444724175,
+            "f1_malicious": 0.8309308072487644,
+            "false_positive_rate": 0.3721469006224944,
+            "false_negative_rate": 0.024793055527582528
+          },
+          {
+            "key": "sgd_modified_huber",
+            "name": "SGD (Modified Huber)",
+            "family": "linear",
+            "f1_macro_multiclass": 0.49665746958230433,
+            "train_time_sec": 3.0539352893829346,
+            "tp_malicious_caught": 48406,
+            "tn_benign_passed": 31168,
+            "fp_benign_flagged_as_attack": 18471,
+            "fn_attack_missed_as_benign": 1245,
+            "accuracy": 0.8014301540940679,
+            "precision_malicious": 0.7238063908369096,
+            "recall_malicious": 0.974924976334817,
+            "f1_malicious": 0.8308046134834546,
+            "false_positive_rate": 0.3721066097221942,
+            "false_negative_rate": 0.025075023665182977
+          },
+          {
+            "key": "sgd_hinge",
+            "name": "SGD (Hinge / Linear SVM)",
+            "family": "linear",
+            "f1_macro_multiclass": 0.5421120367162845,
+            "train_time_sec": 2.0649960041046143,
+            "tp_malicious_caught": 48369,
+            "tn_benign_passed": 31168,
+            "fp_benign_flagged_as_attack": 18471,
+            "fn_attack_missed_as_benign": 1282,
+            "accuracy": 0.8010575083089938,
+            "precision_malicious": 0.7236535008976661,
+            "recall_malicious": 0.9741797748283015,
+            "f1_malicious": 0.8304332523542591,
+            "false_positive_rate": 0.3721066097221942,
+            "false_negative_rate": 0.025820225171698456
+          },
+          {
+            "key": "nystroem_sgd",
+            "name": "Nystroem + SGD",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.43778057779842977,
+            "train_time_sec": 4.4181718826293945,
+            "tp_malicious_caught": 48420,
+            "tn_benign_passed": 30963,
+            "fp_benign_flagged_as_attack": 18676,
+            "fn_attack_missed_as_benign": 1231,
+            "accuracy": 0.7995064961224695,
+            "precision_malicious": 0.72165255752951,
+            "recall_malicious": 0.9752069444724175,
+            "f1_malicious": 0.8294859825091866,
+            "false_positive_rate": 0.3762364270029614,
+            "false_negative_rate": 0.024793055527582528
+          },
+          {
+            "key": "sgd_log",
+            "name": "SGD (Log Loss)",
+            "family": "linear",
+            "f1_macro_multiclass": 0.5131826074389496,
+            "train_time_sec": 3.393634080886841,
+            "tp_malicious_caught": 47936,
+            "tn_benign_passed": 31168,
+            "fp_benign_flagged_as_attack": 18471,
+            "fn_attack_missed_as_benign": 1715,
+            "accuracy": 0.7966965454728573,
+            "precision_malicious": 0.7218516120288524,
+            "recall_malicious": 0.9654589031439448,
+            "f1_malicious": 0.8260697237588104,
+            "false_positive_rate": 0.3721066097221942,
+            "false_negative_rate": 0.03454109685605527
+          },
+          {
+            "key": "logreg",
+            "name": "Logistic Regression",
+            "family": "linear",
+            "f1_macro_multiclass": 0.6304921726561064,
+            "train_time_sec": 19.967849016189575,
+            "tp_malicious_caught": 49267,
+            "tn_benign_passed": 28642,
+            "fp_benign_flagged_as_attack": 20997,
+            "fn_attack_missed_as_benign": 384,
+            "accuracy": 0.7846610937657368,
+            "precision_malicious": 0.7011698736194922,
+            "recall_malicious": 0.9922660167972448,
+            "f1_malicious": 0.8216987032481341,
+            "false_positive_rate": 0.42299401680130544,
+            "false_negative_rate": 0.007733983202755232
+          },
+          {
+            "key": "logreg_elasticnet",
+            "name": "Logistic Regression (ElasticNet)",
+            "family": "linear",
+            "f1_macro_multiclass": 0.6302457397569623,
+            "train_time_sec": 395.962299823761,
+            "tp_malicious_caught": 49266,
+            "tn_benign_passed": 28619,
+            "fp_benign_flagged_as_attack": 21020,
+            "fn_attack_missed_as_benign": 385,
+            "accuracy": 0.7844193775808238,
+            "precision_malicious": 0.700936175056199,
+            "recall_malicious": 0.9922458762159876,
+            "f1_malicious": 0.8215313039345656,
+            "false_positive_rate": 0.4234573621547573,
+            "false_negative_rate": 0.007754123784012407
+          },
+          {
+            "key": "linear_svc",
+            "name": "Linear SVC (liblinear)",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.6153900430101872,
+            "train_time_sec": 20.798763036727905,
+            "tp_malicious_caught": 46862,
+            "tn_benign_passed": 31158,
+            "fp_benign_flagged_as_attack": 18481,
+            "fn_attack_missed_as_benign": 2789,
+            "accuracy": 0.7857790311209588,
+            "precision_malicious": 0.717169398405338,
+            "recall_malicious": 0.9438279188737387,
+            "f1_malicious": 0.8150338278518879,
+            "false_positive_rate": 0.37230806422369506,
+            "false_negative_rate": 0.056172081126261306
+          },
+          {
+            "key": "nearest_centroid",
+            "name": "Nearest Centroid",
+            "family": "instance",
+            "f1_macro_multiclass": 0.4705820134898003,
+            "train_time_sec": 0.04239225387573242,
+            "tp_malicious_caught": 46697,
+            "tn_benign_passed": 31168,
+            "fp_benign_flagged_as_attack": 18471,
+            "fn_attack_missed_as_benign": 2954,
+            "accuracy": 0.7842179474267298,
+            "precision_malicious": 0.7165633439725019,
+            "recall_malicious": 0.9405047229663048,
+            "f1_malicious": 0.8134019630897326,
+            "false_positive_rate": 0.3721066097221942,
+            "false_negative_rate": 0.05949527703369519
+          },
+          {
+            "key": "gaussian_process",
+            "name": "Gaussian Process Classifier",
+            "family": "probabilistic",
+            "f1_macro_multiclass": 0.3725441825014431,
+            "train_time_sec": 44.2822151184082,
+            "tp_malicious_caught": 46678,
+            "tn_benign_passed": 31168,
+            "fp_benign_flagged_as_attack": 18471,
+            "fn_attack_missed_as_benign": 2973,
+            "accuracy": 0.7840265887803404,
+            "precision_malicious": 0.7164806827426361,
+            "recall_malicious": 0.9401220519224185,
+            "f1_malicious": 0.813205574912892,
+            "false_positive_rate": 0.3721066097221942,
+            "false_negative_rate": 0.05987794807758152
+          },
+          {
+            "key": "perceptron",
+            "name": "Perceptron",
+            "family": "linear",
+            "f1_macro_multiclass": 0.5151042720059982,
+            "train_time_sec": 1.432250738143921,
+            "tp_malicious_caught": 47417,
+            "tn_benign_passed": 23420,
+            "fp_benign_flagged_as_attack": 26219,
+            "fn_attack_missed_as_benign": 2234,
+            "accuracy": 0.7134353912780743,
+            "precision_malicious": 0.6439377478407301,
+            "recall_malicious": 0.9550059414714709,
+            "f1_malicious": 0.7692132990501838,
+            "false_positive_rate": 0.528193557485042,
+            "false_negative_rate": 0.044994058528529134
+          },
+          {
+            "key": "lda",
+            "name": "Linear Discriminant Analysis",
+            "family": "linear",
+            "f1_macro_multiclass": 0.547736593843683,
+            "train_time_sec": 0.2405550479888916,
+            "tp_malicious_caught": 30798,
+            "tn_benign_passed": 49639,
+            "fp_benign_flagged_as_attack": 0,
+            "fn_attack_missed_as_benign": 18853,
+            "accuracy": 0.8101218652432269,
+            "precision_malicious": 1.0,
+            "recall_malicious": 0.6202896215584782,
+            "f1_malicious": 0.7656527738070082,
+            "false_positive_rate": 0.0,
+            "false_negative_rate": 0.37971037844152183
+          },
+          {
+            "key": "qda",
+            "name": "Quadratic Discriminant Analysis",
+            "family": "naive_bayes",
+            "f1_macro_multiclass": 0.5038602680396251,
+            "train_time_sec": 0.1589360237121582,
+            "tp_malicious_caught": 30786,
+            "tn_benign_passed": 49639,
+            "fp_benign_flagged_as_attack": 0,
+            "fn_attack_missed_as_benign": 18865,
+            "accuracy": 0.8100010071507705,
+            "precision_malicious": 1.0,
+            "recall_malicious": 0.620047934583392,
+            "f1_malicious": 0.7654686276216168,
+            "false_positive_rate": 0.0,
+            "false_negative_rate": 0.3799520654166079
+          },
+          {
+            "key": "gnb",
+            "name": "Gaussian Naive Bayes",
+            "family": "naive_bayes",
+            "f1_macro_multiclass": 0.47590577094260195,
+            "train_time_sec": 0.05795907974243164,
+            "tp_malicious_caught": 29626,
+            "tn_benign_passed": 49639,
+            "fp_benign_flagged_as_attack": 0,
+            "fn_attack_missed_as_benign": 20025,
+            "accuracy": 0.7983180582133146,
+            "precision_malicious": 1.0,
+            "recall_malicious": 0.596684860325069,
+            "f1_malicious": 0.7474046697024358,
+            "false_positive_rate": 0.0,
+            "false_negative_rate": 0.40331513967493104
+          },
+          {
+            "key": "cnb",
+            "name": "Complement Naive Bayes",
+            "family": "naive_bayes",
+            "f1_macro_multiclass": 0.37348688534530816,
+            "train_time_sec": 0.04764866828918457,
+            "tp_malicious_caught": 29564,
+            "tn_benign_passed": 49639,
+            "fp_benign_flagged_as_attack": 0,
+            "fn_attack_missed_as_benign": 20087,
+            "accuracy": 0.7976936247356229,
+            "precision_malicious": 1.0,
+            "recall_malicious": 0.5954361442871241,
+            "f1_malicious": 0.7464242883292306,
+            "false_positive_rate": 0.0,
+            "false_negative_rate": 0.4045638557128759
+          },
+          {
+            "key": "bnb",
+            "name": "Bernoulli Naive Bayes",
+            "family": "naive_bayes",
+            "f1_macro_multiclass": 0.4197081858672591,
+            "train_time_sec": 0.06011509895324707,
+            "tp_malicious_caught": 29561,
+            "tn_benign_passed": 49639,
+            "fp_benign_flagged_as_attack": 0,
+            "fn_attack_missed_as_benign": 20090,
+            "accuracy": 0.7976634102125089,
+            "precision_malicious": 1.0,
+            "recall_malicious": 0.5953757225433526,
+            "f1_malicious": 0.7463768115942029,
+            "false_positive_rate": 0.0,
+            "false_negative_rate": 0.4046242774566474
+          },
+          {
+            "key": "lightgbm_goss",
+            "name": "LightGBM (GOSS)",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.3488854367179645,
+            "train_time_sec": 5.223880052566528,
+            "tp_malicious_caught": 29917,
+            "tn_benign_passed": 47354,
+            "fp_benign_flagged_as_attack": 2285,
+            "fn_attack_missed_as_benign": 19734,
+            "accuracy": 0.778235471850136,
+            "precision_malicious": 0.9290416744301596,
+            "recall_malicious": 0.6025457694709069,
+            "f1_malicious": 0.7309933661564023,
+            "false_positive_rate": 0.046032353592941035,
+            "false_negative_rate": 0.39745423052909307
+          },
+          {
+            "key": "easy_ensemble",
+            "name": "Easy Ensemble",
+            "family": "imbalanced",
+            "f1_macro_multiclass": 0.3458097368472504,
+            "train_time_sec": 1.6966748237609863,
+            "tp_malicious_caught": 49357,
+            "tn_benign_passed": 7181,
+            "fp_benign_flagged_as_attack": 42458,
+            "fn_attack_missed_as_benign": 294,
+            "accuracy": 0.5694229026085205,
+            "precision_malicious": 0.5375701138158253,
+            "recall_malicious": 0.9940786691103906,
+            "f1_malicious": 0.6977931092983473,
+            "false_positive_rate": 0.8553355224722496,
+            "false_negative_rate": 0.0059213308896094745
+          },
+          {
+            "key": "rusboost",
+            "name": "RUSBoost",
+            "family": "imbalanced",
+            "f1_macro_multiclass": 0.15789485890124333,
+            "train_time_sec": 0.01079416275024414,
+            "tp_malicious_caught": 49651,
+            "tn_benign_passed": 0,
+            "fp_benign_flagged_as_attack": 49639,
+            "fn_attack_missed_as_benign": 0,
+            "accuracy": 0.5000604290462283,
+            "precision_malicious": 0.5000604290462283,
+            "recall_malicious": 1.0,
+            "f1_malicious": 0.6667203792105599,
+            "false_positive_rate": 1.0,
+            "false_negative_rate": 0.0
+          }
+        ]
+      }
+    },
+    "datasense": {
+      "feature_selection": {
+        "dataset": "datasense",
+        "n_train": 31538,
+        "n_test": 13517,
+        "n_features": 109,
+        "feature_names": [
+          "log_data-ranges_avg",
+          "log_data-ranges_max",
+          "log_data-ranges_min",
+          "log_data-ranges_std_deviation",
+          "log_data-types_count",
+          "log_interval-messages",
+          "log_messages_count",
+          "network_fragmentation-score",
+          "network_fragmented-packets",
+          "network_header-length_avg",
+          "network_header-length_max",
+          "network_header-length_min",
+          "network_header-length_std_deviation",
+          "network_interval-packets",
+          "network_ip-flags_avg",
+          "network_ip-flags_max",
+          "network_ip-flags_min",
+          "network_ip-flags_std_deviation",
+          "network_ip-length_avg",
+          "network_ip-length_max",
+          "network_ip-length_min",
+          "network_ip-length_std_deviation",
+          "network_ips_all_count",
+          "network_ips_dst_count",
+          "network_ips_src_count",
+          "network_macs_all_count",
+          "network_macs_dst_count",
+          "network_macs_src_count",
+          "network_mss_avg",
+          "network_mss_max",
+          "network_mss_min",
+          "network_mss_std_deviation",
+          "network_packet-size_avg",
+          "network_packet-size_max",
+          "network_packet-size_min",
+          "network_packet-size_std_deviation",
+          "network_packets_all_count",
+          "network_packets_dst_count",
+          "network_packets_src_count",
+          "network_payload-length_avg",
+          "network_payload-length_max",
+          "network_payload-length_min",
+          "network_payload-length_std_deviation",
+          "network_ports_all_count",
+          "network_ports_dst_count",
+          "network_ports_src_count",
+          "network_protocols_all_count",
+          "network_protocols_dst_count",
+          "network_protocols_src_count",
+          "network_tcp-flags-ack_count",
+          "network_tcp-flags-fin_count",
+          "network_tcp-flags-psh_count",
+          "network_tcp-flags-rst_count",
+          "network_tcp-flags-syn_count",
+          "network_tcp-flags-urg_count",
+          "network_tcp-flags_avg",
+          "network_tcp-flags_max",
+          "network_tcp-flags_min",
+          "network_tcp-flags_std_deviation",
+          "network_time-delta_avg",
+          "network_time-delta_max",
+          "network_time-delta_min",
+          "network_time-delta_std_deviation",
+          "network_ttl_avg",
+          "network_ttl_max",
+          "network_ttl_min",
+          "network_ttl_std_deviation",
+          "network_window-size_avg",
+          "network_window-size_max",
+          "network_window-size_min",
+          "network_window-size_std_deviation",
+          "device_accelerometer-sensor",
+          "device_ap",
+          "device_blurams-camera",
+          "device_dekco-camera",
+          "device_edge1",
+          "device_flame-sensor",
+          "device_gas-sensor",
+          "device_geeni-camera",
+          "device_light-sensor",
+          "device_motion-sensor",
+          "device_mqtt-broker",
+          "device_myq-camera",
+          "device_plug-all-cameras",
+          "device_plug-all-rpb",
+          "device_plug-all-sensors",
+          "device_plug-cameras-dekco-blurams",
+          "device_plug-cameras-geeni",
+          "device_plug-cameras-yi",
+          "device_plug-edge1",
+          "device_plug-flame",
+          "device_plug-motion",
+          "device_plug-mqtt",
+          "device_plug-proximity",
+          "device_plug-rfid",
+          "device_plug-vibration",
+          "device_proximity-collision-sensor",
+          "device_rfid-sensor",
+          "device_router",
+          "device_soil-sensor",
+          "device_sound-sensor",
+          "device_steam-sensor",
+          "device_switch",
+          "device_ultrasonic-sensor",
+          "device_vibration-sensor",
+          "device_water-sensor",
+          "device_weather-sensor",
+          "device_wisenet-camera",
+          "device_yi-camera"
+        ],
+        "class_names": [
+          "benign",
+          "bruteforce",
+          "ddos",
+          "dos",
+          "malware",
+          "mitm",
+          "recon",
+          "web"
+        ],
+        "per_model_feature_selection": {
+          "xgboost": {
+            "family": "boosting",
+            "fit_time_sec": 6.011711835861206,
+            "native_importance_top15": [
+              {
+                "feature": "network_mss_max",
+                "importance": 0.22465681374823665
+              },
+              {
+                "feature": "network_packets_all_count",
+                "importance": 0.11633320611819441
+              },
+              {
+                "feature": "network_tcp-flags_std_deviation",
+                "importance": 0.0801433258755345
+              },
+              {
+                "feature": "network_packets_dst_count",
+                "importance": 0.06041620924563823
+              },
+              {
+                "feature": "network_macs_dst_count",
+                "importance": 0.040138334465139716
+              },
+              {
+                "feature": "network_window-size_max",
+                "importance": 0.032837934465673214
+              },
+              {
+                "feature": "network_packet-size_min",
+                "importance": 0.031493346672625024
+              },
+              {
+                "feature": "network_mss_avg",
+                "importance": 0.025591949787228657
+              },
+              {
+                "feature": "network_ips_dst_count",
+                "importance": 0.020649267635245043
+              },
+              {
+                "feature": "network_ttl_min",
+                "importance": 0.020390793929068143
+              },
+              {
+                "feature": "network_ips_all_count",
+                "importance": 0.01892587924692508
+              },
+              {
+                "feature": "device_router",
+                "importance": 0.017175057818007763
+              },
+              {
+                "feature": "device_edge1",
+                "importance": 0.016375522892879198
+              },
+              {
+                "feature": "network_mss_min",
+                "importance": 0.014593369906663661
+              },
+              {
+                "feature": "network_ip-length_max",
+                "importance": 0.014220474828448786
+              }
+            ],
+            "permutation_importance_top15": [
+              {
+                "feature": "device_edge1",
+                "importance": 0.22044262626515357
+              },
+              {
+                "feature": "network_packet-size_min",
+                "importance": 0.1301549310649683
+              },
+              {
+                "feature": "network_packets_all_count",
+                "importance": 0.09202522824797481
+              },
+              {
+                "feature": "network_time-delta_min",
+                "importance": 0.07268195707318507
+              },
+              {
+                "feature": "network_window-size_std_deviation",
+                "importance": 0.058537161281500404
+              },
+              {
+                "feature": "network_macs_dst_count",
+                "importance": 0.04926098597561632
+              },
+              {
+                "feature": "log_data-types_count",
+                "importance": 0.04147769380785285
+              },
+              {
+                "feature": "network_window-size_min",
+                "importance": 0.03787369887038338
+              },
+              {
+                "feature": "network_time-delta_std_deviation",
+                "importance": 0.03310466594537615
+              },
+              {
+                "feature": "network_macs_all_count",
+                "importance": 0.031060282402380825
+              },
+              {
+                "feature": "network_ip-flags_std_deviation",
+                "importance": 0.02729879858694067
+              },
+              {
+                "feature": "network_time-delta_avg",
+                "importance": 0.02678233008756033
+              },
+              {
+                "feature": "network_ip-flags_avg",
+                "importance": 0.024379571109515726
+              },
+              {
+                "feature": "network_packets_dst_count",
+                "importance": 0.02240209516681652
+              },
+              {
+                "feature": "network_tcp-flags_std_deviation",
+                "importance": 0.016446489723183615
+              }
+            ],
+            "permutation_importance_runtime_sec": 6.193501234054565
+          },
+          "random_forest": {
+            "family": "ensemble_bagging",
+            "fit_time_sec": 3.868540048599243,
+            "native_importance_top15": [
+              {
+                "feature": "network_time-delta_min",
+                "importance": 0.05118627248008598
+              },
+              {
+                "feature": "network_time-delta_avg",
+                "importance": 0.04825040863749601
+              },
+              {
+                "feature": "network_time-delta_std_deviation",
+                "importance": 0.03911085753158022
+              },
+              {
+                "feature": "network_packets_dst_count",
+                "importance": 0.038200605642482545
+              },
+              {
+                "feature": "network_packets_all_count",
+                "importance": 0.035978719702852185
+              },
+              {
+                "feature": "network_ports_all_count",
+                "importance": 0.031441801536021725
+              },
+              {
+                "feature": "network_window-size_std_deviation",
+                "importance": 0.030897900042927723
+              },
+              {
+                "feature": "network_interval-packets",
+                "importance": 0.028982989724969918
+              },
+              {
+                "feature": "device_edge1",
+                "importance": 0.02741728217959039
+              },
+              {
+                "feature": "network_time-delta_max",
+                "importance": 0.024404747873557488
+              },
+              {
+                "feature": "network_ip-length_avg",
+                "importance": 0.02399009952554647
+              },
+              {
+                "feature": "network_ttl_min",
+                "importance": 0.02305514667149306
+              },
+              {
+                "feature": "network_ports_src_count",
+                "importance": 0.02229366812384711
+              },
+              {
+                "feature": "network_macs_all_count",
+                "importance": 0.022272363374662207
+              },
+              {
+                "feature": "network_ip-length_min",
+                "importance": 0.021394528389500036
+              }
+            ],
+            "permutation_importance_top15": [
+              {
+                "feature": "device_geeni-camera",
+                "importance": 0.1647031401912046
+              },
+              {
+                "feature": "log_data-types_count",
+                "importance": 0.1429882688307283
+              },
+              {
+                "feature": "network_ip-length_std_deviation",
+                "importance": 0.132013106035366
+              },
+              {
+                "feature": "network_protocols_src_count",
+                "importance": 0.10110790726753467
+              },
+              {
+                "feature": "network_tcp-flags_std_deviation",
+                "importance": 0.07360975771584276
+              },
+              {
+                "feature": "network_ports_src_count",
+                "importance": 0.0685678861723643
+              },
+              {
+                "feature": "network_protocols_dst_count",
+                "importance": 0.056614602471504315
+              },
+              {
+                "feature": "network_tcp-flags-rst_count",
+                "importance": 0.05348726378070394
+              },
+              {
+                "feature": "network_ip-flags_std_deviation",
+                "importance": 0.0351046255177576
+              },
+              {
+                "feature": "device_steam-sensor",
+                "importance": 0.034540332164684565
+              },
+              {
+                "feature": "network_ttl_std_deviation",
+                "importance": 0.032136125063617946
+              },
+              {
+                "feature": "network_tcp-flags_avg",
+                "importance": 0.0221699583622181
+              },
+              {
+                "feature": "network_tcp-flags_min",
+                "importance": 0.01692318947022931
+              },
+              {
+                "feature": "log_data-ranges_min",
+                "importance": 0.012225912426093331
+              },
+              {
+                "feature": "network_tcp-flags-psh_count",
+                "importance": 0.011430403431191909
+              }
+            ],
+            "permutation_importance_runtime_sec": 12.131002187728882
+          },
+          "logreg": {
+            "family": "linear",
+            "fit_time_sec": 1.1532928943634033,
+            "native_importance_top15": [
+              {
+                "feature": "network_tcp-flags_std_deviation",
+                "importance": 0.034469852344872785
+              },
+              {
+                "feature": "network_ports_dst_count",
+                "importance": 0.03431117263698109
+              },
+              {
+                "feature": "network_ip-length_avg",
+                "importance": 0.03251990979175851
+              },
+              {
+                "feature": "network_ips_dst_count",
+                "importance": 0.03098331316852469
+              },
+              {
+                "feature": "network_window-size_std_deviation",
+                "importance": 0.025514020494957407
+              },
+              {
+                "feature": "network_payload-length_avg",
+                "importance": 0.023936663999436357
+              },
+              {
+                "feature": "network_ip-length_min",
+                "importance": 0.021034993784826764
+              },
+              {
+                "feature": "network_ip-flags_avg",
+                "importance": 0.018931332167175963
+              },
+              {
+                "feature": "network_window-size_min",
+                "importance": 0.018170779820628893
+              },
+              {
+                "feature": "network_packets_all_count",
+                "importance": 0.018086765962698453
+              },
+              {
+                "feature": "network_ports_all_count",
+                "importance": 0.018084861084247124
+              },
+              {
+                "feature": "network_tcp-flags_min",
+                "importance": 0.017860626803555504
+              },
+              {
+                "feature": "network_macs_all_count",
+                "importance": 0.01746413217152389
+              },
+              {
+                "feature": "network_ip-flags_std_deviation",
+                "importance": 0.017023952654904785
+              },
+              {
+                "feature": "network_time-delta_min",
+                "importance": 0.01697468365422901
+              }
+            ],
+            "permutation_importance_top15": [
+              {
+                "feature": "network_ip-length_avg",
+                "importance": 0.038959002156571235
+              },
+              {
+                "feature": "network_ip-flags_avg",
+                "importance": 0.03442468277932224
+              },
+              {
+                "feature": "network_window-size_avg",
+                "importance": 0.031069024432303662
+              },
+              {
+                "feature": "network_window-size_std_deviation",
+                "importance": 0.030042704373022592
+              },
+              {
+                "feature": "network_ip-flags_std_deviation",
+                "importance": 0.029394295928989924
+              },
+              {
+                "feature": "network_payload-length_avg",
+                "importance": 0.02882056025250298
+              },
+              {
+                "feature": "network_tcp-flags_std_deviation",
+                "importance": 0.028170157020878318
+              },
+              {
+                "feature": "network_payload-length_min",
+                "importance": 0.026094067927388668
+              },
+              {
+                "feature": "network_ip-length_min",
+                "importance": 0.025953470563336814
+              },
+              {
+                "feature": "network_tcp-flags_avg",
+                "importance": 0.023846874947076137
+              },
+              {
+                "feature": "network_protocols_dst_count",
+                "importance": 0.023397805784032683
+              },
+              {
+                "feature": "network_payload-length_std_deviation",
+                "importance": 0.022966985126272148
+              },
+              {
+                "feature": "network_ttl_avg",
+                "importance": 0.022664363060297888
+              },
+              {
+                "feature": "network_packet-size_avg",
+                "importance": 0.020829678228750925
+              },
+              {
+                "feature": "network_ttl_std_deviation",
+                "importance": 0.020329443189238124
+              }
+            ],
+            "permutation_importance_runtime_sec": 1.0318872928619385
+          },
+          "knn5": {
+            "family": "instance",
+            "fit_time_sec": 0.001971006393432617,
+            "permutation_importance_top15": [
+              {
+                "feature": "network_payload-length_std_deviation",
+                "importance": 0.053191533696036776
+              },
+              {
+                "feature": "device_blurams-camera",
+                "importance": 0.042349945571581483
+              },
+              {
+                "feature": "network_packet-size_std_deviation",
+                "importance": 0.04057594537211037
+              },
+              {
+                "feature": "network_time-delta_max",
+                "importance": 0.03834396448548383
+              },
+              {
+                "feature": "device_ap",
+                "importance": 0.03725174520034403
+              },
+              {
+                "feature": "network_ip-length_std_deviation",
+                "importance": 0.03165964422385417
+              },
+              {
+                "feature": "device_dekco-camera",
+                "importance": 0.028211210616699615
+              },
+              {
+                "feature": "device_plug-cameras-yi",
+                "importance": 0.023252887113920817
+              },
+              {
+                "feature": "device_plug-edge1",
+                "importance": 0.021590906996488878
+              },
+              {
+                "feature": "device_geeni-camera",
+                "importance": 0.021158700486528348
+              },
+              {
+                "feature": "device_router",
+                "importance": 0.020374855150257346
+              },
+              {
+                "feature": "device_plug-mqtt",
+                "importance": 0.020348225735029535
+              },
+              {
+                "feature": "network_window-size_std_deviation",
+                "importance": 0.019661385844145035
+              },
+              {
+                "feature": "network_time-delta_std_deviation",
+                "importance": 0.018607217897499348
+              },
+              {
+                "feature": "network_protocols_all_count",
+                "importance": 0.018483795993007056
+              }
+            ],
+            "permutation_importance_runtime_sec": 16.63162589073181
+          },
+          "ebm": {
+            "family": "interpretable",
+            "fit_time_sec": 1814.1021521091461,
+            "native_importance_top15": [
+              {
+                "feature": "network_time-delta_min",
+                "importance": 0.053154230101140974
+              },
+              {
+                "feature": "network_window-size_min",
+                "importance": 0.04557944209147248
+              },
+              {
+                "feature": "network_packet-size_min",
+                "importance": 0.0374559183109229
+              },
+              {
+                "feature": "network_ttl_std_deviation",
+                "importance": 0.036928783872434943
+              },
+              {
+                "feature": "network_ttl_avg",
+                "importance": 0.036352648550333294
+              },
+              {
+                "feature": "network_tcp-flags-rst_count",
+                "importance": 0.03232687970705667
+              },
+              {
+                "feature": "network_time-delta_avg",
+                "importance": 0.03223158467503717
+              },
+              {
+                "feature": "network_ports_dst_count",
+                "importance": 0.02917778607046481
+              },
+              {
+                "feature": "network_packets_dst_count",
+                "importance": 0.028962439785500897
+              },
+              {
+                "feature": "network_tcp-flags_std_deviation",
+                "importance": 0.02524083291868579
+              },
+              {
+                "feature": "network_tcp-flags_avg",
+                "importance": 0.02385587384795656
+              },
+              {
+                "feature": "network_packets_src_count",
+                "importance": 0.023653539540615075
+              },
+              {
+                "feature": "network_interval-packets",
+                "importance": 0.023566332839516188
+              },
+              {
+                "feature": "network_window-size_avg",
+                "importance": 0.023334512699257796
+              },
+              {
+                "feature": "network_ports_all_count",
+                "importance": 0.021815888727118808
+              }
+            ],
+            "permutation_importance_top15": [
+              {
+                "feature": "network_time-delta_min",
+                "importance": 0.11822726093999902
+              },
+              {
+                "feature": "network_tcp-flags-rst_count",
+                "importance": 0.08504299238763154
+              },
+              {
+                "feature": "network_packet-size_min",
+                "importance": 0.08135803494063201
+              },
+              {
+                "feature": "network_window-size_min",
+                "importance": 0.07921848991974385
+              },
+              {
+                "feature": "network_ports_dst_count",
+                "importance": 0.07560541962681268
+              },
+              {
+                "feature": "network_time-delta_avg",
+                "importance": 0.06845950769079286
+              },
+              {
+                "feature": "network_ttl_avg",
+                "importance": 0.03906583740649444
+              },
+              {
+                "feature": "network_tcp-flags-syn_count",
+                "importance": 0.03902651106371074
+              },
+              {
+                "feature": "network_ip-flags_std_deviation",
+                "importance": 0.037392822051978324
+              },
+              {
+                "feature": "network_packets_src_count",
+                "importance": 0.03471206670519854
+              },
+              {
+                "feature": "network_window-size_std_deviation",
+                "importance": 0.028372920566308187
+              },
+              {
+                "feature": "network_tcp-flags_std_deviation",
+                "importance": 0.025462886388727436
+              },
+              {
+                "feature": "network_packets_dst_count",
+                "importance": 0.022944769460749588
+              },
+              {
+                "feature": "network_ttl_std_deviation",
+                "importance": 0.020499377227190235
+              },
+              {
+                "feature": "network_ports_all_count",
+                "importance": 0.019479526756762924
+              }
+            ],
+            "permutation_importance_runtime_sec": 3.2488389015197754
+          }
+        },
+        "benign_vs_malicious_feature_selection": {
+          "benign_class_name": "benign",
+          "n_benign_train": 19152,
+          "n_malicious_train": 12386,
+          "mutual_info_top15": [
+            {
+              "feature": "network_time-delta_min",
+              "importance": 0.037718788260994444
+            },
+            {
+              "feature": "network_ip-length_avg",
+              "importance": 0.03129749573618847
+            },
+            {
+              "feature": "network_packets_dst_count",
+              "importance": 0.028356533365917192
+            },
+            {
+              "feature": "network_packets_all_count",
+              "importance": 0.028092860152754813
+            },
+            {
+              "feature": "network_window-size_avg",
+              "importance": 0.027309564082737593
+            },
+            {
+              "feature": "network_interval-packets",
+              "importance": 0.02723743396886658
+            },
+            {
+              "feature": "network_ttl_avg",
+              "importance": 0.027145121412050405
+            },
+            {
+              "feature": "network_packet-size_avg",
+              "importance": 0.026974111534616832
+            },
+            {
+              "feature": "network_ports_all_count",
+              "importance": 0.025233972122489852
+            },
+            {
+              "feature": "network_ports_src_count",
+              "importance": 0.025133824373178883
+            },
+            {
+              "feature": "network_ip-length_std_deviation",
+              "importance": 0.02512793052191794
+            },
+            {
+              "feature": "network_time-delta_avg",
+              "importance": 0.024280198990714225
+            },
+            {
+              "feature": "network_window-size_std_deviation",
+              "importance": 0.02391799640514453
+            },
+            {
+              "feature": "network_packet-size_std_deviation",
+              "importance": 0.023879387626214034
+            },
+            {
+              "feature": "network_tcp-flags_avg",
+              "importance": 0.022498139398240802
+            }
+          ],
+          "mutual_info_runtime_sec": 2.5138790607452393,
+          "anova_f_top15": [
+            {
+              "feature": "network_mss_avg",
+              "importance": 0.10522507655706072
+            },
+            {
+              "feature": "network_mss_max",
+              "importance": 0.10519645404252637
+            },
+            {
+              "feature": "network_mss_min",
+              "importance": 0.1023354498045889
+            },
+            {
+              "feature": "network_protocols_dst_count",
+              "importance": 0.03769981535527436
+            },
+            {
+              "feature": "network_packets_all_count",
+              "importance": 0.03517346496128319
+            },
+            {
+              "feature": "network_time-delta_avg",
+              "importance": 0.03402103776530821
+            },
+            {
+              "feature": "network_packets_dst_count",
+              "importance": 0.032513739454698314
+            },
+            {
+              "feature": "network_ports_all_count",
+              "importance": 0.03237460739310983
+            },
+            {
+              "feature": "network_ports_src_count",
+              "importance": 0.028239839493251557
+            },
+            {
+              "feature": "network_protocols_all_count",
+              "importance": 0.025696770574953613
+            },
+            {
+              "feature": "network_time-delta_std_deviation",
+              "importance": 0.024566340713249122
+            },
+            {
+              "feature": "network_interval-packets",
+              "importance": 0.019533010755411195
+            },
+            {
+              "feature": "network_ip-flags_max",
+              "importance": 0.018586114864882465
+            },
+            {
+              "feature": "network_header-length_max",
+              "importance": 0.016622246366978705
+            },
+            {
+              "feature": "network_header-length_min",
+              "importance": 0.01658308365872363
+            }
+          ]
+        }
+      },
+      "malicious_vs_benign": {
+        "dataset": "datasense",
+        "benign_class_name": "benign",
+        "n_models": 50,
+        "models": [
+          {
+            "key": "lightgbm_goss",
+            "name": "LightGBM (GOSS)",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.9591796647284088,
+            "train_time_sec": 7.80623984336853,
+            "tp_malicious_caught": 5052,
+            "tn_benign_passed": 8165,
+            "fp_benign_flagged_as_attack": 43,
+            "fn_attack_missed_as_benign": 257,
+            "accuracy": 0.9778057261226604,
+            "precision_malicious": 0.9915603532875368,
+            "recall_malicious": 0.9515916368430967,
+            "f1_malicious": 0.9711649365628605,
+            "false_positive_rate": 0.005238791423001949,
+            "false_negative_rate": 0.048408363156903375
+          },
+          {
+            "key": "xgboost",
+            "name": "XGBoost",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.9617721778332361,
+            "train_time_sec": 3.5164742469787598,
+            "tp_malicious_caught": 5038,
+            "tn_benign_passed": 8179,
+            "fp_benign_flagged_as_attack": 29,
+            "fn_attack_missed_as_benign": 271,
+            "accuracy": 0.9778057261226604,
+            "precision_malicious": 0.9942766923228735,
+            "recall_malicious": 0.9489546053870785,
+            "f1_malicious": 0.9710871241326137,
+            "false_positive_rate": 0.003533138401559454,
+            "false_negative_rate": 0.05104539461292146
+          },
+          {
+            "key": "xgboost_dart",
+            "name": "XGBoost (DART)",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.9617721778332361,
+            "train_time_sec": 3.5228271484375,
+            "tp_malicious_caught": 5038,
+            "tn_benign_passed": 8179,
+            "fp_benign_flagged_as_attack": 29,
+            "fn_attack_missed_as_benign": 271,
+            "accuracy": 0.9778057261226604,
+            "precision_malicious": 0.9942766923228735,
+            "recall_malicious": 0.9489546053870785,
+            "f1_malicious": 0.9710871241326137,
+            "false_positive_rate": 0.003533138401559454,
+            "false_negative_rate": 0.05104539461292146
+          },
+          {
+            "key": "lightgbm",
+            "name": "LightGBM",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.9614023073872555,
+            "train_time_sec": 7.818052768707275,
+            "tp_malicious_caught": 5048,
+            "tn_benign_passed": 8166,
+            "fp_benign_flagged_as_attack": 42,
+            "fn_attack_missed_as_benign": 261,
+            "accuracy": 0.977583783383887,
+            "precision_malicious": 0.9917485265225933,
+            "recall_malicious": 0.9508381992842343,
+            "f1_malicious": 0.9708625829406673,
+            "false_positive_rate": 0.005116959064327485,
+            "false_negative_rate": 0.04916180071576568
+          },
+          {
+            "key": "ebm",
+            "name": "Explainable Boosting Machine",
+            "family": "interpretable",
+            "f1_macro_multiclass": 0.9554873966096407,
+            "train_time_sec": 548.467679977417,
+            "tp_malicious_caught": 5036,
+            "tn_benign_passed": 8178,
+            "fp_benign_flagged_as_attack": 30,
+            "fn_attack_missed_as_benign": 273,
+            "accuracy": 0.977583783383887,
+            "precision_malicious": 0.9940781681800237,
+            "recall_malicious": 0.9485778866076474,
+            "f1_malicious": 0.9707951807228915,
+            "false_positive_rate": 0.003654970760233918,
+            "false_negative_rate": 0.05142211339235261
+          },
+          {
+            "key": "gbm_sklearn",
+            "name": "Gradient Boosting (sklearn)",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.9552503701012393,
+            "train_time_sec": 154.26286101341248,
+            "tp_malicious_caught": 5041,
+            "tn_benign_passed": 8165,
+            "fp_benign_flagged_as_attack": 43,
+            "fn_attack_missed_as_benign": 268,
+            "accuracy": 0.9769919360804913,
+            "precision_malicious": 0.9915420928402833,
+            "recall_malicious": 0.9495196835562253,
+            "f1_malicious": 0.9700760127008564,
+            "false_positive_rate": 0.005238791423001949,
+            "false_negative_rate": 0.05048031644377472
+          },
+          {
+            "key": "histgbm",
+            "name": "Hist Gradient Boosting",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.9585483527606088,
+            "train_time_sec": 2.484896183013916,
+            "tp_malicious_caught": 5039,
+            "tn_benign_passed": 8164,
+            "fp_benign_flagged_as_attack": 44,
+            "fn_attack_missed_as_benign": 270,
+            "accuracy": 0.9767699933417179,
+            "precision_malicious": 0.9913436946685028,
+            "recall_malicious": 0.9491429647767942,
+            "f1_malicious": 0.9697844495765974,
+            "false_positive_rate": 0.005360623781676413,
+            "false_negative_rate": 0.05085703522320588
+          },
+          {
+            "key": "catboost",
+            "name": "CatBoost",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.9522810296788089,
+            "train_time_sec": 2.946368932723999,
+            "tp_malicious_caught": 5024,
+            "tn_benign_passed": 8178,
+            "fp_benign_flagged_as_attack": 30,
+            "fn_attack_missed_as_benign": 285,
+            "accuracy": 0.9766960124287933,
+            "precision_malicious": 0.9940641076375148,
+            "recall_malicious": 0.9463175739310604,
+            "f1_malicious": 0.9696033966997973,
+            "false_positive_rate": 0.003654970760233918,
+            "false_negative_rate": 0.05368242606893954
+          },
+          {
+            "key": "voting_soft",
+            "name": "Voting Classifier (soft)",
+            "family": "meta",
+            "f1_macro_multiclass": 0.9210206546229814,
+            "train_time_sec": 8.410597085952759,
+            "tp_malicious_caught": 5070,
+            "tn_benign_passed": 8008,
+            "fp_benign_flagged_as_attack": 200,
+            "fn_attack_missed_as_benign": 239,
+            "accuracy": 0.9675223792261597,
+            "precision_malicious": 0.9620493358633776,
+            "recall_malicious": 0.954982105857977,
+            "f1_malicious": 0.9585026940164476,
+            "false_positive_rate": 0.024366471734892786,
+            "false_negative_rate": 0.04501789414202298
+          },
+          {
+            "key": "bagging_dt",
+            "name": "Bagging (Decision Trees)",
+            "family": "ensemble_bagging",
+            "f1_macro_multiclass": 0.9161655419609983,
+            "train_time_sec": 3.2071008682250977,
+            "tp_malicious_caught": 5034,
+            "tn_benign_passed": 8016,
+            "fp_benign_flagged_as_attack": 192,
+            "fn_attack_missed_as_benign": 275,
+            "accuracy": 0.9654509136642746,
+            "precision_malicious": 0.9632606199770379,
+            "recall_malicious": 0.9482011678282163,
+            "f1_malicious": 0.955671570953963,
+            "false_positive_rate": 0.023391812865497075,
+            "false_negative_rate": 0.051798832171783764
+          },
+          {
+            "key": "rgf",
+            "name": "Regularized Greedy Forest",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.8844957427297693,
+            "train_time_sec": 11.427102088928223,
+            "tp_malicious_caught": 4860,
+            "tn_benign_passed": 8202,
+            "fp_benign_flagged_as_attack": 6,
+            "fn_attack_missed_as_benign": 449,
+            "accuracy": 0.9663386846193682,
+            "precision_malicious": 0.998766954377312,
+            "recall_malicious": 0.9154266340177057,
+            "f1_malicious": 0.9552825552825553,
+            "false_positive_rate": 0.0007309941520467836,
+            "false_negative_rate": 0.08457336598229422
+          },
+          {
+            "key": "stacking",
+            "name": "Stacking Classifier",
+            "family": "meta",
+            "f1_macro_multiclass": 0.90844086477583,
+            "train_time_sec": 18.520282983779907,
+            "tp_malicious_caught": 5108,
+            "tn_benign_passed": 7893,
+            "fp_benign_flagged_as_attack": 315,
+            "fn_attack_missed_as_benign": 201,
+            "accuracy": 0.9618258489309758,
+            "precision_malicious": 0.9419140697031163,
+            "recall_malicious": 0.9621397626671689,
+            "f1_malicious": 0.9519194931047334,
+            "false_positive_rate": 0.03837719298245614,
+            "false_negative_rate": 0.03786023733283104
+          },
+          {
+            "key": "adaboost",
+            "name": "AdaBoost",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.7166627673740653,
+            "train_time_sec": 7.700922012329102,
+            "tp_malicious_caught": 4820,
+            "tn_benign_passed": 8189,
+            "fp_benign_flagged_as_attack": 19,
+            "fn_attack_missed_as_benign": 489,
+            "accuracy": 0.9624176962343716,
+            "precision_malicious": 0.9960735689191982,
+            "recall_malicious": 0.9078922584290827,
+            "f1_malicious": 0.9499408750492708,
+            "false_positive_rate": 0.0023148148148148147,
+            "false_negative_rate": 0.0921077415709173
+          },
+          {
+            "key": "random_forest",
+            "name": "Random Forest",
+            "family": "ensemble_bagging",
+            "f1_macro_multiclass": 0.8877823177022226,
+            "train_time_sec": 0.5823328495025635,
+            "tp_malicious_caught": 5089,
+            "tn_benign_passed": 7806,
+            "fp_benign_flagged_as_attack": 402,
+            "fn_attack_missed_as_benign": 220,
+            "accuracy": 0.9539838721609825,
+            "precision_malicious": 0.9267892915680204,
+            "recall_malicious": 0.9585609342625729,
+            "f1_malicious": 0.9424074074074075,
+            "false_positive_rate": 0.0489766081871345,
+            "false_negative_rate": 0.04143906573742701
+          },
+          {
+            "key": "extra_trees",
+            "name": "Extra Trees",
+            "family": "ensemble_bagging",
+            "f1_macro_multiclass": 0.8889730384744563,
+            "train_time_sec": 0.5135102272033691,
+            "tp_malicious_caught": 4986,
+            "tn_benign_passed": 7907,
+            "fp_benign_flagged_as_attack": 301,
+            "fn_attack_missed_as_benign": 323,
+            "accuracy": 0.9538359103351335,
+            "precision_malicious": 0.9430679024021184,
+            "recall_malicious": 0.9391599171218685,
+            "f1_malicious": 0.941109852774632,
+            "false_positive_rate": 0.03667153996101365,
+            "false_negative_rate": 0.060840082878131474
+          },
+          {
+            "key": "decision_tree",
+            "name": "Decision Tree",
+            "family": "tree",
+            "f1_macro_multiclass": 0.8717758382517738,
+            "train_time_sec": 0.37966108322143555,
+            "tp_malicious_caught": 5058,
+            "tn_benign_passed": 7799,
+            "fp_benign_flagged_as_attack": 409,
+            "fn_attack_missed_as_benign": 251,
+            "accuracy": 0.9511725974698528,
+            "precision_malicious": 0.9251874885677702,
+            "recall_malicious": 0.95272179318139,
+            "f1_malicious": 0.9387527839643651,
+            "false_positive_rate": 0.04982943469785575,
+            "false_negative_rate": 0.047278206818609905
+          },
+          {
+            "key": "figs",
+            "name": "FIGS (Fast Interpretable Greedy-Sums)",
+            "family": "interpretable",
+            "f1_macro_multiclass": 0.7940304942551064,
+            "train_time_sec": 3.3481791019439697,
+            "tp_malicious_caught": 4756,
+            "tn_benign_passed": 8137,
+            "fp_benign_flagged_as_attack": 71,
+            "fn_attack_missed_as_benign": 553,
+            "accuracy": 0.9538359103351335,
+            "precision_malicious": 0.9852910710586286,
+            "recall_malicious": 0.8958372574872857,
+            "f1_malicious": 0.9384372533543803,
+            "false_positive_rate": 0.008650097465886939,
+            "false_negative_rate": 0.10416274251271426
+          },
+          {
+            "key": "balanced_random_forest",
+            "name": "Balanced Random Forest",
+            "family": "imbalanced",
+            "f1_macro_multiclass": 0.8554017144736479,
+            "train_time_sec": 0.43537211418151855,
+            "tp_malicious_caught": 5068,
+            "tn_benign_passed": 7761,
+            "fp_benign_flagged_as_attack": 447,
+            "fn_attack_missed_as_benign": 241,
+            "accuracy": 0.9491011319079677,
+            "precision_malicious": 0.9189483227561197,
+            "recall_malicious": 0.9546053870785459,
+            "f1_malicious": 0.9364375461936438,
+            "false_positive_rate": 0.05445906432748538,
+            "false_negative_rate": 0.045394612921454136
+          },
+          {
+            "key": "ngboost",
+            "name": "NGBoost",
+            "family": "boosting",
+            "f1_macro_multiclass": 0.8522719928070772,
+            "train_time_sec": 102.12896084785461,
+            "tp_malicious_caught": 4670,
+            "tn_benign_passed": 8207,
+            "fp_benign_flagged_as_attack": 1,
+            "fn_attack_missed_as_benign": 639,
+            "accuracy": 0.9526522157283421,
+            "precision_malicious": 0.9997859130807107,
+            "recall_malicious": 0.8796383499717461,
+            "f1_malicious": 0.9358717434869738,
+            "false_positive_rate": 0.00012183235867446393,
+            "false_negative_rate": 0.12036165002825391
+          },
+          {
+            "key": "balanced_bagging",
+            "name": "Balanced Bagging",
+            "family": "imbalanced",
+            "f1_macro_multiclass": 0.8596597125827725,
+            "train_time_sec": 1.8087542057037354,
+            "tp_malicious_caught": 5090,
+            "tn_benign_passed": 7714,
+            "fp_benign_flagged_as_attack": 494,
+            "fn_attack_missed_as_benign": 219,
+            "accuracy": 0.9472516090848561,
+            "precision_malicious": 0.9115329512893983,
+            "recall_malicious": 0.9587492936522886,
+            "f1_malicious": 0.9345451207197282,
+            "false_positive_rate": 0.06018518518518518,
+            "false_negative_rate": 0.041250706347711434
+          },
+          {
+            "key": "extra_tree",
+            "name": "Extra Tree (single)",
+            "family": "tree",
+            "f1_macro_multiclass": 0.8353766014117455,
+            "train_time_sec": 0.019190073013305664,
+            "tp_malicious_caught": 4971,
+            "tn_benign_passed": 7788,
+            "fp_benign_flagged_as_attack": 420,
+            "fn_attack_missed_as_benign": 338,
+            "accuracy": 0.9439224680032552,
+            "precision_malicious": 0.9220923761825265,
+            "recall_malicious": 0.9363345262761349,
+            "f1_malicious": 0.929158878504673,
+            "false_positive_rate": 0.05116959064327485,
+            "false_negative_rate": 0.06366547372386513
+          },
+          {
+            "key": "bagging_knn",
+            "name": "Bagging (KNN)",
+            "family": "ensemble_bagging",
+            "f1_macro_multiclass": 0.8494596473462821,
+            "train_time_sec": 1.8123061656951904,
+            "tp_malicious_caught": 4639,
+            "tn_benign_passed": 8112,
+            "fp_benign_flagged_as_attack": 96,
+            "fn_attack_missed_as_benign": 670,
+            "accuracy": 0.9433306206998594,
+            "precision_malicious": 0.9797254487856388,
+            "recall_malicious": 0.8737992088905632,
+            "f1_malicious": 0.9237355635205097,
+            "false_positive_rate": 0.011695906432748537,
+            "false_negative_rate": 0.1262007911094368
+          },
+          {
+            "key": "knn5",
+            "name": "K-Nearest Neighbors (k=5)",
+            "family": "instance",
+            "f1_macro_multiclass": 0.8452203533658152,
+            "train_time_sec": 0.004213809967041016,
+            "tp_malicious_caught": 4625,
+            "tn_benign_passed": 8100,
+            "fp_benign_flagged_as_attack": 108,
+            "fn_attack_missed_as_benign": 684,
+            "accuracy": 0.9414071169638233,
+            "precision_malicious": 0.9771814916543419,
+            "recall_malicious": 0.8711621774345452,
+            "f1_malicious": 0.9211312487552281,
+            "false_positive_rate": 0.013157894736842105,
+            "false_negative_rate": 0.1288378225654549
+          },
+          {
+            "key": "knn15_distance",
+            "name": "K-Nearest Neighbors (k=15, distance-weighted)",
+            "family": "instance",
+            "f1_macro_multiclass": 0.8486815105656995,
+            "train_time_sec": 0.004446983337402344,
+            "tp_malicious_caught": 4587,
+            "tn_benign_passed": 8101,
+            "fp_benign_flagged_as_attack": 107,
+            "fn_attack_missed_as_benign": 722,
+            "accuracy": 0.9386698231856181,
+            "precision_malicious": 0.9772049424797614,
+            "recall_malicious": 0.8640045206253532,
+            "f1_malicious": 0.9171248625412376,
+            "false_positive_rate": 0.01303606237816764,
+            "false_negative_rate": 0.13599547937464682
+          },
+          {
+            "key": "elm",
+            "name": "Extreme Learning Machine",
+            "family": "exotic",
+            "f1_macro_multiclass": 0.7919952343656563,
+            "train_time_sec": 0.091156005859375,
+            "tp_malicious_caught": 4351,
+            "tn_benign_passed": 8172,
+            "fp_benign_flagged_as_attack": 36,
+            "fn_attack_missed_as_benign": 958,
+            "accuracy": 0.9264629725530813,
+            "precision_malicious": 0.991793936630955,
+            "recall_malicious": 0.819551704652477,
+            "f1_malicious": 0.897483498349835,
+            "false_positive_rate": 0.0043859649122807015,
+            "false_negative_rate": 0.18044829534752307
+          },
+          {
+            "key": "easy_ensemble",
+            "name": "Easy Ensemble",
+            "family": "imbalanced",
+            "f1_macro_multiclass": 0.6338976772415208,
+            "train_time_sec": 2.0032267570495605,
+            "tp_malicious_caught": 4988,
+            "tn_benign_passed": 7375,
+            "fp_benign_flagged_as_attack": 833,
+            "fn_attack_missed_as_benign": 321,
+            "accuracy": 0.9146260264851668,
+            "precision_malicious": 0.8568974403023536,
+            "recall_malicious": 0.9395366359012997,
+            "f1_malicious": 0.8963162623539982,
+            "false_positive_rate": 0.10148635477582846,
+            "false_negative_rate": 0.06046336409870032
+          },
+          {
+            "key": "lda",
+            "name": "Linear Discriminant Analysis",
+            "family": "linear",
+            "f1_macro_multiclass": 0.7370446454968809,
+            "train_time_sec": 0.10472774505615234,
+            "tp_malicious_caught": 4325,
+            "tn_benign_passed": 8072,
+            "fp_benign_flagged_as_attack": 136,
+            "fn_attack_missed_as_benign": 984,
+            "accuracy": 0.9171413775245987,
+            "precision_malicious": 0.9695135619816184,
+            "recall_malicious": 0.814654360519872,
+            "f1_malicious": 0.8853633572159673,
+            "false_positive_rate": 0.016569200779727095,
+            "false_negative_rate": 0.18534563948012808
+          },
+          {
+            "key": "sgd_hinge",
+            "name": "SGD (Hinge / Linear SVM)",
+            "family": "linear",
+            "f1_macro_multiclass": 0.7522804871884409,
+            "train_time_sec": 1.3683979511260986,
+            "tp_malicious_caught": 4627,
+            "tn_benign_passed": 7689,
+            "fp_benign_flagged_as_attack": 519,
+            "fn_attack_missed_as_benign": 682,
+            "accuracy": 0.9111489235777169,
+            "precision_malicious": 0.8991449669646328,
+            "recall_malicious": 0.8715388962139763,
+            "f1_malicious": 0.8851267336202774,
+            "false_positive_rate": 0.06323099415204679,
+            "false_negative_rate": 0.12846110378602374
+          },
+          {
+            "key": "linear_svc",
+            "name": "Linear SVC (liblinear)",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.7507335870153422,
+            "train_time_sec": 27.192148208618164,
+            "tp_malicious_caught": 4618,
+            "tn_benign_passed": 7666,
+            "fp_benign_flagged_as_attack": 542,
+            "fn_attack_missed_as_benign": 691,
+            "accuracy": 0.908781534364134,
+            "precision_malicious": 0.8949612403100775,
+            "recall_malicious": 0.869843661706536,
+            "f1_malicious": 0.8822237080905531,
+            "false_positive_rate": 0.06603313840155946,
+            "false_negative_rate": 0.13015633829346393
+          },
+          {
+            "key": "sgd_log",
+            "name": "SGD (Log Loss)",
+            "family": "linear",
+            "f1_macro_multiclass": 0.7312381829867742,
+            "train_time_sec": 3.9823410511016846,
+            "tp_malicious_caught": 4643,
+            "tn_benign_passed": 7600,
+            "fp_benign_flagged_as_attack": 608,
+            "fn_attack_missed_as_benign": 666,
+            "accuracy": 0.905748316934231,
+            "precision_malicious": 0.8842125309464863,
+            "recall_malicious": 0.8745526464494255,
+            "f1_malicious": 0.8793560606060605,
+            "false_positive_rate": 0.07407407407407407,
+            "false_negative_rate": 0.1254473535505745
+          },
+          {
+            "key": "sgd_modified_huber",
+            "name": "SGD (Modified Huber)",
+            "family": "linear",
+            "f1_macro_multiclass": 0.7106423271748336,
+            "train_time_sec": 4.272297143936157,
+            "tp_malicious_caught": 4699,
+            "tn_benign_passed": 7522,
+            "fp_benign_flagged_as_attack": 686,
+            "fn_attack_missed_as_benign": 610,
+            "accuracy": 0.9041207368498927,
+            "precision_malicious": 0.8726090993500464,
+            "recall_malicious": 0.8851007722734978,
+            "f1_malicious": 0.8788105479708248,
+            "false_positive_rate": 0.08357699805068226,
+            "false_negative_rate": 0.11489922772650217
+          },
+          {
+            "key": "perceptron",
+            "name": "Perceptron",
+            "family": "linear",
+            "f1_macro_multiclass": 0.730380802348664,
+            "train_time_sec": 0.2627408504486084,
+            "tp_malicious_caught": 4615,
+            "tn_benign_passed": 7605,
+            "fp_benign_flagged_as_attack": 603,
+            "fn_attack_missed_as_benign": 694,
+            "accuracy": 0.9040467559369683,
+            "precision_malicious": 0.8844384821770793,
+            "recall_malicious": 0.8692785835373893,
+            "f1_malicious": 0.8767930084544504,
+            "false_positive_rate": 0.07346491228070176,
+            "false_negative_rate": 0.13072141646261065
+          },
+          {
+            "key": "label_spreading",
+            "name": "Label Spreading",
+            "family": "graph",
+            "f1_macro_multiclass": 0.6818483850198569,
+            "train_time_sec": 0.05990123748779297,
+            "tp_malicious_caught": 4219,
+            "tn_benign_passed": 8106,
+            "fp_benign_flagged_as_attack": 102,
+            "fn_attack_missed_as_benign": 1090,
+            "accuracy": 0.9118147517940371,
+            "precision_malicious": 0.9763943531589909,
+            "recall_malicious": 0.7946882652100207,
+            "f1_malicious": 0.8762201453790238,
+            "false_positive_rate": 0.012426900584795321,
+            "false_negative_rate": 0.20531173478997927
+          },
+          {
+            "key": "svc_rbf",
+            "name": "SVM (RBF Kernel)",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.7656375664702149,
+            "train_time_sec": 1.9796380996704102,
+            "tp_malicious_caught": 4697,
+            "tn_benign_passed": 7474,
+            "fp_benign_flagged_as_attack": 734,
+            "fn_attack_missed_as_benign": 612,
+            "accuracy": 0.9004216912036694,
+            "precision_malicious": 0.8648499355551463,
+            "recall_malicious": 0.8847240534940667,
+            "f1_malicious": 0.8746741154562384,
+            "false_positive_rate": 0.08942495126705653,
+            "false_negative_rate": 0.11527594650593333
+          },
+          {
+            "key": "nystroem_sgd",
+            "name": "Nystroem + SGD",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.6648809070068499,
+            "train_time_sec": 0.880789041519165,
+            "tp_malicious_caught": 4444,
+            "tn_benign_passed": 7756,
+            "fp_benign_flagged_as_attack": 452,
+            "fn_attack_missed_as_benign": 865,
+            "accuracy": 0.902567137678479,
+            "precision_malicious": 0.9076797385620915,
+            "recall_malicious": 0.8370691278960256,
+            "f1_malicious": 0.8709456148946594,
+            "false_positive_rate": 0.0550682261208577,
+            "false_negative_rate": 0.1629308721039744
+          },
+          {
+            "key": "svc_poly",
+            "name": "SVM (Polynomial Kernel)",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.7521176995608222,
+            "train_time_sec": 2.5265941619873047,
+            "tp_malicious_caught": 4645,
+            "tn_benign_passed": 7489,
+            "fp_benign_flagged_as_attack": 719,
+            "fn_attack_missed_as_benign": 664,
+            "accuracy": 0.8976843974254642,
+            "precision_malicious": 0.865958240119314,
+            "recall_malicious": 0.8749293652288567,
+            "f1_malicious": 0.8704206877166683,
+            "false_positive_rate": 0.08759746588693958,
+            "false_negative_rate": 0.12507063477114333
+          },
+          {
+            "key": "svc_linear",
+            "name": "SVM (Linear Kernel)",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.7476829115979865,
+            "train_time_sec": 1.894317865371704,
+            "tp_malicious_caught": 4902,
+            "tn_benign_passed": 7146,
+            "fp_benign_flagged_as_attack": 1062,
+            "fn_attack_missed_as_benign": 407,
+            "accuracy": 0.8913220389139602,
+            "precision_malicious": 0.8219315895372233,
+            "recall_malicious": 0.92333772838576,
+            "f1_malicious": 0.8696886365652443,
+            "false_positive_rate": 0.12938596491228072,
+            "false_negative_rate": 0.07666227161423997
+          },
+          {
+            "key": "logreg",
+            "name": "Logistic Regression",
+            "family": "linear",
+            "f1_macro_multiclass": 0.7357064400521722,
+            "train_time_sec": 1.1443698406219482,
+            "tp_malicious_caught": 4918,
+            "tn_benign_passed": 7087,
+            "fp_benign_flagged_as_attack": 1121,
+            "fn_attack_missed_as_benign": 391,
+            "accuracy": 0.8881408596582082,
+            "precision_malicious": 0.8143732406027488,
+            "recall_malicious": 0.9263514786212093,
+            "f1_malicious": 0.8667606626718365,
+            "false_positive_rate": 0.13657407407407407,
+            "false_negative_rate": 0.07364852137879073
+          },
+          {
+            "key": "logreg_elasticnet",
+            "name": "Logistic Regression (ElasticNet)",
+            "family": "linear",
+            "f1_macro_multiclass": 0.7335440532501996,
+            "train_time_sec": 121.19248414039612,
+            "tp_malicious_caught": 4914,
+            "tn_benign_passed": 7070,
+            "fp_benign_flagged_as_attack": 1138,
+            "fn_attack_missed_as_benign": 395,
+            "accuracy": 0.8865872604867944,
+            "precision_malicious": 0.8119629874421679,
+            "recall_malicious": 0.925598041062347,
+            "f1_malicious": 0.8650646950092421,
+            "false_positive_rate": 0.13864522417153996,
+            "false_negative_rate": 0.07440195893765304
+          },
+          {
+            "key": "gaussian_process",
+            "name": "Gaussian Process Classifier",
+            "family": "probabilistic",
+            "f1_macro_multiclass": 0.46149719192928246,
+            "train_time_sec": 122.52522087097168,
+            "tp_malicious_caught": 3953,
+            "tn_benign_passed": 8165,
+            "fp_benign_flagged_as_attack": 43,
+            "fn_attack_missed_as_benign": 1356,
+            "accuracy": 0.8965007028186728,
+            "precision_malicious": 0.9892392392392393,
+            "recall_malicious": 0.7445846675456772,
+            "f1_malicious": 0.8496507254164428,
+            "false_positive_rate": 0.005238791423001949,
+            "false_negative_rate": 0.25541533245432285
+          },
+          {
+            "key": "ridge",
+            "name": "Ridge Classifier",
+            "family": "linear",
+            "f1_macro_multiclass": 0.6539935978327341,
+            "train_time_sec": 0.01964592933654785,
+            "tp_malicious_caught": 4657,
+            "tn_benign_passed": 7127,
+            "fp_benign_flagged_as_attack": 1081,
+            "fn_attack_missed_as_benign": 652,
+            "accuracy": 0.8717910779019014,
+            "precision_malicious": 0.8116068316486581,
+            "recall_malicious": 0.8771896779054436,
+            "f1_malicious": 0.8431248302706619,
+            "false_positive_rate": 0.1317007797270955,
+            "false_negative_rate": 0.12281032209455642
+          },
+          {
+            "key": "bnb",
+            "name": "Bernoulli Naive Bayes",
+            "family": "naive_bayes",
+            "f1_macro_multiclass": 0.6487780955049046,
+            "train_time_sec": 0.01757502555847168,
+            "tp_malicious_caught": 4570,
+            "tn_benign_passed": 7209,
+            "fp_benign_flagged_as_attack": 999,
+            "fn_attack_missed_as_benign": 739,
+            "accuracy": 0.871421173337279,
+            "precision_malicious": 0.8206141138444963,
+            "recall_malicious": 0.8608024110001884,
+            "f1_malicious": 0.840227983085126,
+            "false_positive_rate": 0.12171052631578948,
+            "false_negative_rate": 0.13919758899981163
+          },
+          {
+            "key": "cnb",
+            "name": "Complement Naive Bayes",
+            "family": "naive_bayes",
+            "f1_macro_multiclass": 0.41340778986983406,
+            "train_time_sec": 0.01479196548461914,
+            "tp_malicious_caught": 4147,
+            "tn_benign_passed": 7686,
+            "fp_benign_flagged_as_attack": 522,
+            "fn_attack_missed_as_benign": 1162,
+            "accuracy": 0.8754161426352001,
+            "precision_malicious": 0.8881987577639752,
+            "recall_malicious": 0.7811263891504991,
+            "f1_malicious": 0.8312287031469233,
+            "false_positive_rate": 0.06359649122807018,
+            "false_negative_rate": 0.21887361084950085
+          },
+          {
+            "key": "nearest_centroid",
+            "name": "Nearest Centroid",
+            "family": "instance",
+            "f1_macro_multiclass": 0.5947522268146754,
+            "train_time_sec": 0.015877962112426758,
+            "tp_malicious_caught": 4401,
+            "tn_benign_passed": 7273,
+            "fp_benign_flagged_as_attack": 935,
+            "fn_attack_missed_as_benign": 908,
+            "accuracy": 0.8636531774802101,
+            "precision_malicious": 0.8247751124437781,
+            "recall_malicious": 0.8289696741382558,
+            "f1_malicious": 0.8268670737435416,
+            "false_positive_rate": 0.11391325536062379,
+            "false_negative_rate": 0.17103032586174421
+          },
+          {
+            "key": "passive_aggressive",
+            "name": "Passive-Aggressive Classifier",
+            "family": "linear",
+            "f1_macro_multiclass": 0.6527096470228986,
+            "train_time_sec": 0.36635804176330566,
+            "tp_malicious_caught": 4808,
+            "tn_benign_passed": 6453,
+            "fp_benign_flagged_as_attack": 1755,
+            "fn_attack_missed_as_benign": 501,
+            "accuracy": 0.8330990604424059,
+            "precision_malicious": 0.7325918025293311,
+            "recall_malicious": 0.9056319457524957,
+            "f1_malicious": 0.8099730458221024,
+            "false_positive_rate": 0.2138157894736842,
+            "false_negative_rate": 0.09436805424750423
+          },
+          {
+            "key": "som_classifier",
+            "name": "Self-Organizing Map Classifier",
+            "family": "exotic",
+            "f1_macro_multiclass": 0.5671605110026774,
+            "train_time_sec": 0.46532297134399414,
+            "tp_malicious_caught": 3519,
+            "tn_benign_passed": 8134,
+            "fp_benign_flagged_as_attack": 74,
+            "fn_attack_missed_as_benign": 1790,
+            "accuracy": 0.8620995783087964,
+            "precision_malicious": 0.9794043974394656,
+            "recall_malicious": 0.6628366924091166,
+            "f1_malicious": 0.7906088519433835,
+            "false_positive_rate": 0.009015594541910331,
+            "false_negative_rate": 0.3371633075908834
+          },
+          {
+            "key": "qda",
+            "name": "Quadratic Discriminant Analysis",
+            "family": "naive_bayes",
+            "f1_macro_multiclass": 0.531673708438281,
+            "train_time_sec": 0.10079121589660645,
+            "tp_malicious_caught": 4917,
+            "tn_benign_passed": 4323,
+            "fp_benign_flagged_as_attack": 3885,
+            "fn_attack_missed_as_benign": 392,
+            "accuracy": 0.6835836354220611,
+            "precision_malicious": 0.5586230402181322,
+            "recall_malicious": 0.9261631192314936,
+            "f1_malicious": 0.6969031252214585,
+            "false_positive_rate": 0.4733187134502924,
+            "false_negative_rate": 0.07383688076850631
+          },
+          {
+            "key": "gnb",
+            "name": "Gaussian Naive Bayes",
+            "family": "naive_bayes",
+            "f1_macro_multiclass": 0.4343763654207239,
+            "train_time_sec": 0.019756078720092773,
+            "tp_malicious_caught": 4978,
+            "tn_benign_passed": 3242,
+            "fp_benign_flagged_as_attack": 4966,
+            "fn_attack_missed_as_benign": 331,
+            "accuracy": 0.6081231042391063,
+            "precision_malicious": 0.5006033789219629,
+            "recall_malicious": 0.9376530420041439,
+            "f1_malicious": 0.6527240542844029,
+            "false_positive_rate": 0.6050194931773879,
+            "false_negative_rate": 0.062346957995856093
+          },
+          {
+            "key": "rbf_sampler_ridge",
+            "name": "RBF Sampler + Ridge",
+            "family": "kernel",
+            "f1_macro_multiclass": 0.21106064831225696,
+            "train_time_sec": 0.07085108757019043,
+            "tp_malicious_caught": 4764,
+            "tn_benign_passed": 2548,
+            "fp_benign_flagged_as_attack": 5660,
+            "fn_attack_missed_as_benign": 545,
+            "accuracy": 0.5409484353036916,
+            "precision_malicious": 0.4570222563315426,
+            "recall_malicious": 0.8973441326050103,
+            "f1_malicious": 0.6056060509756562,
+            "false_positive_rate": 0.6895711500974658,
+            "false_negative_rate": 0.10265586739498964
+          },
+          {
+            "key": "rusboost",
+            "name": "RUSBoost",
+            "family": "imbalanced",
+            "f1_macro_multiclass": 0.18471694554297083,
+            "train_time_sec": 0.018478870391845703,
+            "tp_malicious_caught": 2027,
+            "tn_benign_passed": 8208,
+            "fp_benign_flagged_as_attack": 0,
+            "fn_attack_missed_as_benign": 3282,
+            "accuracy": 0.7571946437819043,
+            "precision_malicious": 1.0,
+            "recall_malicious": 0.38180448295347524,
+            "f1_malicious": 0.5526172300981461,
+            "false_positive_rate": 0.0,
+            "false_negative_rate": 0.6181955170465248
+          }
+        ]
+      }
+    }
+  }
+}

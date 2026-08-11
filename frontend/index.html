@@ -39,6 +39,7 @@
     <button data-target="view-table">Full Table</button>
     <button data-target="view-failed">Failed Runs</button>
     <button data-target="view-guide">Model Guide</button>
+    <button data-target="view-deepdive">Deep Dive</button>
     <button data-target="view-methodology">Methodology</button>
   </nav>
 
@@ -109,6 +110,102 @@
     <h2>Model Guide</h2>
     <p class="section-note">A plain-language card per model, grouped by family, with the exact hyperparameters used.</p>
     <div id="model-cards"></div>
+  </section>
+
+  <section class="view" id="view-deepdive">
+    <h2>Deep Dive: Feature Selection, Malicious/Benign Detection &amp; Scaling to 40 Lakh Rows</h2>
+    <p class="section-note">
+      Three questions the leaderboard alone doesn't answer: which features each model family actually
+      leans on, how well the zoo separates malicious traffic from benign specifically (not just the
+      6-8-way attack-type split), and what would have to change to run this pipeline on a dataset roughly
+      12-90x larger than what's here today. Everything below is computed from the same fixed-seed train/test
+      split every other tab uses.
+    </p>
+
+    <h3 class="subsection-title">Feature selection by model family</h3>
+    <p class="section-note">
+      One representative model per major family, retrained on the identical split, scored two ways:
+      each model's own native importance (impurity-based for trees, |coefficient| for linear, per-feature
+      shape function for the glass-box EBM) and model-agnostic permutation importance (how much F1-macro
+      drops when a feature is shuffled) on a held-out test subsample -- so families that expose no native
+      importance at all (KNN) are still directly comparable to the ones that do.
+    </p>
+    <div class="chart-grid" id="deepdive-feature-panels"></div>
+    <div class="callout wide" style="margin-top:16px;" id="deepdive-feature-note"></div>
+
+    <h3 class="subsection-title">Identifying malicious vs. benign traffic</h3>
+    <p class="section-note">
+      Every model in the zoo is trained multiclass (attack-type, not just attack/benign), but every
+      multiclass confusion matrix already contains the binary answer: collapse every non-benign class into
+      "malicious" and every model's existing predictions -- no retraining -- yield a benign-vs-malicious
+      verdict. The two numbers that matter operationally for an IDS are false-negative rate (a real attack
+      waved through as benign) and false-positive rate (legitimate traffic wrongly blocked).
+    </p>
+    <div class="stat-grid" id="deepdive-mvb-stats" style="margin-bottom:16px;"></div>
+    <div class="card" id="deepdive-mvb-chart"></div>
+    <div class="table-scroll" style="margin-top:16px;">
+      <table>
+        <thead><tr><th>Model</th><th>Family</th><th>Malicious F1</th><th>False Neg. Rate</th><th>False Pos. Rate</th><th>Multiclass F1</th></tr></thead>
+        <tbody id="deepdive-mvb-body"></tbody>
+      </table>
+    </div>
+    <p class="section-note" style="margin-top:20px;">
+      Which raw features actually separate benign from malicious, independent of any one model, via two
+      classic univariate filter-selection methods run directly on the binary-relabeled data: mutual
+      information (captures any dependency, linear or not) and the ANOVA F-test (captures linear
+      separability). Where the two disagree, non-linear structure is doing the work.
+    </p>
+    <div class="chart-grid" id="deepdive-mvb-features"></div>
+
+    <h3 class="subsection-title">Scaling to ~40 lakh (4,000,000) row datasets</h3>
+    <p class="section-note">
+      MQTTset here is 330,936 rows across 33 features; DataSense is 45,055 rows across 109 features -- a
+      real deployment target of ~40 lakh rows is roughly 12x and 89x larger, respectively. The zoo's own
+      harness already had to answer "what breaks first at scale" to train 50 models on today's data; the
+      table below shows what it found, extrapolated to the current dataset's actual numbers.
+    </p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Complexity class</th><th>Example families</th><th>Behavior at current scale</th><th>What happens at ~40 lakh rows</th></tr></thead>
+        <tbody id="deepdive-scale-table"></tbody>
+      </table>
+    </div>
+    <div class="callout wide" style="margin-top:16px;">
+      <strong>Feature selection first.</strong> The importances above aren't just descriptive -- they're
+      a scaling lever. Dropping near-zero-importance features (DataSense's long tail of per-device one-hot
+      columns is the obvious target) shrinks memory and training cost linearly, and disproportionately
+      helps every distance- or kernel-based method whose cost grows with dimensionality.
+    </div>
+    <div class="callout wide" style="margin-top:14px;">
+      <strong>Favor near-linear-time families.</strong> Histogram-based gradient boosting (XGBoost/hist,
+      LightGBM, HistGBM) and bagged trees scale roughly log-linearly and were already the fastest strong
+      performers at today's scale. Kernel SVM, Gaussian Process, and graph-based Label Spreading are
+      O(n^2)-O(n^3) and needed hard subsample caps (12k / 3k / 5k rows respectively) even at 45k-330k rows
+      -- at 4M rows they're not viable at all without a fundamentally different (approximate) formulation.
+    </div>
+    <div class="callout wide" style="margin-top:14px;">
+      <strong>Sample selectively, not blindly.</strong> RUSBoost's naive random undersampling produced the
+      worst malicious-detection F1 of any model on both datasets, while LightGBM's GOSS -- which keeps the
+      highest-gradient (hardest) examples and subsamples the rest -- stayed competitive with full-data
+      boosting. At 4M rows, principled sampling (gradient-based, or stratified to preserve rare attack-class
+      ratios) should replace naive random subsampling, not just reduce row count.
+    </div>
+    <div class="callout wide" style="margin-top:14px;">
+      <strong>Inference cost matters as much as training cost.</strong> KNN "trains" in near-zero time
+      because it's lazy, but its inference cost scales with the stored training-set size -- already
+      ~15-80x slower per sample than XGBoost/HistGBM at today's scale. For a live inline IDS, that gap only
+      widens as training data grows toward 4M rows; boosting/tree families keep sub-millisecond inference
+      almost independent of n.
+    </div>
+    <div class="callout wide" style="margin-top:14px;">
+      <strong>Don't centralize what doesn't need centralizing.</strong> The survey paper's target
+      architecture is federated learning, which is also the natural answer to the memory ceiling: train
+      locally per device/site (DataSense is already organized per-device) and aggregate (FedAvg-style)
+      rather than materializing 4M rows as one in-memory array on one machine. Where centralized training is
+      still needed, mini-batch/<code>partial_fit</code>-capable learners, Parquet/columnar storage over CSV,
+      and float32 over float64 keep a single training pass from ever needing the whole dataset resident at
+      once.
+    </div>
   </section>
 
   <section class="view" id="view-methodology">

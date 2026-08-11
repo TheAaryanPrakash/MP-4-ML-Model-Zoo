@@ -100,6 +100,8 @@ section.view { display: none; }
 section.view.active { display: block; }
 section { margin-bottom: 46px; }
 h2 { font-size: 19px; margin: 0 0 6px; }
+h3.subsection-title { font-size: 15.5px; margin: 34px 0 6px; padding-top: 22px; border-top: 1px solid var(--border); }
+h3.subsection-title:first-of-type { margin-top: 20px; padding-top: 0; border-top: none; }
 .section-note { color: var(--text-secondary); font-size: 14px; max-width: 74ch; margin: 0 0 20px; }
 
 /* ---- stat tiles ---- */

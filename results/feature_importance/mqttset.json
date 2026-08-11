@@ -1,0 +1,764 @@
+{
+  "dataset": "mqttset",
+  "n_train": 231646,
+  "n_test": 99290,
+  "n_features": 33,
+  "feature_names": [
+    "tcp.flags",
+    "tcp.time_delta",
+    "tcp.len",
+    "mqtt.conack.flags",
+    "mqtt.conack.flags.reserved",
+    "mqtt.conack.flags.sp",
+    "mqtt.conack.val",
+    "mqtt.conflag.cleansess",
+    "mqtt.conflag.passwd",
+    "mqtt.conflag.qos",
+    "mqtt.conflag.reserved",
+    "mqtt.conflag.retain",
+    "mqtt.conflag.uname",
+    "mqtt.conflag.willflag",
+    "mqtt.conflags",
+    "mqtt.dupflag",
+    "mqtt.hdrflags",
+    "mqtt.kalive",
+    "mqtt.len",
+    "mqtt.msgid",
+    "mqtt.msgtype",
+    "mqtt.proto_len",
+    "mqtt.protoname",
+    "mqtt.qos",
+    "mqtt.retain",
+    "mqtt.sub.qos",
+    "mqtt.suback.qos",
+    "mqtt.ver",
+    "mqtt.willmsg",
+    "mqtt.willmsg_len",
+    "mqtt.willtopic",
+    "mqtt.willtopic_len",
+    "mqtt_msg_len"
+  ],
+  "class_names": [
+    "bruteforce",
+    "dos",
+    "flood",
+    "legitimate",
+    "malformed",
+    "slowite"
+  ],
+  "per_model_feature_selection": {
+    "xgboost": {
+      "family": "boosting",
+      "fit_time_sec": 1.5746808052062988,
+      "native_importance_top15": [
+        {
+          "feature": "mqtt.msgid",
+          "importance": 0.4610808594346241
+        },
+        {
+          "feature": "mqtt.kalive",
+          "importance": 0.11361106003699523
+        },
+        {
+          "feature": "mqtt.hdrflags",
+          "importance": 0.1033186272708722
+        },
+        {
+          "feature": "mqtt_msg_len",
+          "importance": 0.09124613911686527
+        },
+        {
+          "feature": "mqtt.conflag.cleansess",
+          "importance": 0.0908032766249505
+        },
+        {
+          "feature": "mqtt.conack.val",
+          "importance": 0.0333914742625206
+        },
+        {
+          "feature": "mqtt.conflag.passwd",
+          "importance": 0.031389093559045574
+        },
+        {
+          "feature": "tcp.flags",
+          "importance": 0.0312655256850818
+        },
+        {
+          "feature": "mqtt.retain",
+          "importance": 0.01231997501053022
+        },
+        {
+          "feature": "tcp.time_delta",
+          "importance": 0.011783250108232833
+        },
+        {
+          "feature": "mqtt.qos",
+          "importance": 0.008330840264397458
+        },
+        {
+          "feature": "tcp.len",
+          "importance": 0.007741768516366866
+        },
+        {
+          "feature": "mqtt.len",
+          "importance": 0.0037181101095173415
+        },
+        {
+          "feature": "mqtt.conflag.uname",
+          "importance": 0.0
+        },
+        {
+          "feature": "mqtt.conack.flags",
+          "importance": 0.0
+        }
+      ],
+      "permutation_importance_top15": [
+        {
+          "feature": "mqtt.hdrflags",
+          "importance": 0.2633661926467349
+        },
+        {
+          "feature": "mqtt_msg_len",
+          "importance": 0.21242725287564568
+        },
+        {
+          "feature": "tcp.time_delta",
+          "importance": 0.139282266717711
+        },
+        {
+          "feature": "mqtt.msgid",
+          "importance": 0.13604767109149618
+        },
+        {
+          "feature": "tcp.flags",
+          "importance": 0.12505128807448165
+        },
+        {
+          "feature": "tcp.len",
+          "importance": 0.07856680367488188
+        },
+        {
+          "feature": "mqtt.conack.val",
+          "importance": 0.023352122256996555
+        },
+        {
+          "feature": "mqtt.conflag.passwd",
+          "importance": 0.018608575635131904
+        },
+        {
+          "feature": "mqtt.len",
+          "importance": 0.0028093663828671588
+        },
+        {
+          "feature": "mqtt.qos",
+          "importance": 0.000488460644052877
+        },
+        {
+          "feature": "mqtt.conack.flags.reserved",
+          "importance": 0.0
+        },
+        {
+          "feature": "mqtt.conack.flags.sp",
+          "importance": 0.0
+        },
+        {
+          "feature": "mqtt.conflag.willflag",
+          "importance": 0.0
+        },
+        {
+          "feature": "mqtt.conflag.cleansess",
+          "importance": 0.0
+        },
+        {
+          "feature": "mqtt.conack.flags",
+          "importance": 0.0
+        }
+      ],
+      "permutation_importance_runtime_sec": 1.8678278923034668
+    },
+    "random_forest": {
+      "family": "ensemble_bagging",
+      "fit_time_sec": 10.453285932540894,
+      "native_importance_top15": [
+        {
+          "feature": "tcp.time_delta",
+          "importance": 0.23551973192390294
+        },
+        {
+          "feature": "mqtt_msg_len",
+          "importance": 0.21436467090356853
+        },
+        {
+          "feature": "tcp.len",
+          "importance": 0.10043096008987094
+        },
+        {
+          "feature": "tcp.flags",
+          "importance": 0.09222765359658545
+        },
+        {
+          "feature": "mqtt.hdrflags",
+          "importance": 0.08359357014544411
+        },
+        {
+          "feature": "mqtt.len",
+          "importance": 0.08269801161296644
+        },
+        {
+          "feature": "mqtt.msgid",
+          "importance": 0.07343211118416511
+        },
+        {
+          "feature": "mqtt.msgtype",
+          "importance": 0.05236099059037743
+        },
+        {
+          "feature": "mqtt.conack.val",
+          "importance": 0.015593528668433564
+        },
+        {
+          "feature": "mqtt.qos",
+          "importance": 0.014333963042938668
+        },
+        {
+          "feature": "mqtt.conflags",
+          "importance": 0.006427121575948614
+        },
+        {
+          "feature": "mqtt.kalive",
+          "importance": 0.005878958689654096
+        },
+        {
+          "feature": "mqtt.conflag.uname",
+          "importance": 0.005766704563208843
+        },
+        {
+          "feature": "mqtt.conflag.passwd",
+          "importance": 0.004499954624189148
+        },
+        {
+          "feature": "mqtt.proto_len",
+          "importance": 0.0031648478522258742
+        }
+      ],
+      "permutation_importance_top15": [
+        {
+          "feature": "mqtt_msg_len",
+          "importance": 0.37502074512253686
+        },
+        {
+          "feature": "tcp.time_delta",
+          "importance": 0.26146744576888564
+        },
+        {
+          "feature": "tcp.flags",
+          "importance": 0.1969254995026666
+        },
+        {
+          "feature": "mqtt.msgid",
+          "importance": 0.07607774755892918
+        },
+        {
+          "feature": "mqtt.len",
+          "importance": 0.045737253019110545
+        },
+        {
+          "feature": "mqtt.conack.val",
+          "importance": 0.043019116177594616
+        },
+        {
+          "feature": "mqtt.conflags",
+          "importance": 0.00029203214171275396
+        },
+        {
+          "feature": "mqtt.ver",
+          "importance": 0.00029203214171275396
+        },
+        {
+          "feature": "mqtt.conflag.cleansess",
+          "importance": 0.00029203214171275396
+        },
+        {
+          "feature": "mqtt.protoname",
+          "importance": 0.00029203214171275396
+        },
+        {
+          "feature": "mqtt.proto_len",
+          "importance": 0.00029203214171275396
+        },
+        {
+          "feature": "mqtt.kalive",
+          "importance": 0.00029203214171275396
+        },
+        {
+          "feature": "mqtt.conflag.qos",
+          "importance": 0.0
+        },
+        {
+          "feature": "mqtt.conflag.passwd",
+          "importance": 0.0
+        },
+        {
+          "feature": "mqtt.conack.flags.sp",
+          "importance": 0.0
+        }
+      ],
+      "permutation_importance_runtime_sec": 2.579058885574341
+    },
+    "logreg": {
+      "family": "linear",
+      "fit_time_sec": 9.109240055084229,
+      "native_importance_top15": [
+        {
+          "feature": "mqtt_msg_len",
+          "importance": 0.37896524550362304
+        },
+        {
+          "feature": "mqtt.len",
+          "importance": 0.19418570398670748
+        },
+        {
+          "feature": "mqtt.qos",
+          "importance": 0.11283267034715276
+        },
+        {
+          "feature": "mqtt.msgid",
+          "importance": 0.08969352701290488
+        },
+        {
+          "feature": "tcp.len",
+          "importance": 0.042272104731906804
+        },
+        {
+          "feature": "mqtt.hdrflags",
+          "importance": 0.03458654887194462
+        },
+        {
+          "feature": "mqtt.msgtype",
+          "importance": 0.033804766112278194
+        },
+        {
+          "feature": "tcp.time_delta",
+          "importance": 0.028528783364951304
+        },
+        {
+          "feature": "mqtt.conflag.cleansess",
+          "importance": 0.01184555030502147
+        },
+        {
+          "feature": "mqtt.ver",
+          "importance": 0.01184555030502147
+        },
+        {
+          "feature": "mqtt.protoname",
+          "importance": 0.01184555030502147
+        },
+        {
+          "feature": "mqtt.proto_len",
+          "importance": 0.01184555030502147
+        },
+        {
+          "feature": "mqtt.kalive",
+          "importance": 0.009688395960498508
+        },
+        {
+          "feature": "mqtt.dupflag",
+          "importance": 0.008028068416274478
+        },
+        {
+          "feature": "mqtt.conack.val",
+          "importance": 0.006654584123902376
+        }
+      ],
+      "permutation_importance_top15": [
+        {
+          "feature": "mqtt.len",
+          "importance": 0.17712565382514478
+        },
+        {
+          "feature": "mqtt_msg_len",
+          "importance": 0.1737759096308518
+        },
+        {
+          "feature": "mqtt.qos",
+          "importance": 0.1598794325634956
+        },
+        {
+          "feature": "mqtt.msgid",
+          "importance": 0.11500229299940219
+        },
+        {
+          "feature": "mqtt.msgtype",
+          "importance": 0.1041491701836417
+        },
+        {
+          "feature": "mqtt.hdrflags",
+          "importance": 0.09257907624562238
+        },
+        {
+          "feature": "tcp.len",
+          "importance": 0.0805053018417486
+        },
+        {
+          "feature": "tcp.flags",
+          "importance": 0.03451101779845071
+        },
+        {
+          "feature": "mqtt.kalive",
+          "importance": 0.017209665566455493
+        },
+        {
+          "feature": "mqtt.dupflag",
+          "importance": 0.012217786950848814
+        },
+        {
+          "feature": "tcp.time_delta",
+          "importance": 0.007816320000264592
+        },
+        {
+          "feature": "mqtt.conack.val",
+          "importance": 0.00572407656438276
+        },
+        {
+          "feature": "mqtt.retain",
+          "importance": 0.003245500345536579
+        },
+        {
+          "feature": "mqtt.conflag.cleansess",
+          "importance": 0.003129450605429073
+        },
+        {
+          "feature": "mqtt.proto_len",
+          "importance": 0.003129450605429073
+        }
+      ],
+      "permutation_importance_runtime_sec": 0.07171797752380371
+    },
+    "knn5": {
+      "family": "instance",
+      "fit_time_sec": 0.0007982254028320312,
+      "permutation_importance_top15": [
+        {
+          "feature": "tcp.flags",
+          "importance": 0.19828371527744126
+        },
+        {
+          "feature": "mqtt_msg_len",
+          "importance": 0.1512874797630946
+        },
+        {
+          "feature": "tcp.time_delta",
+          "importance": 0.1336838293358117
+        },
+        {
+          "feature": "mqtt.hdrflags",
+          "importance": 0.13335497711155983
+        },
+        {
+          "feature": "mqtt.msgtype",
+          "importance": 0.13180421634347284
+        },
+        {
+          "feature": "tcp.len",
+          "importance": 0.09502269871943074
+        },
+        {
+          "feature": "mqtt.len",
+          "importance": 0.054801902137672436
+        },
+        {
+          "feature": "mqtt.msgid",
+          "importance": 0.05317654250446223
+        },
+        {
+          "feature": "mqtt.conack.val",
+          "importance": 0.029264907340156462
+        },
+        {
+          "feature": "mqtt.kalive",
+          "importance": 0.013827061203599894
+        },
+        {
+          "feature": "mqtt.dupflag",
+          "importance": 0.005162737126581018
+        },
+        {
+          "feature": "mqtt.retain",
+          "importance": 0.0003299331367170182
+        },
+        {
+          "feature": "mqtt.proto_len",
+          "importance": 0.0
+        },
+        {
+          "feature": "mqtt.conflag.qos",
+          "importance": 0.0
+        },
+        {
+          "feature": "mqtt.willmsg",
+          "importance": 0.0
+        }
+      ],
+      "permutation_importance_runtime_sec": 2.368182897567749
+    },
+    "ebm": {
+      "family": "interpretable",
+      "fit_time_sec": 639.9037520885468,
+      "native_importance_top15": [
+        {
+          "feature": "mqtt_msg_len",
+          "importance": 0.19788388435773802
+        },
+        {
+          "feature": "tcp.time_delta",
+          "importance": 0.14088416694484487
+        },
+        {
+          "feature": "mqtt.len",
+          "importance": 0.1266991398780294
+        },
+        {
+          "feature": "mqtt.msgid",
+          "importance": 0.11813342196116448
+        },
+        {
+          "feature": "mqtt.msgtype",
+          "importance": 0.11484948406219275
+        },
+        {
+          "feature": "mqtt.hdrflags",
+          "importance": 0.1097730004978009
+        },
+        {
+          "feature": "tcp.len",
+          "importance": 0.08345203001491491
+        },
+        {
+          "feature": "tcp.flags",
+          "importance": 0.0776526260236569
+        },
+        {
+          "feature": "mqtt.qos",
+          "importance": 0.01818319793121223
+        },
+        {
+          "feature": "mqtt.dupflag",
+          "importance": 0.0062652505351253095
+        },
+        {
+          "feature": "mqtt.conack.val",
+          "importance": 0.0012866122384895332
+        },
+        {
+          "feature": "mqtt.ver",
+          "importance": 0.0006813603519251513
+        },
+        {
+          "feature": "mqtt.proto_len",
+          "importance": 0.0006751722369164881
+        },
+        {
+          "feature": "mqtt.protoname",
+          "importance": 0.0006736317334188342
+        },
+        {
+          "feature": "mqtt.conflag.cleansess",
+          "importance": 0.0006716237987439613
+        }
+      ],
+      "permutation_importance_top15": [
+        {
+          "feature": "mqtt_msg_len",
+          "importance": 0.2444468898079238
+        },
+        {
+          "feature": "tcp.time_delta",
+          "importance": 0.14976713234050804
+        },
+        {
+          "feature": "tcp.len",
+          "importance": 0.12064164847204836
+        },
+        {
+          "feature": "tcp.flags",
+          "importance": 0.11734509328059212
+        },
+        {
+          "feature": "mqtt.len",
+          "importance": 0.1172735394564531
+        },
+        {
+          "feature": "mqtt.msgtype",
+          "importance": 0.0694490741462261
+        },
+        {
+          "feature": "mqtt.msgid",
+          "importance": 0.06894283266767089
+        },
+        {
+          "feature": "mqtt.hdrflags",
+          "importance": 0.06716838565665088
+        },
+        {
+          "feature": "mqtt.conack.val",
+          "importance": 0.028583099773104734
+        },
+        {
+          "feature": "mqtt.qos",
+          "importance": 0.010564883920296617
+        },
+        {
+          "feature": "mqtt.dupflag",
+          "importance": 0.003976375279999064
+        },
+        {
+          "feature": "mqtt.retain",
+          "importance": 0.0006229584784440947
+        },
+        {
+          "feature": "mqtt.conflag.passwd",
+          "importance": 0.0005068754955591059
+        },
+        {
+          "feature": "mqtt.conflag.uname",
+          "importance": 0.0005068754955591059
+        },
+        {
+          "feature": "mqtt.conflag.cleansess",
+          "importance": 3.405595482732665e-05
+        }
+      ],
+      "permutation_importance_runtime_sec": 1.3213629722595215
+    }
+  },
+  "benign_vs_malicious_feature_selection": {
+    "benign_class_name": "legitimate",
+    "n_benign_train": 115824,
+    "n_malicious_train": 115822,
+    "mutual_info_top15": [
+      {
+        "feature": "mqtt.hdrflags",
+        "importance": 0.15902135323638564
+      },
+      {
+        "feature": "mqtt.len",
+        "importance": 0.15790633801417708
+      },
+      {
+        "feature": "tcp.time_delta",
+        "importance": 0.15598559152017968
+      },
+      {
+        "feature": "tcp.len",
+        "importance": 0.15329777501589273
+      },
+      {
+        "feature": "mqtt_msg_len",
+        "importance": 0.10384502936186278
+      },
+      {
+        "feature": "mqtt.msgid",
+        "importance": 0.10218384827347718
+      },
+      {
+        "feature": "mqtt.qos",
+        "importance": 0.05405161484115429
+      },
+      {
+        "feature": "mqtt.msgtype",
+        "importance": 0.05152318953930037
+      },
+      {
+        "feature": "tcp.flags",
+        "importance": 0.016720612298213387
+      },
+      {
+        "feature": "mqtt.dupflag",
+        "importance": 0.016392564535369292
+      },
+      {
+        "feature": "mqtt.ver",
+        "importance": 0.0038737985903484267
+      },
+      {
+        "feature": "mqtt.protoname",
+        "importance": 0.0036619490832891697
+      },
+      {
+        "feature": "mqtt.kalive",
+        "importance": 0.0032286796251983765
+      },
+      {
+        "feature": "mqtt.conflags",
+        "importance": 0.003163312694372611
+      },
+      {
+        "feature": "mqtt.conflag.cleansess",
+        "importance": 0.0028087609770328743
+      }
+    ],
+    "mutual_info_runtime_sec": 4.14979887008667,
+    "anova_f_top15": [
+      {
+        "feature": "mqtt.msgid",
+        "importance": 0.2936201251034614
+      },
+      {
+        "feature": "mqtt.qos",
+        "importance": 0.2009472843999086
+      },
+      {
+        "feature": "mqtt_msg_len",
+        "importance": 0.19227190218793405
+      },
+      {
+        "feature": "mqtt.len",
+        "importance": 0.1643483216214559
+      },
+      {
+        "feature": "mqtt.dupflag",
+        "importance": 0.04865789662096007
+      },
+      {
+        "feature": "tcp.flags",
+        "importance": 0.024027928696219527
+      },
+      {
+        "feature": "tcp.len",
+        "importance": 0.019141223652435414
+      },
+      {
+        "feature": "mqtt.protoname",
+        "importance": 0.008108235207756602
+      },
+      {
+        "feature": "mqtt.proto_len",
+        "importance": 0.008108235207756602
+      },
+      {
+        "feature": "mqtt.conflag.cleansess",
+        "importance": 0.008108235207756602
+      },
+      {
+        "feature": "mqtt.ver",
+        "importance": 0.008108235207756602
+      },
+      {
+        "feature": "tcp.time_delta",
+        "importance": 0.006982503545561107
+      },
+      {
+        "feature": "mqtt.conflags",
+        "importance": 0.00373375924558222
+      },
+      {
+        "feature": "mqtt.conack.val",
+        "importance": 0.003658691128198375
+      },
+      {
+        "feature": "mqtt.conflag.uname",
+        "importance": 0.00364408863498108
+      }
+    ]
+  }
+}

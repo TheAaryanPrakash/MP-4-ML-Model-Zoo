@@ -32,6 +32,22 @@ function colorForFamily(family) { return cssVar(`--grp-${groupOf(family)}`); }
 const fmtPct = (v) => (v * 100).toFixed(1) + "%";
 const fmtNum = (v, d = 2) => Number(v).toFixed(d);
 const fmtTime = (s) => (s < 1 ? (s * 1000).toFixed(0) + " ms" : s.toFixed(2) + " s");
+function fmtBigDuration(s) {
+  if (s < 1) return (s * 1000).toFixed(0) + " ms";
+  if (s < 60) return s.toFixed(1) + " s";
+  if (s < 3600) return (s / 60).toFixed(1) + " min";
+  if (s < 86400) return (s / 3600).toFixed(1) + " hr";
+  const days = s / 86400;
+  if (days < 365) return days.toFixed(1) + " days";
+  const years = days / 365;
+  return years > 100 ? "> 100 years (infeasible)" : years.toFixed(1) + " years";
+}
+function fmtBigBytes(b) {
+  const units = ["B", "KB", "MB", "GB", "TB", "PB"];
+  let i = 0;
+  while (b >= 1024 && i < units.length - 1) { b /= 1024; i++; }
+  return b.toFixed(b < 10 ? 1 : 0) + " " + units[i];
+}
 
 /* ---- SVG helpers ---- */
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -493,6 +509,151 @@ function buildModelCards() {
   });
 }
 
+/* ==================================================================
+   Deep Dive: feature selection, malicious/benign, scaling
+   ================================================================== */
+let DEEPDIVE = null;
+function currentDeepDive() { return DEEPDIVE && DEEPDIVE.datasets[currentDatasetKey]; }
+
+const DEEPDIVE_MODEL_FAMILY = { xgboost: "boosting", random_forest: "ensemble_bagging", logreg: "linear", knn5: "instance", ebm: "interpretable" };
+const DEEPDIVE_MODEL_LABEL = { xgboost: "XGBoost", random_forest: "Random Forest", logreg: "Logistic Regression", knn5: "K-Nearest Neighbors", ebm: "Explainable Boosting Machine" };
+
+function buildDeepDiveFeatures() {
+  const dd = currentDeepDive();
+  const panelsEl = document.getElementById("deepdive-feature-panels");
+  const noteEl = document.getElementById("deepdive-feature-note");
+  if (!dd) { panelsEl.innerHTML = ""; noteEl.innerHTML = ""; return; }
+
+  const perModel = dd.feature_selection.per_model_feature_selection;
+  panelsEl.innerHTML = "";
+  const topSets = {};
+  Object.entries(perModel).forEach(([key, entry]) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    panelsEl.appendChild(card);
+    const items = (entry.permutation_importance_top15 || []).slice(0, 8);
+    topSets[key] = new Set(items.slice(0, 5).map((x) => x.feature));
+    renderBarPanel(card, {
+      title: `${DEEPDIVE_MODEL_LABEL[key] || key} (permutation importance)`,
+      sub: `family: ${entry.family} · fit ${fmtTime(entry.fit_time_sec)}`,
+      items: items.map((x) => ({ label: x.feature, value: x.importance, color: colorForFamily(DEEPDIVE_MODEL_FAMILY[key]) })),
+      format: (v) => v.toFixed(3), domainMax: Math.max(0.001, ...items.map((x) => x.importance)),
+    });
+  });
+
+  // rough agreement: how many of xgboost's top-5 features also show up in each other model's top-5
+  const ref = topSets["xgboost"];
+  let agreementHtml = "";
+  if (ref) {
+    const overlaps = Object.entries(topSets).filter(([k]) => k !== "xgboost").map(([k, s]) => {
+      const shared = [...ref].filter((f) => s.has(f)).length;
+      return `${DEEPDIVE_MODEL_LABEL[k] || k} shares ${shared}/5`;
+    });
+    agreementHtml = `<strong>Top-5 feature overlap with XGBoost.</strong> ${overlaps.join(" · ")} of XGBoost's top-5 permutation-important features. ` +
+      `Tree/boosting-family models tend to converge on a similar small set of high-signal features (they all split greedily on whatever reduces impurity most); ` +
+      `linear and instance-based models, which have no notion of a "best split," spread importance across a wider, less-overlapping set -- direct evidence that ` +
+      `feature selection is genuinely model-family-dependent here, not just a property of the data.`;
+  }
+  noteEl.innerHTML = agreementHtml;
+}
+
+function buildDeepDiveMvB() {
+  const dd = currentDeepDive();
+  const statsEl = document.getElementById("deepdive-mvb-stats");
+  const chartEl = document.getElementById("deepdive-mvb-chart");
+  const bodyEl = document.getElementById("deepdive-mvb-body");
+  const featEl = document.getElementById("deepdive-mvb-features");
+  if (!dd) { statsEl.innerHTML = ""; chartEl.innerHTML = ""; bodyEl.innerHTML = ""; featEl.innerHTML = ""; return; }
+
+  const mvb = dd.malicious_vs_benign;
+  const models = mvb.models;
+  const best = models[0];
+  const worst = models[models.length - 1];
+  const avgFnr = models.reduce((s, m) => s + m.false_negative_rate, 0) / models.length;
+
+  statsEl.innerHTML = `
+    <div class="stat-card"><div class="label">Best malicious-detection F1</div><div class="value small">${best.name}</div><div class="sub">F1 ${fmtPct(best.f1_malicious)} · FNR ${fmtPct(best.false_negative_rate)} · FPR ${fmtPct(best.false_positive_rate)}</div></div>
+    <div class="stat-card"><div class="label">Worst malicious-detection F1</div><div class="value small">${worst.name}</div><div class="sub">F1 ${fmtPct(worst.f1_malicious)} · FNR ${fmtPct(worst.false_negative_rate)}</div></div>
+    <div class="stat-card"><div class="label">Avg. false-negative rate</div><div class="value">${fmtPct(avgFnr)}</div><div class="sub">across all ${models.length} successful models -- real attacks missed as "benign"</div></div>
+    <div class="stat-card"><div class="label">Benign class</div><div class="value small">${mvb.benign_class_name}</div><div class="sub">every other class collapsed to "malicious"</div></div>
+  `;
+
+  const top15 = models.slice(0, 15);
+  renderBarPanel(chartEl, {
+    title: "Top 15 by malicious-detection F1", sub: "Binary view, collapsed from each model's existing multiclass confusion matrix -- no retraining",
+    items: top15.map((m) => ({ label: m.name, value: m.f1_malicious, color: colorForFamily(m.family), metaHtml: `<div class="t-row"><span>FNR</span><span>${fmtPct(m.false_negative_rate)}</span></div><div class="t-row"><span>FPR</span><span>${fmtPct(m.false_positive_rate)}</span></div>` })),
+  });
+
+  bodyEl.innerHTML = models.map((m) => `
+    <tr>
+      <td><span class="model-dot" style="display:inline-block;width:8px;height:8px;margin-right:6px;background:${colorForFamily(m.family)}"></span>${m.name}</td>
+      <td>${m.family}</td>
+      <td>${fmtPct(m.f1_malicious)}</td>
+      <td>${fmtPct(m.false_negative_rate)}</td>
+      <td>${fmtPct(m.false_positive_rate)}</td>
+      <td>${fmtPct(m.f1_macro_multiclass)}</td>
+    </tr>`).join("");
+
+  const bvm = dd.feature_selection.benign_vs_malicious_feature_selection;
+  featEl.innerHTML = "";
+  [["mutual_info_top15", "Mutual information", "captures any dependency, linear or not"],
+   ["anova_f_top15", "ANOVA F-test", "captures linear separability only"]].forEach(([field, title, sub]) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    featEl.appendChild(card);
+    const items = bvm[field].slice(0, 10);
+    renderBarPanel(card, {
+      title: `${title}: top 10 benign-vs-malicious features`, sub,
+      items: items.map((x) => ({ label: x.feature, value: x.importance, color: cssVar("--accent") })),
+      format: (v) => v.toFixed(3), domainMax: Math.max(0.001, ...items.map((x) => x.importance)),
+    });
+  });
+}
+
+const SCALE_ROWS = [
+  { complexity: "O(n log n) — histogram-binned, near-linear", label: "Histogram gradient boosting", key: "histgbm", mode: "time_linear" },
+  { complexity: "O(n log n) per tree, embarrassingly parallel", label: "Bagged trees (Random Forest)", key: "random_forest", mode: "time_linear" },
+  { complexity: "O(n) per solver iteration", label: "Linear (well-chosen solver)", key: "logreg", mode: "time_linear" },
+  { complexity: "O(n²)–O(n³) — OvO + balanced weights on imbalanced data", label: "Kernel SVM", key: "svc_rbf", mode: "time_quadratic" },
+  { complexity: "O(n³) time, O(n²) memory — exact kernel matrix inversion", label: "Gaussian Process", key: "gaussian_process", mode: "time_cubic" },
+  { complexity: "O(n²) memory — full pairwise similarity graph", label: "Graph-based (Label Spreading)", key: "label_spreading", mode: "memory_quadratic" },
+  { complexity: "O(1) \"train\", O(n) per query at inference", label: "Instance-based (KNN, lazy)", key: "knn5", mode: "inference_linear" },
+];
+const TARGET_ROWS = 4_000_000;
+
+function buildDeepDiveScale() {
+  const tbody = document.getElementById("deepdive-scale-table");
+  if (!DATA) { tbody.innerHTML = ""; return; }
+  const models = currentModels();
+  const d = currentDS().dataset;
+
+  tbody.innerHTML = SCALE_ROWS.map((row) => {
+    const m = models.find((x) => x.key === row.key);
+    if (!m) return `<tr><td>${row.complexity}</td><td>${row.label}</td><td colspan="2">not available for this dataset</td></tr>`;
+    const nUsed = m.subsample_cap || d.n_train;
+    const scale = TARGET_ROWS / nUsed;
+    let current, projected;
+    if (row.mode === "time_linear") {
+      current = `${fmtTime(m.train_time_sec)} train on ${nUsed.toLocaleString()} rows`;
+      projected = `~${fmtBigDuration(m.train_time_sec * scale)} train (linear extrapolation)`;
+    } else if (row.mode === "time_quadratic") {
+      current = `${fmtTime(m.train_time_sec)} train, capped to ${nUsed.toLocaleString()} rows`;
+      projected = `~${fmtBigDuration(m.train_time_sec * scale * scale)} train if naively scaled -- not viable`;
+    } else if (row.mode === "time_cubic") {
+      current = `${fmtTime(m.train_time_sec)} train, capped to ${nUsed.toLocaleString()} rows`;
+      projected = `~${fmtBigDuration(m.train_time_sec * scale * scale * scale)} train if naively scaled -- not viable`;
+    } else if (row.mode === "memory_quadratic") {
+      const currentBytes = nUsed * nUsed * 8;
+      current = `~${fmtBigBytes(currentBytes)} similarity matrix, capped to ${nUsed.toLocaleString()} rows`;
+      projected = `~${fmtBigBytes(currentBytes * scale * scale)} similarity matrix -- not viable`;
+    } else if (row.mode === "inference_linear") {
+      current = `${m.inference_time_per_sample_ms.toFixed(4)} ms/sample, ${nUsed.toLocaleString()} rows stored`;
+      projected = `~${(m.inference_time_per_sample_ms * scale).toFixed(2)} ms/sample at inference time`;
+    }
+    return `<tr><td>${row.complexity}</td><td>${row.label}</td><td>${current}</td><td>${projected}</td></tr>`;
+  }).join("");
+}
+
 /* ---- tabs ---- */
 function buildTabs() {
   const buttons = document.querySelectorAll("nav.tabs button");
@@ -518,13 +679,19 @@ function renderAll() {
   buildTable();
   buildFailedRuns();
   buildModelCards();
+  buildDeepDiveFeatures();
+  buildDeepDiveMvB();
+  buildDeepDiveScale();
 }
 
 /* ---- init ---- */
-fetch("data.json")
-  .then((r) => r.json())
-  .then((json) => {
-    DATA = json;
+Promise.all([
+  fetch("data.json").then((r) => r.json()),
+  fetch("deep-dive-data.json").then((r) => (r.ok ? r.json() : null)).catch(() => null),
+])
+  .then(([data, deepDive]) => {
+    DATA = data;
+    DEEPDIVE = deepDive;
     buildTabs();
     renderAll();
   })
